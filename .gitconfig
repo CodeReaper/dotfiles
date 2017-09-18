@@ -1,5 +1,29 @@
 [alias]
 
+	# long and descriptive name for removing branch
+	delete-remote-branch = push origin --delete 
+
+	# undo last commit
+	undo-commit = reset --soft HEAD^
+
+	# mirror svn command
+	st = status
+
+	# mirror svn command
+	df = diff
+
+	# only show staged diff
+	dc = diff --cached
+
+	# graphing for when you are a bit lost
+	graph = log --graph --full-history --all --color --pretty=format:"%x1b[31m%h%x09%x1b[32m%d%x1b[0m%x20%s";
+
+	# `git since 2` will show commits from the past two days
+	since = !sh -c 'today=$(date +"%Y-%m-%d") && earlier=$(date -v-${1}d +"%Y-%m-%d") && echo "log --since=$earlier --until=$today" && git log --since=$earlier --until=$today' $1
+
+	# Shows your commits from the last workday to today
+	standup = !sh -c 'days=$([ $(date +%w) == 1 ] && echo 3 || echo 1) && lasttime=$(date -v-${days}d +"%Y-%m-%d") && git log --since=$lasttime --author=$(git config user.email) --pretty=oneline --all'
+
 	# View abbreviated SHA, description, and history graph of the latest 20 commits
 	l = log --pretty=oneline -n 20 --graph --abbrev-commit
 

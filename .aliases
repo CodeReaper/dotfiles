@@ -1,5 +1,14 @@
 #!/usr/bin/env bash
 
+# less output from curl, please
+alias curl='curl --silent'
+
+# easy clean up of xcode
+alias xcodeclean='rm -rf ~/library/Developer/Xcode/DerivedData/*'
+
+# keep fastlane in a bundle context
+alias fastlane='bundle exec fastlane'
+
 # Easier navigation: .., ..., ...., ....., ~ and -
 alias ..="cd .."
 alias ...="cd ../.."
