@@ -1,7 +1,7 @@
 [alias]
 
 	# long and descriptive name for removing branch
-	delete-remote-branch = push origin --delete 
+	delete-remote-branch = push origin --delete
 
 	# undo last commit
 	undo-commit = reset --soft HEAD^
@@ -159,7 +159,7 @@
 [commit]
 
 	# https://help.github.com/articles/signing-commits-using-gpg/
-	gpgsign = true
+	gpgsign = false
 
 [diff]
 
