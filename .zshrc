@@ -1,7 +1,7 @@
+eval "$(/opt/homebrew/bin/brew shellenv)"
+source $(brew --prefix asdf)/asdf.sh
 
 source ~/.aliases
-
-source $(brew --prefix asdf)/asdf.sh
 
 # enable git autocomplete
 autoload -Uz compinit && compinit -u
