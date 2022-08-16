@@ -17,4 +17,3 @@ PROMPT='${PWD/#$HOME/~} ${vcs_info_msg_0_} %% '
 export HOMEBREW_NO_INSTALL_CLEANUP=1
 export LDFLAGS="-L/usr/local/opt/libffi/lib -L/usr/local/opt/icu4c/lib -L/usr/local/opt/sqlite/lib"
 export CPPFLAGS="-I/usr/local/opt/libffi/include -I/usr/local/opt/icu4c/include -I/usr/local/opt/sqlite/include"
-

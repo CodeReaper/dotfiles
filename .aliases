@@ -31,4 +31,3 @@ alias logcat='__logcat() { PKG_NAME=$1;shift;adb logcat --pid=$(adb shell pidof 
 
 alias netstat='netstat -anptcp'
 alias code='/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code'
-
