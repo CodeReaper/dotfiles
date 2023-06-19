@@ -15,9 +15,11 @@ PROMPT='${PWD/#$HOME/~} ${vcs_info_msg_0_} %% '
 
 # load keys for ssh agent
 if [ -z "$SSH_AUTH_SOCK" ] ; then
+    load() { test -f $1 && ssh-add $1 }
     eval `ssh-agent -s`
-    ssh-add ~/.ssh/id_rsa
-    ssh-add ~/.ssh/work_rsa
+    load ~/.ssh/id_ed25519
+    load ~/.ssh/id_rsa
+    load ~/.ssh/work_rsa
 fi
 
 # env
