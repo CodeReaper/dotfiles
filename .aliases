@@ -24,10 +24,10 @@ alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
-alias subl="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
-
 alias adb="~/Library/Android/sdk/platform-tools/adb"
 alias logcat='__logcat() { PKG_NAME=$1;shift;adb logcat --pid=$(adb shell pidof -s $PKG_NAME) -v color $@ }; __logcat';
 
 alias netstat='netstat -anptcp'
 alias code='/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code'
+
+alias ll='ls -lash'

@@ -1,4 +1,4 @@
-eval "$(/opt/homebrew/bin/brew shellenv)"
+eval "$(/usr/local/bin/brew shellenv)"
 source $(brew --prefix asdf)/asdf.sh
 
 source ~/.aliases
