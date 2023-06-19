@@ -89,8 +89,8 @@
 	untracked = cyan
 
 [commit]
-	# https://help.github.com/articles/signing-commits-using-gpg/
-	gpgsign = false
+	# https://calebhearth.com/sign-git-with-ssh
+	gpgsign = true
 
 [diff]
 	# Detect copies as well as renames
@@ -117,6 +117,9 @@
 
 [gpg]
 	format = ssh
+
+[gpg "ssh"]
+	allowedSignersFile = ~/.ssh/allowed_signers
 
 [include]
 	path = .gitconfig.user
