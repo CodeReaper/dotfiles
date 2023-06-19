@@ -115,5 +115,8 @@
 [pull]
 	ff = only
 
+[gpg]
+	format = ssh
+
 [include]
 	path = .gitconfig.user
