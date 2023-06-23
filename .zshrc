@@ -1,5 +1,12 @@
-eval "$(/usr/local/bin/brew shellenv)"
-source $(brew --prefix asdf)/asdf.sh
+# load brew
+brew=/opt/homebrew/bin/brew
+test -x $brew || brew=/usr/local/bin/brew
+eval "$($brew shellenv)"
+
+# load asdf
+asdf=$(brew --prefix asdf)/asdf.sh
+test -d $asdf || asdf=$(brew --prefix asdf)/libexec/asdf.sh
+source $asdf
 
 source ~/.aliases
 
