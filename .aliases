@@ -4,6 +4,10 @@ alias showlinked="( ls -l node_modules ; ls -l node_modules/@* ) | grep ^l"
 alias plist="/usr/libexec/PlistBuddy -c \"Print\" $@"
 alias xml="xmllint --format -"
 alias json="python -mjson.tool"
+alias jwt="
+__decode() { read in; echo "\$in"==== | fold -w 4 | sed '$ d' | tr -d '\n' | base64 --decode|python -mjson.tool };
+__jwt() { echo \$1|cut -d. -f1|__decode; echo \$1|cut -d. -f2|__decode; };
+__jwt"
 
 # less output from curl, please
 alias curl='curl --silent'
