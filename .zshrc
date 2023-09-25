@@ -22,12 +22,12 @@ PROMPT='${PWD/#$HOME/~} ${vcs_info_msg_0_} %% '
 
 # load keys for ssh agent
 if [ -z "$SSH_AUTH_SOCK" ] ; then
-    load() { test -f $1 && ssh-add $1 }
     eval `ssh-agent -s`
-    load ~/.ssh/id_ed25519
-    load ~/.ssh/id_rsa
-    load ~/.ssh/work_rsa
 fi
+load() { test -f $1 && ssh-add $1 }
+load ~/.ssh/id_ed25519
+load ~/.ssh/id_rsa
+load ~/.ssh/work_rsa
 
 # env
 export HOMEBREW_NO_INSTALL_CLEANUP=1
