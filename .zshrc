@@ -1,12 +1,12 @@
 # load brew
-brew=/opt/homebrew/bin/brew
-test -x $brew || brew=/usr/local/bin/brew
-eval "$($brew shellenv)"
+if [ "$(arch)" = "arm64" ]; then
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+else
+    eval "$(/usr/local/bin/brew shellenv)"
+fi
 
 # load asdf
-asdf=$(brew --prefix asdf)/asdf.sh
-test -d $asdf || asdf=$(brew --prefix asdf)/libexec/asdf.sh
-source $asdf
+[ "$(arch)" = "arm64" ] && source $(brew --prefix asdf)/libexec/asdf.sh || source $(brew --prefix asdf)/asdf.sh
 
 source ~/.aliases
 
@@ -24,7 +24,7 @@ PROMPT='${PWD/#$HOME/~} ${vcs_info_msg_0_} %% '
 if [ -z "$SSH_AUTH_SOCK" ] ; then
     eval `ssh-agent -s`
 fi
-load() { test -f $1 && ssh-add $1 }
+load() { test -f $1 && ssh-add $1 2> /dev/null }
 load ~/.ssh/id_ed25519
 load ~/.ssh/id_rsa
 load ~/.ssh/work_rsa

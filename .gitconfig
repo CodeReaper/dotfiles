@@ -89,10 +89,6 @@
 	changed = yellow
 	untracked = cyan
 
-[commit]
-	# https://calebhearth.com/sign-git-with-ssh
-	gpgsign = true
-
 [diff]
 	# Detect copies as well as renames
 	renames = copies
@@ -116,6 +112,7 @@
 [pull]
 	ff = only
 
+# https://calebhearth.com/sign-git-with-ssh
 [gpg]
 	format = ssh
 
