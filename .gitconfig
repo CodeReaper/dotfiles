@@ -125,3 +125,17 @@
 
 [include]
 	path = .gitconfig.user
+
+# example content of .gitconfig.user
+# [user]
+# 	name = Name nameson
+# 	email = name@family.me
+# 	signingkey = ssh-rsa some-key
+# [includeIf "gitdir:~/repos/company/"]
+#     path = ~/.gitconfig.work
+
+# example content of .gitconfig.work
+# [user]
+# 	name = Name nameson
+# 	email = name@company.com
+# 	signingkey = ssh-rsa some-other-key
