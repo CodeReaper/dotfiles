@@ -96,6 +96,7 @@
 [diff]
 	# Detect copies as well as renames
 	renames = copies
+	wsErrorHighlight = new,old
 
 [diff "bin"]
 	# Use `hexdump` to diff binary files
