@@ -5,8 +5,10 @@ else
     eval "$(/usr/local/bin/brew shellenv)"
 fi
 
-# load asdf
-[ "$(arch)" = "arm64" ] && source $(brew --prefix asdf)/libexec/asdf.sh || source $(brew --prefix asdf)/asdf.sh
+# add asdf(>=0.16.0) shims to path
+if command -v asdf 2>&1 >/dev/null; then
+    export PATH="$PATH:$(realpath ~/.asdf/shims/)"
+fi
 
 source ~/.aliases
 
