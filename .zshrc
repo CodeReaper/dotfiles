@@ -7,8 +7,10 @@ fi
 
 # add asdf(>=0.16.0) shims to path
 if command -v asdf 2>&1 >/dev/null; then
-    export PATH="$PATH:$(realpath ~/.asdf/shims/)"
+    export PATH="$(realpath ~/.asdf/shims/):$PATH"
 fi
+
+export PATH="$PATH:$(realpath ~/.local/bin/)"
 
 source ~/.aliases
 

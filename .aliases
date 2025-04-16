@@ -35,3 +35,5 @@ alias netstat='netstat -anptcp'
 alias code='/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code'
 
 alias ll='ls -lash'
+
+alias uuid="uuidgen| tr '[:upper:]' '[:lower:]'"
