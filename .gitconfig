@@ -44,6 +44,10 @@
 	u = push -u
 
 	p = pull
+
+	b = checkout -b
+
+	cm = commit
 [apply]
 	# Detect whitespace errors when applying a patch
 	whitespace = fix
@@ -132,6 +136,8 @@
 # 	name = Name nameson
 # 	email = name@family.me
 # 	signingkey = ssh-rsa some-key
+# [commit]
+# 	gpgsign = true
 # [includeIf "gitdir:~/repos/company/"]
 #     path = ~/.gitconfig.work
 
