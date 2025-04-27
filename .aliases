@@ -44,7 +44,10 @@ alias uuid="uuidgen| tr '[:upper:]' '[:lower:]'"
 
 # docker tooling
 
-alias dive='docker run --rm -it -v /var/run/docker.sock:/var/run/docker.sock ghcr.io/wagoodman/dive $@'
+alias dive='
+docker run --rm -it \
+-v /var/run/docker.sock:/var/run/docker.sock \
+ghcr.io/wagoodman/dive $@'
 
 alias grype='
 mkdir -p /tmp/grype && \
@@ -60,3 +63,10 @@ docker run --rm \
 -v /var/run/docker.sock:/var/run/docker.sock \
 -v /tmp/trivy:/root/.cache/ \
 aquasec/trivy image $@'
+
+alias syft='docker run --rm ghcr.io/anchore/syft $@'
+
+alias dfimage='
+docker run --rm \
+-v /var/run/docker.sock:/var/run/docker.sock \
+ghcr.io/laniksj/dfimage $@'
