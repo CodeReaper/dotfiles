@@ -22,10 +22,17 @@ autoload -Uz compinit && compinit -u
 
 # show version control information
 autoload -Uz vcs_info
-precmd() { vcs_info }
+precmd() {
+  if [[ $? -ne 0 ]]; then
+    LAST_EXIT="✖"
+  else
+    LAST_EXIT=""
+  fi
+  vcs_info
+}
 zstyle ':vcs_info:git:*' formats '(%b)'
 setopt PROMPT_SUBST
-PROMPT='${PWD/#$HOME/~} ${vcs_info_msg_0_} %% '
+PROMPT='${PWD/#$HOME/~} ${vcs_info_msg_0_:+$vcs_info_msg_0_ }${LAST_EXIT:+$LAST_EXIT }%% '
 
 # load keys for ssh agent
 # - must use home variable
