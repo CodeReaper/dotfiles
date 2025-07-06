@@ -18,7 +18,11 @@ fi
 source ~/.aliases
 
 # enable git autocomplete
-autoload -Uz compinit && compinit -u
+autoload -Uz compinit
+if ! compinit &>/dev/null; then
+  rm -f "$HOME/.zcompdump"*
+  compinit
+fi
 
 # show version control information
 autoload -Uz vcs_info
@@ -50,7 +54,7 @@ PROMPT='${PWD/#$HOME/~} ${vcs_info_msg_0_:+$vcs_info_msg_0_ }${LAST_EXIT:+$LAST_
     }
     trap "rm -f '${SSH_ENV}.lock' || true" EXIT
     if ln ~/.zshrc "${SSH_ENV}.lock" 2> /dev/null; then
-        if [ -f "$SSH_ENV" ]; then
+        if [ -f "$SSH_ENV" ]; then # really could use a check on whether the ssh-agent process is still running
             source "$SSH_ENV" > /dev/null
 
             if ! kill -0 "$SSH_AGENT_PID" 2>/dev/null; then
