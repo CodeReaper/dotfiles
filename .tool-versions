@@ -7,3 +7,4 @@ kind 0.24.0
 kubectl 1.31.0
 lane 1.0.12
 python 3.11.2
+dotnet-core 9.0.300
