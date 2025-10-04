@@ -1,7 +1,12 @@
 *
+
+!.config/
+!.config/nvim/
+!.config/nvim/lua/
 !.config/nvim/*.json
 !.config/nvim/*.lua
 !.config/nvim/lua/*.lua
+
 !.aliases
 !.editorconfig
 !.gitconfig
