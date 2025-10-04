@@ -1,1 +1,11 @@
 *
+!.config/nvim/*.json
+!.config/nvim/*.lua
+!.config/nvim/lua/*.lua
+!.aliases
+!.editorconfig
+!.gitconfig
+!.gitignore
+!.gitignore.global
+!.tool-versions
+!.zshrc

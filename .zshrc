@@ -75,3 +75,9 @@ source "$HOME/.ssh/.env" > /dev/null
 export HOMEBREW_NO_INSTALL_CLEANUP=1
 export LDFLAGS="-L/usr/local/opt/icu4c/lib -L/usr/local/opt/sqlite/lib"
 export CPPFLAGS="-I/usr/local/opt/icu4c/include -I/usr/local/opt/sqlite/include"
+
+# special cases
+if command -v colima &>/dev/null; then
+    export DOCKER_HOST="unix://${HOME}/.colima/default/docker.sock"
+    export TESTCONTAINERS_DOCKER_SOCKET_OVERRIDE="${HOME}/.colima/default/docker.sock"
+fi
