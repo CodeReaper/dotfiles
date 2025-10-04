@@ -11,56 +11,13 @@ vim.opt.rtp:prepend(lazypath)
 return require("lazy").setup({
 
     {
-            'neovim/nvim-lspconfig',
+    "mason-org/mason-lspconfig.nvim",
+    opts = {
+        ensure_installed = { "lua_ls", "rust_analyzer" },
+    },
     dependencies = {
-      -- Automatically install LSPs and related tools to stdpath for Neovim
-      -- Mason must be loaded before its dependents so we need to set it up here.
-      -- NOTE: `opts = {}` is the same as calling `require('mason').setup({})`
-      { 'mason-org/mason.nvim', opts = {} },
-      'mason-org/mason-lspconfig.nvim',
-      'WhoIsSethDaniel/mason-tool-installer.nvim',
-
-      -- Useful status updates for LSP.
-      { 'j-hui/fidget.nvim', opts = {} },
-
-      -- Allows extra capabilities provided by blink.cmp
-      'saghen/blink.cmp',
-        config = function()
-            vim.lsp.enable({
-                "gopls",
-                "lua_ls",
-                "nil_ls",
-                "pyright",
-                "rust_analyzer",
-                "terraformls",
-                "ts_ls",
-            })
-
-            vim.lsp.config("rust_analyzer", {
-                settings = {
-                    ["rust-analyzer"] = {
-                        procMacro = {
-                            ignored = {
-                                leptos_macro = {
-                                    "server",
-                                },
-                            },
-                        },
-                    },
-                },
-            })
-
-            require("blink.cmp").setup({
-                keymap = {
-                    preset = "enter",
-                },
-                cmdline = {
-                    keymap = {
-                        preset = "super-tab",
-                    },
-                },
-            })
-        end,
+        { "mason-org/mason.nvim", opts = {} },
+        "neovim/nvim-lspconfig",
     },
 },
 
@@ -86,57 +43,6 @@ return require("lazy").setup({
     {
         'nvim-telescope/telescope.nvim', tag = '0.1.8',
         dependencies = { 'nvim-lua/plenary.nvim' }
-    },
-
-      { -- Autoformat
-    'stevearc/conform.nvim',
-    event = { 'BufWritePre' },
-    cmd = { 'ConformInfo' },
-    keys = {
-      {
-        '<leader>f',
-        function()
-          require('conform').format { async = true, lsp_format = 'fallback' }
-        end,
-        mode = '',
-        desc = '[F]ormat buffer',
-      },
-    },
-    opts = {
-      notify_on_error = false,
-      format_on_save = function(bufnr)
-        -- Disable "format_on_save lsp_fallback" for languages that don't
-        -- have a well standardized coding style. You can add additional
-        -- languages here or re-enable it for the disabled ones.
-        local disable_filetypes = { c = true, cpp = true }
-        if disable_filetypes[vim.bo[bufnr].filetype] then
-          return nil
-        else
-          return {
-            timeout_ms = 500,
-            lsp_format = 'fallback',
-          }
-        end
-      end,
-      formatters_by_ft = {
-        lua = { 'stylua' },
-        -- Conform can also run multiple formatters sequentially
-        -- python = { "isort", "black" },
-        --
-        -- You can use 'stop_after_first' to run the first available formatter from the list
-        -- javascript = { "prettierd", "prettier", stop_after_first = true },
-      },
-    },
-  },
-
-
-  {
-        "https://github.com/Saghen/blink.cmp",
-        dependencies = {
-            "https://github.com/neovim/nvim-lspconfig",
-        },
-        version = "1.*",
-        event = "VeryLazy",
     },
 
 })

@@ -3,9 +3,11 @@
 !.config/
 !.config/nvim/
 !.config/nvim/lua/
+!.config/nvim/lua/plugin/
 !.config/nvim/*.json
 !.config/nvim/*.lua
 !.config/nvim/lua/*.lua
+!.config/nvim/lua/plugin/*.lua
 
 !.aliases
 !.editorconfig
