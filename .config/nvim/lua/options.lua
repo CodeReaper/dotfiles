@@ -1,6 +1,7 @@
 vim.opt.cursorline = true     -- highlight the current line
 vim.opt.expandtab = true      -- convert tabs to spaces
 vim.opt.ignorecase = true     -- ignore case in search patterns
+vim.opt.mouse = ""
 vim.opt.number = true         -- set numbered lines
 vim.opt.relativenumber = true -- show relative line number
 vim.opt.scrolloff = 3         -- minimal number of screen lines to keep above and below the cursor
