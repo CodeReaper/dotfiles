@@ -11,11 +11,12 @@ vim.opt.rtp:prepend(lazypath)
 return require("lazy").setup({
 
     require 'plugin.conform',
-    require 'plugin.which',
-    require 'plugin.telescope',
+    require 'plugin.gitsigns',
     require 'plugin.mason',
+    require 'plugin.mini',
     require 'plugin.sleuth',
     require 'plugin.slides',
-    require 'plugin.mini',
+    require 'plugin.telescope',
+    require 'plugin.which',
 
 })
