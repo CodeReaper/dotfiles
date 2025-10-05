@@ -1,4 +1,7 @@
 return {
     "tpope/vim-sleuth",
-    opts = {},
+    event = "VeryLazy",
+    config = function()
+        vim.cmd("silent Sleuth")
+    end,
 }

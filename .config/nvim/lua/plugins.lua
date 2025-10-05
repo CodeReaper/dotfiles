@@ -14,7 +14,8 @@ return require("lazy").setup({
     require 'plugin.which',
     require 'plugin.telescope',
     require 'plugin.mason',
--- use config function    require 'plugin.sleuth',
+    require 'plugin.sleuth',
     require 'plugin.slides',
+    require 'plugin.mini',
 
 })
