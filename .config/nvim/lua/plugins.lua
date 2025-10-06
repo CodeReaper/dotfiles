@@ -9,7 +9,6 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 return require("lazy").setup({
-
     require 'plugin.conform',
     require 'plugin.gitsigns',
     require 'plugin.mason',
@@ -17,6 +16,6 @@ return require("lazy").setup({
     require 'plugin.sleuth',
     require 'plugin.slides',
     require 'plugin.telescope',
+    require 'plugin.treesitter',
     require 'plugin.which',
-
 })
