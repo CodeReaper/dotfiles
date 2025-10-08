@@ -1,10 +1,8 @@
 return {
-    "mason-org/mason-lspconfig.nvim",
-    opts = {
-        ensure_installed = require('lsps')
-    },
-    dependencies = {
-        { "mason-org/mason.nvim", opts = {} },
-        "neovim/nvim-lspconfig",
-    },
+  'neovim/nvim-lspconfig',
+  dependencies = {
+    { 'mason-org/mason.nvim', opts = {} },
+    'mason-org/mason-lspconfig.nvim',
+    'WhoIsSethDaniel/mason-tool-installer.nvim',
+  },
 }

@@ -19,6 +19,8 @@ map('n', '<leader>sd', builtin.diagnostics, { desc = '[S]earch [D]iagnostics' })
 map('n', '<leader>sr', builtin.resume, { desc = '[S]earch [R]esume' })
 map('n', '<leader>s.', builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
 map('n', '<leader><leader>', builtin.buffers, { desc = '[ ] Find existing buffers' })
+-- file browser
+map("n", "<leader>fb", ":Telescope file_browser path=%:p:h select_buffer=true<CR>")
 
 -- format
 map("n", "<leader>f", function()
