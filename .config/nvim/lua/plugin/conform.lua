@@ -5,9 +5,10 @@ return {
         formatters_by_ft = {
             lua = { "stylua" },
             go = { "goimports", "gofmt" },
-            rust = { "rustfmt", lsp_format = "fallback" },
-            terraform = { "terraform_fmt" },
+            rs = { "rustfmt", lsp_format = "fallback" },
+            tf = { "terraform_fmt" },
             yaml = { "yq" },
+            yml = { "yq" },
             json = { "jq" },
             dockerfile = { "dockerfmt" },
             sh = { "shellcheck" },

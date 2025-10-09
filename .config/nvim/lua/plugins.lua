@@ -19,6 +19,7 @@ require('lazy').setup {
   require 'plugin.sleuth',
   require 'plugin.slides',
   require 'plugin.telescope',
+  require 'plugin.tokyonight',
   require 'plugin.treesitter',
   require 'plugin.which',
 }
