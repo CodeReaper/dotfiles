@@ -9,3 +9,7 @@ brews:
  - tree-sitter-cli
  - rg
  - fd
+
+
+ https://influentcoder.com/posts/nvim-diagnostics/
+

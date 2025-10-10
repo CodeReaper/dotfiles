@@ -5,7 +5,6 @@ return {
         formatters_by_ft = {
             lua = { "stylua" },
             go = { "goimports", "gofmt" },
-            rs = { "rustfmt", lsp_format = "fallback" },
             tf = { "terraform_fmt" },
             yaml = { "yq" },
             yml = { "yq" },

@@ -1,6 +1,18 @@
+-- https://neovim.io/doc/user/options.html
+vim.g.have_nerd_font = false
+vim.g.loaded_perl_provider = 0
+vim.g.loaded_python3_provider = 0
+vim.g.loaded_ruby_provider = 0
+vim.o.breakindent = true
+vim.o.confirm = true
+vim.o.inccommand = 'split'
+vim.o.list = true
+vim.o.scrolloff = 10
+vim.o.showmode = false
 vim.opt.cursorline = true     -- highlight the current line
 vim.opt.expandtab = true      -- convert tabs to spaces
 vim.opt.ignorecase = true     -- ignore case in search patterns
+vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 vim.opt.mouse = ""
 vim.opt.number = true         -- set numbered lines
 vim.opt.relativenumber = true -- show relative line number
