@@ -1,3 +1,4 @@
+-- RESOURCE: https://influentcoder.com/posts/nvim-diagnostics/
 vim.diagnostic.config {
   update_in_insert = false,
   severity_sort = true,

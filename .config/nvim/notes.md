@@ -1,15 +1,11 @@
-
-https://github.com/MeanderingProgrammer/render-markdown.nvim
-
-https://github.com/amrbashir/nvim-docs-view?tab=readme-ov-file
-
-https://github.com/folke/trouble.nvim
+maybe:
+- https://github.com/MeanderingProgrammer/render-markdown.nvim
+- https://github.com/navarasu/onedark.nvim
 
 brews:
  - tree-sitter-cli
  - rg
  - fd
 
-
- https://influentcoder.com/posts/nvim-diagnostics/
-
+shortcuts:
+ - https://neovim.io/doc/user/motion.html

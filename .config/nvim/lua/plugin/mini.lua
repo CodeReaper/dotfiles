@@ -4,7 +4,6 @@ return {
         require('mini.ai').setup { n_lines = 500 }
         require('mini.comment').setup()
         require('mini.completion').setup()
-        require('mini.icons').setup { style = "ascii" }
         require('mini.move').setup()
         require('mini.pairs').setup()
         require('mini.splitjoin').setup()

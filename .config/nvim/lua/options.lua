@@ -1,4 +1,4 @@
--- https://neovim.io/doc/user/options.html
+-- RESOURCE: https://neovim.io/doc/user/options.html
 vim.g.have_nerd_font = false
 vim.g.loaded_perl_provider = 0
 vim.g.loaded_python3_provider = 0

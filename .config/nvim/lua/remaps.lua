@@ -1,6 +1,6 @@
 local map = vim.keymap.set
 
--- https://vim.rtorr.com - cheat sheet
+-- RESOURCE: https://vim.rtorr.com - cheat sheet
 
 map("n", "J", "mzJ`z")
 
