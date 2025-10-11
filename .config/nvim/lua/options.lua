@@ -9,6 +9,7 @@ vim.o.inccommand = 'split'
 vim.o.list = true
 vim.o.scrolloff = 10
 vim.o.showmode = false
+vim.opt.clipboard = "unnamedplus"
 vim.opt.cursorline = true     -- highlight the current line
 vim.opt.expandtab = true      -- convert tabs to spaces
 vim.opt.ignorecase = true     -- ignore case in search patterns

@@ -1,5 +1,7 @@
 local map = vim.keymap.set
 
+map('n', 'q', '<Nop>', { desc = 'Disable recording' })
+
 -- telescope
 local builtin = require('telescope.builtin')
 map('n', '<leader>sh', builtin.help_tags, { desc = '[S]earch [H]elp' })
