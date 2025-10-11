@@ -9,12 +9,7 @@ return {
       yaml = { 'yq' },
       yml = { 'yq' },
       json = { 'jq' },
-      dockerfile = { 'dockerfmt' },
-      sh = { 'shellcheck' },
-      makefile = { 'bake' }, -- TODO: setup formatter
-      mk = { 'bake' }, -- TODO: setup formatter
-      md = { 'markdownfmt' }, -- TODO: setup formatter
-      xml = { 'xmllint' },
+      xml = { 'xmllint' }, -- FIXME: complains about no lsp
       ['*'] = {},
       ['_'] = { 'trim_whitespace' },
     },

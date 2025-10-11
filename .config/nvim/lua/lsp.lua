@@ -1,12 +1,36 @@
+-- RESOURCE: https://github.com/neovim/nvim-lspconfig/tree/master/lsp
 local servers = {
+  -- alloy_ls = {},
+  ansiblels = {},
+  azure_pipelines_ls = {},
+  bashls = {},
+  csharp_ls = {},
+  docker_language_server = {},
+  gh_actions_ls = {},
   gopls = {},
+  helm_ls = {},
   jsonls = {},
+  jqls = {},
   lua_ls = {},
+  marksman = {}, -- markdown
+  nginx_language_server = {},
+  systemd_ls = {},
+  templ = {},
+  terraformls = {},
+  yamlls = {},
 }
 
 local ensure_installed = vim.tbl_keys(servers)
 vim.list_extend(ensure_installed, {
+  'checkmake',
+  'editorconfig-checker',
+  'hadolint',
+  'jq',
+  'markdownlint',
+  'prettier',
+  'shellcheck',
   'stylua',
+  'yamllint',
 })
 
 require('mason-tool-installer').setup { ensure_installed = ensure_installed }

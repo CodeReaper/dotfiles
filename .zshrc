@@ -73,8 +73,8 @@ source "$HOME/.ssh/.env" > /dev/null
 
 # env
 export HOMEBREW_NO_INSTALL_CLEANUP=1
-export LDFLAGS="-L/usr/local/opt/icu4c/lib -L/usr/local/opt/sqlite/lib"
-export CPPFLAGS="-I/usr/local/opt/icu4c/include -I/usr/local/opt/sqlite/include"
+export LDFLAGS="-L/usr/local/opt/icu4c/lib -L/usr/local/opt/sqlite/lib -L/opt/homebrew/opt/openssl/lib"
+export CPPFLAGS="-I/usr/local/opt/icu4c/include -I/usr/local/opt/sqlite/include -I/opt/homebrew/opt/openssl/include"
 
 # special cases
 if command -v colima &>/dev/null; then

@@ -9,3 +9,5 @@ brews:
 
 shortcuts:
  - https://neovim.io/doc/user/motion.html
+
+shell flags needs to be setup before installing asdf python otherwise you need to uninstall/install python again
