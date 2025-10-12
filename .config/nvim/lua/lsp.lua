@@ -1,6 +1,6 @@
 -- RESOURCE: https://github.com/neovim/nvim-lspconfig/tree/master/lsp
 local servers = {
-  -- alloy_ls = {},
+  -- alloy_ls = {}, -- not part of mason-lsp yet
   ansiblels = {},
   azure_pipelines_ls = {},
   bashls = {},

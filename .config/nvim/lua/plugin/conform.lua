@@ -6,10 +6,10 @@ return {
       lua = { 'stylua' },
       go = { 'goimports', 'gofmt' },
       tf = { 'terraform_fmt' },
-      yaml = { 'yq' },
-      yml = { 'yq' },
-      json = { 'jq' },
-      xml = { 'xmllint' }, -- FIXME: complains about no lsp
+      yaml = { 'prettier' },
+      yml = { 'prettier' },
+      json = { 'prettier' },
+      xml = { 'xmllint' }, -- FIXME: complains about no lsp, same for prettier
       ['*'] = {},
       ['_'] = { 'trim_whitespace' },
     },
