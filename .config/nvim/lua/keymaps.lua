@@ -26,4 +26,3 @@ map("n", "<leader>fb", ":Telescope file_browser path=%:p:h select_buffer=true<CR
 map("n", "<leader>f", function()
     vim.lsp.buf.format()
 end, { desc = "Format buffer with LSP" })
-

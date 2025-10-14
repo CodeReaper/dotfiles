@@ -35,7 +35,7 @@ vim.list_extend(ensure_installed, {
 
 require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
-local capabilities = vim.lsp.protocol.make_client_capabilities()
+local capabilities = require('blink.cmp').get_lsp_capabilities()
 
 require('mason-lspconfig').setup {
   ensure_installed = {}, -- explicitly set empty
