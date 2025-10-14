@@ -14,6 +14,9 @@ fi
 if test -d ~/.local/bin/; then
     export PATH="$PATH:$(realpath ~/.local/bin/)"
 fi
+if test -d ~/.dotnet/tools/; then
+    export PATH="$PATH:$(realpath ~/.dotnet/tools/)"
+fi
 
 source ~/.aliases
 
