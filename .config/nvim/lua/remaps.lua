@@ -23,3 +23,7 @@ map('n', 'q', '<Nop>', { desc = 'Disable recording' })
 map("v", "<", "<gv")
 map("v", ">", ">gv")
 
+-- Remap x command to black hole register.
+map({ 'n', 'v' }, 'x', '"_x', { desc = 'Change the register of the `x` command to the black hole register' })
+-- Remap y command to use system clipboard.
+map({ 'n', 'v' }, 'y', '"+y', { desc = 'Change the register of the `y` command to the system clipboard' })
