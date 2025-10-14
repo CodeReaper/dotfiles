@@ -4,5 +4,6 @@ return {
     keymap = {
       preset = 'enter',
     },
+    fuzzy = { implementation = 'lua' },
   },
 }
