@@ -1,5 +1,5 @@
 {
-  "blink.cmp": { "branch": "main", "commit": "5037cfa645a9c4f5d6e2a3f6a44e096df86c8093" },
+  "blink.cmp": { "branch": "main", "commit": "cb87357e93376fbe9b12e60333c7f5788baca057" },
   "conform.nvim": { "branch": "master", "commit": "fbcb4fa7f34bfea9be702ffff481a8e336ebf6ed" },
   "gitsigns.nvim": { "branch": "main", "commit": "1ee5c1fd068c81f9dd06483e639c2aa4587dc197" },
   "lazy.nvim": { "branch": "main", "commit": "1ea3c4085785f460fb0e46d2fe1ee895f5f9e7c1" },
@@ -9,7 +9,7 @@
   "mason.nvim": { "branch": "main", "commit": "ad7146aa61dcaeb54fa900144d768f040090bff0" },
   "mini.ai": { "branch": "main", "commit": "11c57180bc9084089206e211ac7aa598bedc9673" },
   "mini.comment": { "branch": "main", "commit": "c40bc46e72f41d3db265f6d86deb3dc259c0985d" },
-  "mini.completion": { "branch": "main", "commit": "27483b0ad3f2d269a6a0ce7564171817bca8fdf2" },
+  "mini.completion": { "branch": "main", "commit": "8290272686acfd2767c04e342c5ce39e519d5913" },
   "mini.move": { "branch": "main", "commit": "f33406ae7d95b931c6a0d3ba11e50983fe800afb" },
   "mini.pairs": { "branch": "main", "commit": "b9aada8c0e59f2b938e98fbf4eae0799eba96ad9" },
   "mini.splitjoin": { "branch": "main", "commit": "b0d57bb5d1ed154e5902ae2745f1a320a7642443" },

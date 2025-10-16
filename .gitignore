@@ -15,3 +15,4 @@
 !.gitignore.global
 !.tool-versions
 !.zshrc
+!Makefile

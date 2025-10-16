@@ -11,5 +11,8 @@ shortcuts:
  - https://neovim.io/doc/user/motion.html
 
 shell flags needs to be setup before installing asdf python otherwise you need to uninstall/install python again
+
 https://github.com/EthanWng97/dotfiles/blob/main/.config/nvim/lua/plugins/lsp/lsp-utils.lua
-https://github.com/lttb/gh-actions-language-server
+
+dap:
+https://tamerlan.dev/a-guide-to-debugging-applications-in-neovim/
