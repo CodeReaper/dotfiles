@@ -1,19 +1,29 @@
+include .env
+ifeq ($(origin ZONE),undefined)
+$(error ZONE is not set)
+endif
+
+define BREW
+brew ls --versions $(1) > /dev/null || brew install $(1);
+
+endef
+
+define CASK
+brew ls --cask --versions $(1) > /dev/null || brew install --cask $(1);
+
+endef
+
+BREWS = asdf brotli lz4
+PERSONAL_BREWS = colima docker docker-buildx docker-compose docker-credential-helper
+CASKS = visual-studio-code
+
+brew-install:
+	$(foreach brew,$(BREWS),$(call BREW,$(brew)))
+ifeq ($(ZONE),PERSONAL)
+	$(foreach brew,$(PERSONAL_BREWS),$(call BREW,$(brew)))
+endif
+# 	$(foreach cask,$(CASKS),$(call CASK,$(cask)))
 
 brew-list:
 	brew list --installed-on-request
-
-brew-install:
-	brew install \
-		asdf \
-		brotli \
-		colima \
-		docker \
-		docker-buildx \
-		docker-compose \
-		docker-credential-helper \
-		fd \
-		lz4 \
-		neovim \
-		rg \
-		tree-sitter-cli \
-
+	brew list --cask
