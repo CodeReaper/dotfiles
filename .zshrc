@@ -14,6 +14,9 @@ fi
 if test -d ~/.local/bin/; then
     export PATH="$PATH:$(realpath ~/.local/bin/)"
 fi
+if test -d ~/.dotnet/tools/; then
+    export PATH="$PATH:$(realpath ~/.dotnet/tools/)"
+fi
 
 source ~/.aliases
 
@@ -73,8 +76,11 @@ source "$HOME/.ssh/.env" > /dev/null
 
 # env
 export HOMEBREW_NO_INSTALL_CLEANUP=1
-export LDFLAGS="-L/usr/local/opt/icu4c/lib -L/usr/local/opt/sqlite/lib"
-export CPPFLAGS="-I/usr/local/opt/icu4c/include -I/usr/local/opt/sqlite/include"
+export LDFLAGS="-L/usr/local/opt/icu4c/lib -L/usr/local/opt/sqlite/lib -L/opt/homebrew/opt/openssl/lib"
+export CPPFLAGS="-I/usr/local/opt/icu4c/include -I/usr/local/opt/sqlite/include -I/opt/homebrew/opt/openssl/include"
+
+test -f $HOME/.asdf/plugins/golang/set-env.zsh && source $HOME/.asdf/plugins/golang/set-env.zsh
+test -f $HOME/.asdf/plugins/dotnet-core/set-dotnet-home.zsh && source $HOME/.asdf/plugins/dotnet-core/set-dotnet-home.zsh
 
 # special cases
 if command -v colima &>/dev/null; then

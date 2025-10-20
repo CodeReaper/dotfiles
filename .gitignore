@@ -1,7 +1,13 @@
 *
-!.config/nvim/*.json
-!.config/nvim/*.lua
-!.config/nvim/lua/*.lua
+
+!.config/
+!.config/nvim/
+!.config/nvim/*
+!.config/nvim/lua/
+!.config/nvim/lua/*
+!.config/nvim/lua/plugin/
+!.config/nvim/lua/plugin/*
+
 !.aliases
 !.editorconfig
 !.gitconfig
@@ -9,3 +15,4 @@
 !.gitignore.global
 !.tool-versions
 !.zshrc
+!Makefile

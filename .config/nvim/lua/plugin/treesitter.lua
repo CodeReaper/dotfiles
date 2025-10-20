@@ -1,0 +1,48 @@
+return {
+  'nvim-treesitter/nvim-treesitter',
+  lazy = false,
+  branch = 'master',
+  build = ':TSUpdate',
+  config = function()
+    local treesitter = require 'nvim-treesitter.configs'
+    treesitter.setup {
+      modules = {},
+      sync_install = false,
+      ignore_install = {},
+      highlight = { enable = true },
+      indent = { enable = true },
+      auto_install = true,
+      -- RESOURCE: https://github.com/nvim-treesitter/nvim-treesitter#supported-languages
+      ensure_installed = {
+        'bash',
+        'c',
+        'comment',
+        'css',
+        'csv',
+        'diff',
+        'dockerfile',
+        'editorconfig',
+        'gitcommit',
+        'gitignore',
+        'go',
+        'gomod',
+        'gosum',
+        'hcl',
+        'html',
+        'json',
+        'lua',
+        'luadoc',
+        'make',
+        'markdown',
+        'markdown_inline',
+        'nginx',
+        'query',
+        'sql',
+        'terraform',
+        'vim',
+        'vimdoc',
+        'yaml',
+      },
+    }
+  end,
+}
