@@ -43,5 +43,15 @@
     "command": "-editor.action.indentLines",
     "key": "cmd+]",
     "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "command": "cursorPageDown",
+    "key": "cmd+d",
+    "when": "textInputFocus"
+  },
+  {
+    "command": "cursorPageUp",
+    "key": "cmd+u",
+    "when": "textInputFocus"
   }
 ]
