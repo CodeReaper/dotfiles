@@ -1,6 +1,47 @@
 [
   {
+    "command": "-workbench.action.closeFolder",
     "key": "cmd+k f",
-    "command": "editor.action.formatChanges"
+    "when": "emptyWorkspaceSupport && workbenchState != 'empty'"
+  },
+  {
+    "command": "editor.action.formatDocument",
+    "key": "cmd+k f",
+    "when": "editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly && !inCompositeEditor"
+  },
+  {
+    "command": "-editor.action.formatDocument",
+    "key": "shift+alt+f",
+    "when": "editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly && !inCompositeEditor"
+  },
+  {
+    "command": "editor.action.marker.prevInFiles",
+    "key": "cmd+[",
+    "when": "editorFocus"
+  },
+  {
+    "command": "-editor.action.marker.prevInFiles",
+    "key": "shift+f8",
+    "when": "editorFocus"
+  },
+  {
+    "command": "editor.action.marker.nextInFiles",
+    "key": "cmd+]",
+    "when": "editorFocus"
+  },
+  {
+    "command": "-editor.action.marker.nextInFiles",
+    "key": "f8",
+    "when": "editorFocus"
+  },
+  {
+    "command": "-editor.action.outdentLines",
+    "key": "cmd+[",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "command": "-editor.action.indentLines",
+    "key": "cmd+]",
+    "when": "editorTextFocus && !editorReadonly"
   }
 ]

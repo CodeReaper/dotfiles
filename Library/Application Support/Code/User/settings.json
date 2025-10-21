@@ -1,37 +1,53 @@
 {
-  "redhat.telemetry.enabled": false,
-  "git.openRepositoryInParentFolders": "never",
-  "explorer.confirmDragAndDrop": false,
-  "files.autoSave": "afterDelay",
-  "terminal.integrated.enableMultiLinePasteWarning": "never",
-  "makefile.configureOnOpen": false,
-  "go.toolsManagement.autoUpdate": true,
-  "editor.minimap.enabled": true,
-  "chat.agent.enabled": false,
-  "search.quickOpen.includeHistory": false,
-  "gitlens.codeLens.recentChange.enabled": false,
-  "gitlens.codeLens.authors.enabled": false,
-  "gitlens.codeLens.scopes": ["containers", "document"],
+  "[csharp]": {
+    "editor.formatOnType": true,
+    "editor.maxTokenizationLineLength": 2500
+  },
   "[dockercompose]": {
-    "editor.insertSpaces": true,
-    "editor.tabSize": 2,
     "editor.autoIndent": "advanced",
+    "editor.defaultFormatter": "redhat.vscode-yaml",
+    "editor.insertSpaces": true,
     "editor.quickSuggestions": {
-      "other": true,
       "comments": false,
+      "other": true,
       "strings": true
     },
-    "editor.defaultFormatter": "redhat.vscode-yaml"
+    "editor.tabSize": 2
   },
   "[github-actions-workflow]": {
     "editor.defaultFormatter": "redhat.vscode-yaml"
   },
-  "workbench.sideBar.location": "right",
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "editor.formatOnSave": true
+  "ansible.validation.enabled": false,
+  "ansible.validation.lint.enabled": false,
+  "chat.agent.enabled": false,
+  "cSpell.userWords": ["Fstyr"],
+  "dotnet.formatting.organizeImportsOnFormat": true,
+  "editor.formatOnSave": true,
+  "editor.minimap.enabled": true,
+  "explorer.confirmDragAndDrop": false,
+  "extensions.ignoreRecommendations": true,
+  "files.autoSave": "afterDelay",
+  "files.exclude": {
+    "**/.git": true
+  },
+  "git.openRepositoryInParentFolders": "never",
+  "gitlens.codeLens.authors.enabled": false,
+  "gitlens.codeLens.recentChange.enabled": false,
+  "gitlens.codeLens.scopes": ["containers", "document"],
+  "go.toolsManagement.autoUpdate": true,
+  "makefile.configureOnOpen": false,
+  "merge-conflict.codeLens.enabled": false,
+  "merge-conflict.decorators.enabled": false,
+  "redhat.telemetry.enabled": false,
+  "search.quickOpen.includeHistory": false,
+  "terminal.integrated.enableMultiLinePasteWarning": "never",
+  "window.zoomLevel": 1,
+  "workbench.colorTheme": "Default Dark Modern",
+  "workbench.sideBar.location": "right"
 }
