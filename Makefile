@@ -13,8 +13,9 @@ brew ls --cask --versions $(1) > /dev/null || brew install --cask $(1);
 
 endef
 
-BREWS = asdf brotli lz4
+BREWS = asdf brotli lz4 tree watch
 PERSONAL_BREWS = colima docker docker-buildx docker-compose docker-credential-helper
+WORK_BREWS = azure-cli wget
 CASKS = visual-studio-code
 
 brew-install:
