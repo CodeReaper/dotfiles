@@ -26,11 +26,17 @@
   "ansible.validation.enabled": false,
   "ansible.validation.lint.enabled": false,
   "chat.agent.enabled": false,
-  "cSpell.userWords": ["Fstyr"],
+  "cSpell.ignorePaths": [
+    "package-lock.json",
+    "node_modules",
+    ".git/**",
+    ".gitignore"
+  ],
+  "cSpell.userWords": ["fstyr", "healthz"],
   "dotnet.formatting.organizeImportsOnFormat": true,
   "editor.cursorSurroundingLines": 1000, // keeps cursor centered always
   "editor.formatOnSave": true,
-  "editor.minimap.enabled": true,
+  "editor.minimap.enabled": false,
   "explorer.confirmDragAndDrop": false,
   "extensions.ignoreRecommendations": true,
   "files.autoSave": "afterDelay",
@@ -49,6 +55,11 @@
   "search.quickOpen.includeHistory": false,
   "terminal.integrated.enableMultiLinePasteWarning": "never",
   "window.zoomLevel": 1,
+  "workbench.colorCustomizations": {
+    "[Default Dark Modern]": {
+      "editor.lineHighlightBackground": "#3d4022"
+    }
+  },
   "workbench.colorTheme": "Default Dark Modern",
   "workbench.sideBar.location": "right"
 }

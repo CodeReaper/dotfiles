@@ -15,26 +15,6 @@
     "when": "editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly && !inCompositeEditor"
   },
   {
-    "command": "editor.action.marker.prevInFiles",
-    "key": "cmd+[",
-    "when": "editorFocus"
-  },
-  {
-    "command": "-editor.action.marker.prevInFiles",
-    "key": "shift+f8",
-    "when": "editorFocus"
-  },
-  {
-    "command": "editor.action.marker.nextInFiles",
-    "key": "cmd+]",
-    "when": "editorFocus"
-  },
-  {
-    "command": "-editor.action.marker.nextInFiles",
-    "key": "f8",
-    "when": "editorFocus"
-  },
-  {
     "command": "-editor.action.outdentLines",
     "key": "cmd+[",
     "when": "editorTextFocus && !editorReadonly"
@@ -53,5 +33,34 @@
     "command": "cursorPageUp",
     "key": "cmd+u",
     "when": "textInputFocus"
+  },
+  {
+    "command": "editor.action.rename",
+    "key": "cmd+k r",
+    "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly"
+  },
+  {
+    "command": "-workbench.action.files.revealActiveFileInWindows",
+    "key": "cmd+k r"
+  },
+  {
+    "command": "editor.action.marker.prev",
+    "key": "cmd+[",
+    "when": "editorFocus"
+  },
+  {
+    "command": "-editor.action.marker.prev",
+    "key": "shift+alt+f8",
+    "when": "editorFocus"
+  },
+  {
+    "command": "editor.action.marker.next",
+    "key": "cmd+]",
+    "when": "editorFocus"
+  },
+  {
+    "command": "-editor.action.marker.next",
+    "key": "alt+f8",
+    "when": "editorFocus"
   }
 ]
