@@ -25,12 +25,22 @@
     "when": "editorTextFocus && !editorReadonly"
   },
   {
-    "command": "cursorPageDown",
+    "command": "cursorMove",
+    "args": {
+      "to": "down",
+      "by": "line",
+      "value": 10
+    },
     "key": "cmd+d",
     "when": "textInputFocus"
   },
   {
-    "command": "cursorPageUp",
+    "command": "cursorMove",
+    "args": {
+      "to": "up",
+      "by": "line",
+      "value": 10
+    },
     "key": "cmd+u",
     "when": "textInputFocus"
   },

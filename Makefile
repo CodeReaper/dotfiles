@@ -1,3 +1,23 @@
+# handle extensions too:
+# - ms-dotnettools.vscode-dotnet-runtime
+# - redhat.ansible
+# - ms-dotnettools.csharp (perhaps)
+# - ms-dotnettools.csdevkit
+# - streetsidesoftware.code-spell-checker
+# - EditorConfig.EditorConfig
+# - eamodio.gitlens
+# - golang.go
+# - Grafana.grafana-alloy
+# - hashicorp.terraform
+# - ms-kubernetes-tools.vscode-kubernetes-tools
+# - bierner.markdown-mermaid
+# - esbenp.prettier-vscode
+# - dbankier.vscode-quick-select
+# - mechatroner.rainbow-csv
+# - redhat.vscode-yaml
+
+# https://stackoverflow.com/a/49612562/190599 multi commands
+
 BREWS = asdf brotli lz4 mas tree watch
 PERSONAL_BREWS = colima docker docker-buildx docker-compose docker-credential-helper
 WORK_BREWS = azure-cli wget
