@@ -1,71 +1,50 @@
-# handle extensions too:
-# - ms-dotnettools.vscode-dotnet-runtime
-# - redhat.ansible
-# - ms-dotnettools.csharp (perhaps)
-# - ms-dotnettools.csdevkit
-# - streetsidesoftware.code-spell-checker
-# - EditorConfig.EditorConfig
-# - eamodio.gitlens
-# - golang.go
-# - Grafana.grafana-alloy
-# - hashicorp.terraform
-# - ms-kubernetes-tools.vscode-kubernetes-tools
-# - bierner.markdown-mermaid
-# - esbenp.prettier-vscode
-# - dbankier.vscode-quick-select
-# - mechatroner.rainbow-csv
-# - redhat.vscode-yaml
-
-# https://stackoverflow.com/a/49612562/190599 multi commands
-
-BREWS = asdf brotli lz4 mas tree watch
-PERSONAL_BREWS = colima docker docker-buildx docker-compose docker-credential-helper
-WORK_BREWS = azure-cli wget
-
-CASKS = chatgpt discord hush rectangle spotify visual-studio-code
-PERSONAL_CASKS = steam tor-browser vlc
-WORK_CASKS =
-
 include .env
 ifeq ($(origin ZONE),undefined)
 $(error ZONE is not set)
 endif
 
-define BREW
-brew install $(1);
-
-endef
-
-define CASK
-brew install --cask $(1);
-
-endef
-
-install: install-rosetta install-brew install-brews install-casks install-autoupdate install-apps
+install: install-rosetta install-brew install-brews install-casks install-autoupdate install-apps install-code-extensions
 
 install-rosetta:
 	arch -arch x86_64 uname -m | grep x86_64 > /dev/null || \
 		softwareupdate --install-rosetta --agree-to-license
 
 install-brew:
-	which brew > /dev/null # FIXME: needs to install brew, if missing
+	which brew > /dev/null || { \
+		echo "Install brew via pkg from https://github.com/Homebrew/brew/releases/latest"; \
+		exit 1; \
+	}
 
 install-brews:
-	$(foreach brew,$(BREWS),$(call BREW,$(brew)))
+	brew install asdf
+	brew install brotli
+	brew install lz4
+	brew install mas
+	brew install tree
+	brew install watch
 ifeq ($(ZONE),PERSONAL)
-	$(foreach brew,$(PERSONAL_BREWS),$(call BREW,$(brew)))
+	brew install colima
+	brew install docker
+	brew install docker-buildx
+	brew install docker-compose
+	brew install docker-credential-helper
 endif
 ifeq ($(ZONE),WORK)
-	$(foreach brew,$(WORK_BREWS),$(call BREW,$(brew)))
+	brew install azure-cli
+	brew install wget
 endif
 
 install-casks:
-	$(foreach cask,$(CASKS),$(call CASK,$(cask)))
+	brew install --cask chatgpt
+	brew install --cask discord
+	brew install --cask hush
+	brew install --cask rectangle
+	brew install --cask spotify
+	brew install --cask visual-studio-code
 ifeq ($(ZONE),PERSONAL)
-	$(foreach cask,$(PERSONAL_CASKS),$(call CASK,$(cask)))
-endif
-ifeq ($(ZONE),WORK)
-	$(foreach cask,$(WORK_CASKS),$(call CASK,$(cask)))
+	brew install --cask steam
+	brew install --cask tor-browser
+	brew install --cask vlc
 endif
 
 install-autoupdate:
@@ -83,7 +62,30 @@ ifeq ($(ZONE),PERSONAL)
 	mas install 409203825 # Numbers
 endif
 
+install-code-extensions:
+	code \
+		--install-extension bierner.markdown-mermaid \
+		--install-extension dbankier.vscode-quick-select \
+		--install-extension eamodio.gitlens \
+		--install-extension editorconfig.editorconfig \
+		--install-extension esbenp.prettier-vscode \
+		--install-extension golang.go \
+		--install-extension hashicorp.terraform \
+		--install-extension mechatroner.rainbow-csv \
+		--install-extension ms-kubernetes-tools.vscode-kubernetes-tools \
+		--install-extension redhat.vscode-yaml \
+		--install-extension streetsidesoftware.code-spell-checker
+ifeq ($(ZONE),WORK)
+# sleep to avoid overloading poorly implemented extension system
+	@sleep 2
+	code
+		--install-extension grafana.grafana-alloy \
+		--install-extension ms-dotnettools.csdevkit \
+		--install-extension redhat.ansible
+endif
+
 list:
 	brew list --installed-on-request
 	brew list --cask
 	mas list
+	code --list-extensions

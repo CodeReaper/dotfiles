@@ -1,3 +1,4 @@
+// see https://stackoverflow.com/a/49612562/190599 for multi commands
 [
   {
     "command": "-workbench.action.closeFolder",
@@ -7,11 +8,6 @@
   {
     "command": "editor.action.formatDocument",
     "key": "cmd+k f",
-    "when": "editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly && !inCompositeEditor"
-  },
-  {
-    "command": "-editor.action.formatDocument",
-    "key": "shift+alt+f",
     "when": "editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly && !inCompositeEditor"
   },
   {
@@ -25,22 +21,22 @@
     "when": "editorTextFocus && !editorReadonly"
   },
   {
-    "command": "cursorMove",
     "args": {
-      "to": "down",
       "by": "line",
+      "to": "down",
       "value": 10
     },
+    "command": "cursorMove",
     "key": "cmd+d",
     "when": "textInputFocus"
   },
   {
-    "command": "cursorMove",
     "args": {
-      "to": "up",
       "by": "line",
+      "to": "up",
       "value": 10
     },
+    "command": "cursorMove",
     "key": "cmd+u",
     "when": "textInputFocus"
   },
@@ -59,18 +55,68 @@
     "when": "editorFocus"
   },
   {
-    "command": "-editor.action.marker.prev",
-    "key": "shift+alt+f8",
-    "when": "editorFocus"
-  },
-  {
     "command": "editor.action.marker.next",
     "key": "cmd+]",
     "when": "editorFocus"
   },
   {
-    "command": "-editor.action.marker.next",
-    "key": "alt+f8",
-    "when": "editorFocus"
+    "command": "editor.action.peekDefinition",
+    "key": "cmd+o d",
+    "when": "editorHasDefinitionProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor"
+  },
+  {
+    "command": "editor.action.peekImplementation",
+    "key": "cmd+o i",
+    "when": "editorHasImplementationProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor"
+  },
+  {
+    "command": "editor.action.goToReferences",
+    "key": "cmd+o r",
+    "when": "editorHasReferenceProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor"
+  },
+  {
+    "command": "workbench.action.debug.continue",
+    "key": "cmd+r d",
+    "when": "debugState == 'stopped'"
+  },
+  {
+    "command": "workbench.action.debug.disconnect",
+    "key": "cmd+r s",
+    "when": "focusedSessionIsAttach && inDebugMode"
+  },
+  {
+    "command": "workbench.action.debug.restart",
+    "key": "cmd+r r",
+    "when": "inDebugMode"
+  },
+  {
+    "command": "workbench.action.debug.start",
+    "key": "cmd+r d",
+    "when": "debuggersAvailable && debugState == 'inactive'"
+  },
+  {
+    "command": "workbench.action.debug.stepInto",
+    "key": "cmd+r i",
+    "when": "debugState != 'inactive'"
+  },
+  {
+    "command": "workbench.action.debug.stepOut",
+    "key": "cmd+r o",
+    "when": "debugState == 'stopped'"
+  },
+  {
+    "command": "workbench.action.debug.stepOver",
+    "key": "cmd+r n",
+    "when": "debugState == 'stopped'"
+  },
+  {
+    "command": "workbench.action.debug.stop",
+    "key": "cmd+r s",
+    "when": "inDebugMode && !focusedSessionIsAttach"
+  },
+  {
+    "command": "editor.debug.action.toggleBreakpoint",
+    "key": "cmd+r t",
+    "when": "debuggersAvailable && disassemblyViewFocus || debuggersAvailable && editorTextFocus"
   }
 ]
