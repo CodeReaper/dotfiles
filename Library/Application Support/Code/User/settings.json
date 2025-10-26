@@ -58,8 +58,11 @@
   "workbench.colorCustomizations": {
     "[Default Dark Modern]": {
       "editor.lineHighlightBackground": "#3d4022"
+    },
+    "[Tokyo Night]": {
+      "editor.lineHighlightBackground": "#3d4022"
     }
   },
-  "workbench.colorTheme": "Default Dark Modern",
+  "workbench.colorTheme": "Tokyo Night",
   "workbench.sideBar.location": "right"
 }
