@@ -3,6 +3,8 @@ ifeq ($(origin ZONE),undefined)
 $(error ZONE is not set)
 endif
 
+CODE := /Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code
+
 install: install-rosetta install-brew install-brews install-casks install-autoupdate install-apps install-code-extensions
 
 install-rosetta:
@@ -63,7 +65,7 @@ ifeq ($(ZONE),PERSONAL)
 endif
 
 install-code-extensions:
-	code \
+	$(CODE) \
 		--install-extension bierner.markdown-mermaid \
 		--install-extension dbankier.vscode-quick-select \
 		--install-extension eamodio.gitlens \
@@ -79,7 +81,7 @@ install-code-extensions:
 ifeq ($(ZONE),WORK)
 # sleep to avoid overloading poorly implemented extension system
 	@sleep 2
-	code
+	$(CODE) \
 		--install-extension grafana.grafana-alloy \
 		--install-extension ms-dotnettools.csdevkit \
 		--install-extension redhat.ansible
@@ -89,4 +91,4 @@ list:
 	brew list --installed-on-request
 	brew list --cask
 	mas list
-	code --list-extensions
+	$(CODE) --list-extensions

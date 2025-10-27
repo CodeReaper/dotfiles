@@ -32,7 +32,14 @@
     ".git/**",
     ".gitignore"
   ],
-  "cSpell.userWords": ["fstyr", "healthz", "npgsql"],
+  "cSpell.userWords": [
+    "appsettings",
+    "fstyr",
+    "healthz",
+    "npgsql",
+    "serilog",
+    "swashbuckle"
+  ],
   "dotnet.formatting.organizeImportsOnFormat": true,
   "editor.cursorSurroundingLines": 1000, // keeps cursor centered always
   "editor.formatOnSave": true,
@@ -64,5 +71,6 @@
     }
   },
   "workbench.colorTheme": "Tokyo Night",
-  "workbench.sideBar.location": "right"
+  "workbench.sideBar.location": "right",
+  "workbench.startupEditor": "none"
 }
