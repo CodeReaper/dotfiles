@@ -1,5 +1,5 @@
 action-validator 0.8.0
-dotnet-core 9.0.300
+dotnet-core 9.0.306
 github-cli 2.65.0
 golang 1.25.1
 helm 3.19.0

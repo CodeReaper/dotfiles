@@ -78,6 +78,7 @@ install-code-extensions:
 		--install-extension ms-kubernetes-tools.vscode-kubernetes-tools \
 		--install-extension redhat.vscode-yaml \
 		--install-extension streetsidesoftware.code-spell-checker
+		--install-extension wayou.vscode-todo-highlight \
 ifeq ($(ZONE),WORK)
 # sleep to avoid overloading poorly implemented extension system
 	@sleep 2
