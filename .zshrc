@@ -80,7 +80,20 @@ export LDFLAGS="-L/usr/local/opt/icu4c/lib -L/usr/local/opt/sqlite/lib -L/opt/ho
 export CPPFLAGS="-I/usr/local/opt/icu4c/include -I/usr/local/opt/sqlite/include -I/opt/homebrew/opt/openssl/include"
 
 test -f $HOME/.asdf/plugins/golang/set-env.zsh && source $HOME/.asdf/plugins/golang/set-env.zsh
-test -f $HOME/.asdf/plugins/dotnet-core/set-dotnet-home.zsh && source $HOME/.asdf/plugins/dotnet-core/set-dotnet-home.zsh
+
+# inlined while testing potential fix
+# test -f $HOME/.asdf/plugins/dotnet-core/set-dotnet-home.zsh && source $HOME/.asdf/plugins/dotnet-core/set-dotnet-home.zsh
+asdf_update_dotnet_home() {
+  local dotnet_path
+  dotnet_path="$(asdf which dotnet)"
+  if [[ -e "${dotnet_path}" ]]; then
+    export DOTNET_ROOT
+    DOTNET_ROOT="$(dirname "$(realpath "${dotnet_path}")")"
+  fi
+}
+autoload -U add-zsh-hook
+add-zsh-hook precmd asdf_update_dotnet_home
+# end of test file
 
 # special cases
 if command -v colima &>/dev/null; then
