@@ -37,7 +37,7 @@
       "value": 10
     },
     "command": "cursorMove",
-    "key": "cmd+u",
+    "key": "cmd+e",
     "when": "textInputFocus"
   },
   {
@@ -118,5 +118,24 @@
     "command": "editor.debug.action.toggleBreakpoint",
     "key": "cmd+r t",
     "when": "debuggersAvailable && disassemblyViewFocus || debuggersAvailable && editorTextFocus"
+  },
+  {
+    "command": "-editor.action.addSelectionToNextFindMatch",
+    "key": "cmd+d",
+    "when": "editorFocus"
+  },
+  {
+    "command": "-cursorUndo",
+    "key": "cmd+u",
+    "when": "textInputFocus"
+  },
+  {
+    "command": "-actions.findWithSelection",
+    "key": "cmd+e"
+  },
+  {
+    "command": "-editor.action.toggleScreenReaderAccessibilityMode",
+    "key": "cmd+e",
+    "when": "accessibilityHelpIsShown"
   }
 ]
