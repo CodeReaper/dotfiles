@@ -5,7 +5,7 @@ endif
 
 CODE := /Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code
 
-install: install-rosetta install-brew install-brews install-casks install-autoupdate install-apps install-code-extensions
+install: install-rosetta install-brew install-brews install-casks install-autoupdate install-asdf install-apps install-code-extensions
 
 install-rosetta:
 	arch -arch x86_64 uname -m | grep x86_64 > /dev/null || \
@@ -55,6 +55,26 @@ install-autoupdate:
 	brew autoupdate status | grep installed || \
 		brew autoupdate start 43200 --upgrade --cleanup --immediate --ac-only
 
+install-asdf:
+	asdf plugin add github-cli
+	asdf plugin add golang
+	asdf plugin add helm
+	asdf plugin add jq
+	asdf plugin add kind
+	asdf plugin add kubeconform
+	asdf plugin add kubectl
+	asdf plugin add nodejs
+	asdf plugin add python
+	asdf plugin add shellcheck
+	asdf plugin add shfmt
+	asdf plugin add swiftlint
+	asdf plugin add terraform
+	asdf plugin add yq
+ifeq ($(ZONE),WORK)
+	asdf plugin add dotnet-core
+endif
+	asdf install
+
 install-apps:
 	mas install 1160517834 # whiteboard
 	mas install 1561604170 # nightshift - safari extension
@@ -95,3 +115,4 @@ list:
 	brew list --cask
 	mas list
 	$(CODE) --list-extensions
+	asdf plugin list

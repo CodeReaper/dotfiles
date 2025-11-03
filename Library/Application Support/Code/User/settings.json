@@ -37,6 +37,7 @@
   ],
   "cSpell.userWords": [
     "appsettings",
+    "correlator",
     "fstyr",
     "healthz",
     "npgsql",
