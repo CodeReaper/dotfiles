@@ -7,6 +7,7 @@ This happened just before I was going to have handle 'run/debug test' shortcuts 
 Currently considering how to configure VSCode to more neovim-like (but without adding neovim or vim motions to it).
 
 ## Old notes
+
 ```
 maybe:
 - https://github.com/MeanderingProgrammer/render-markdown.nvim

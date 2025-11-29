@@ -9,29 +9,19 @@ __decode() { read in; echo "\$in"==== | fold -w 4 | sed '$ d' | tr -d '\n' | bas
 __jwt() { echo \$1|cut -d. -f1|__decode; echo \$1|cut -d. -f2|__decode; };
 __jwt"
 
-# less output from curl, please
-alias curl='curl --silent'
-
-# easy clean up of xcode
-alias xcodeclean='rm -rf ~/library/Developer/Xcode/DerivedData/*'
-
-# keep fastlane in a bundle context
-alias fastlane='bundle exec fastlane'
-alias pod='bundle exec pod'
-alias rake='bundle exec rake'
-
 # git
 alias g="git"
 
 # Always enable colored `grep` output
 # Note: `GREP_OPTIONS="--color=auto"` is deprecated, hence the alias usage.
 alias grep='grep --color=auto'
-alias fgrep='fgrep --color=auto'
-alias egrep='egrep --color=auto'
+
+# easy clean up of xcode
+alias xcodeclean='rm -rf ~/library/Developer/Xcode/DerivedData/*'
 
 # android
 alias adb="~/Library/Android/sdk/platform-tools/adb"
-alias logcat='__logcat() { PKG_NAME=$1;shift;adb logcat --pid=$(adb shell pidof -s $PKG_NAME) -v color $@ }; __logcat';
+alias logcat='__logcat() { PKG_NAME=$1;shift;adb logcat --pid=$(adb shell pidof -s $PKG_NAME) -v color $@ }; __logcat'
 
 # network
 alias netstat='netstat -anptcp'
@@ -41,6 +31,10 @@ alias code='/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/co
 
 # generators
 alias uuid="uuidgen| tr '[:upper:]' '[:lower:]'"
+
+# tooling
+
+alias serve="python -m http.server $@"
 
 # docker tooling
 

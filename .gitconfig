@@ -48,6 +48,8 @@
 	b = checkout -b
 
 	cm = commit
+
+	tmp = commit -m tmp
 [apply]
 	# Detect whitespace errors when applying a patch
 	whitespace = fix
@@ -120,6 +122,7 @@
 
 [pull]
 	ff = only
+	rebase = true
 
 # https://calebhearth.com/sign-git-with-ssh
 [gpg]
@@ -146,3 +149,5 @@
 # 	name = Name nameson
 # 	email = name@company.com
 # 	signingkey = ssh-rsa some-other-key
+[rebase]
+	autoStash = true

@@ -1,0 +1,150 @@
+{
+  "[csharp]": {
+    "editor.formatOnType": true,
+    "editor.maxTokenizationLineLength": 2500
+  },
+  "[dockercompose]": {
+    "editor.autoIndent": "advanced",
+    "editor.defaultFormatter": "redhat.vscode-yaml",
+    "editor.insertSpaces": true,
+    "editor.quickSuggestions": {
+      "comments": false,
+      "other": true,
+      "strings": true
+    },
+    "editor.tabSize": 2
+  },
+  "[github-actions-workflow]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[yaml]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "ansible.validation.enabled": false,
+  "ansible.validation.lint.enabled": false,
+  "chat.agent.enabled": false,
+  "cSpell.ignorePaths": [
+    "package-lock.json",
+    "node_modules",
+    ".git/**",
+    ".gitignore"
+  ],
+  "cSpell.userWords": [
+    "appsettings",
+    "correlator",
+    "fstyr",
+    "healthz",
+    "npgsql",
+    "serilog",
+    "swashbuckle"
+  ],
+  "dotnet.formatting.organizeImportsOnFormat": true,
+  "editor.cursorSurroundingLines": 1000, // keeps cursor centered always
+  "editor.formatOnSave": true,
+  "editor.minimap.enabled": false,
+  "editor.tokenColorCustomizations": {
+    "textMateRules": [
+      {
+        "scope": "rainbow1",
+        "settings": {
+          "foreground": "#e15e7f"
+        }
+      },
+      {
+        "scope": "keyword.rainbow2",
+        "settings": {
+          "foreground": "#3CB44B",
+          "fontStyle": "bold"
+        }
+      },
+      {
+        "scope": "entity.name.function.rainbow3",
+        "settings": {
+          "foreground": "#FFE119",
+          "fontStyle": "italic"
+        }
+      },
+      {
+        "scope": "comment.rainbow4",
+        "settings": {
+          "foreground": "#0082C8",
+          "fontStyle": "underline"
+        }
+      },
+      {
+        "scope": "string.rainbow5",
+        "settings": {
+          "foreground": "#FABEBE"
+        }
+      },
+      {
+        "scope": "variable.parameter.rainbow6",
+        "settings": {
+          "foreground": "#46F0F0",
+          "fontStyle": "bold"
+        }
+      },
+      {
+        "scope": "constant.numeric.rainbow7",
+        "settings": {
+          "foreground": "#9c4597",
+          "fontStyle": "italic"
+        }
+      },
+      {
+        "scope": "entity.name.type.rainbow8",
+        "settings": {
+          "foreground": "#008080",
+          "fontStyle": "underline"
+        }
+      },
+      {
+        "scope": "markup.bold.rainbow9",
+        "settings": {
+          "foreground": "#F58231"
+        }
+      },
+      {
+        "scope": "invalid.rainbow10",
+        "settings": {
+          "foreground": "#FFFFFF"
+        }
+      }
+    ]
+  },
+  "explorer.confirmDragAndDrop": false,
+  "extensions.ignoreRecommendations": true,
+  "files.autoSave": "afterDelay",
+  "files.exclude": {
+    "**/.git": true
+  },
+  "git.openRepositoryInParentFolders": "never",
+  "gitlens.codeLens.authors.enabled": false,
+  "gitlens.codeLens.recentChange.enabled": false,
+  "gitlens.codeLens.scopes": ["containers", "document"],
+  "go.toolsManagement.autoUpdate": true,
+  "merge-conflict.codeLens.enabled": false,
+  "merge-conflict.decorators.enabled": false,
+  "redhat.telemetry.enabled": false,
+  "search.quickOpen.includeHistory": false,
+  "terminal.integrated.enableMultiLinePasteWarning": "never",
+  "window.zoomLevel": 1,
+  "workbench.colorCustomizations": {
+    "[Default Dark Modern]": {
+      "editor.lineHighlightBackground": "#282515"
+    },
+    "[Tokyo Night]": {
+      "editor.lineHighlightBackground": "#282515"
+    }
+  },
+  "workbench.colorTheme": "Tokyo Night",
+  "workbench.sideBar.location": "right",
+  "workbench.startupEditor": "none",
+  "makefile.configureOnOpen": false
+}
