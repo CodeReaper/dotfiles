@@ -146,5 +146,7 @@
   "workbench.colorTheme": "Tokyo Night",
   "workbench.sideBar.location": "right",
   "workbench.startupEditor": "none",
-  "makefile.configureOnOpen": false
+  "makefile.configureOnOpen": false,
+  "terminal.integrated.stickyScroll.enabled": false,
+  "terminal.integrated.suggest.enabled": false
 }
