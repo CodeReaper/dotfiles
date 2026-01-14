@@ -97,6 +97,7 @@ install-code-extensions:
 		--install-extension mechatroner.rainbow-csv \
 		--install-extension mkhl.shfmt \
 		--install-extension ms-kubernetes-tools.vscode-kubernetes-tools \
+		--install-extension redhat.vscode-xml \
 		--install-extension redhat.vscode-yaml \
 		--install-extension streetsidesoftware.code-spell-checker \
 		--install-extension timonwong.shellcheck \
