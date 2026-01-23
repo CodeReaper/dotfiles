@@ -44,6 +44,7 @@ install-casks:
 	brew install --cask spotify
 	brew install --cask visual-studio-code
 ifeq ($(ZONE),PERSONAL)
+	brew install --cask slack
 	brew install --cask steam
 	brew install --cask tor-browser
 	brew install --cask vlc
