@@ -137,5 +137,13 @@
     "command": "-editor.action.toggleScreenReaderAccessibilityMode",
     "key": "cmd+e",
     "when": "accessibilityHelpIsShown"
+  },
+  {
+    "key": "shift+enter", // https://github.com/anomalyco/opencode/issues/1505#issuecomment-3407445837
+    "command": "workbench.action.terminal.sendSequence",
+    "args": {
+      "text": "\u001b[13;2u"
+    },
+    "when": "terminalFocus"
   }
 ]

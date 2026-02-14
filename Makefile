@@ -24,6 +24,7 @@ install-brews:
 	brew install mas
 	brew install tree
 	brew install watch
+	brew install anomalyco/tap/opencode
 ifeq ($(ZONE),PERSONAL)
 	brew install colima
 	brew install docker
@@ -37,17 +38,19 @@ ifeq ($(ZONE),WORK)
 endif
 
 install-casks:
-	brew install --cask chatgpt
-	brew install --cask discord
-	brew install --cask hush
-	brew install --cask rectangle
-	brew install --cask spotify
-	brew install --cask visual-studio-code
+	brew list --cask chatgpt >/dev/null 2>&1 || brew install --cask chatgpt
+	brew list --cask discord >/dev/null 2>&1 || brew install --cask discord
+	brew list --cask hush >/dev/null 2>&1 || brew install --cask hush
+	brew list --cask rectangle >/dev/null 2>&1 || brew install --cask rectangle
+	brew list --cask spotify >/dev/null 2>&1 || brew install --cask spotify
+	brew list --cask visual-studio-code >/dev/null 2>&1 || brew install --cask visual-studio-code
 ifeq ($(ZONE),PERSONAL)
-	brew install --cask slack
-	brew install --cask steam
-	brew install --cask tor-browser
-	brew install --cask vlc
+	brew list --cask steam >/dev/null 2>&1 || brew install --cask steam
+	brew list --cask tor-browser >/dev/null 2>&1 || brew install --cask tor-browser
+	brew list --cask vlc >/dev/null 2>&1 || brew install --cask vlc
+endif
+ifeq ($(ZONE),WORK)
+	brew list --cask slack >/dev/null 2>&1 || brew install --cask slack
 endif
 
 install-autoupdate:
@@ -100,6 +103,7 @@ install-code-extensions:
 		--install-extension ms-kubernetes-tools.vscode-kubernetes-tools \
 		--install-extension redhat.vscode-xml \
 		--install-extension redhat.vscode-yaml \
+		--install-extension sst-dev.opencode \
 		--install-extension streetsidesoftware.code-spell-checker \
 		--install-extension timonwong.shellcheck \
 		--install-extension wayou.vscode-todo-highlight
