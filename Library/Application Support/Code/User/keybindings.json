@@ -164,5 +164,20 @@
       "text": "\u001b[13;2u"
     },
     "when": "terminalFocus"
+  },
+  {
+    "key": "cmd+escape",
+    "command": "-quickInput.hide",
+    "when": "inQuickInput"
+  },
+  {
+    "key": "cmd+escape",
+    "command": "-workbench.action.chat.cancel",
+    "when": "chatHasToolConfirmation && !chatRemoteJobCreating || chatSessionRequestInProgress && !chatRemoteJobCreating"
+  },
+  {
+    "key": "cmd+escape",
+    "command": "-workbench.action.hideComment",
+    "when": "commentWidgetVisible && editorFocus"
   }
 ]
