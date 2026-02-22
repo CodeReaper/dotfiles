@@ -179,5 +179,9 @@
     "key": "cmd+escape",
     "command": "-workbench.action.hideComment",
     "when": "commentWidgetVisible && editorFocus"
+  },
+  {
+    "key": "cmd+l cmd+k",
+    "command": "workbench.action.toggleEditorWidths"
   }
 ]
