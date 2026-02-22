@@ -41,6 +41,7 @@ install-casks:
 	brew list --cask chatgpt >/dev/null 2>&1 || brew install --cask chatgpt
 	brew list --cask discord >/dev/null 2>&1 || brew install --cask discord
 	brew list --cask hush >/dev/null 2>&1 || brew install --cask hush
+	brew list --cask macpass >/dev/null 2>&1 || brew install --cask macpass
 	brew list --cask rectangle >/dev/null 2>&1 || brew install --cask rectangle
 	brew list --cask spotify >/dev/null 2>&1 || brew install --cask spotify
 	brew list --cask visual-studio-code >/dev/null 2>&1 || brew install --cask visual-studio-code
