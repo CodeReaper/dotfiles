@@ -1,0 +1,25 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "permission": {
+    "*": "ask",
+    "bash": {
+      "*": "ask",
+      "dotnet *": "ask",
+      "dotnet build *": "allow",
+      "dotnet restore *": "allow",
+      "dotnet test *": "allow",
+      "git *": "ask",
+      "git diff *": "allow",
+      "git log *": "allow",
+      "git show *": "allow",
+      "go *": "allow",
+      "go run *": "ask",
+      "grep *": "allow",
+      "make *": "ask",
+      "make test": "allow",
+      "sed *": "allow",
+      "rm *": "deny",
+      "strings *": "allow"
+    }
+  }
+}

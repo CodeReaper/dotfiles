@@ -23,15 +23,16 @@
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "[yaml]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
   "[xml]": {
     "editor.defaultFormatter": "redhat.vscode-xml"
+  },
+  "[yaml]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "ansible.validation.enabled": false,
   "ansible.validation.lint.enabled": false,
   "chat.agent.enabled": false,
+  "chat.disableAIFeatures": true,
   "cSpell.ignorePaths": [
     "package-lock.json",
     "node_modules",
@@ -45,7 +46,8 @@
     "healthz",
     "npgsql",
     "serilog",
-    "swashbuckle"
+    "swashbuckle",
+    "opencode"
   ],
   "dotnet.formatting.organizeImportsOnFormat": true,
   "editor.cursorSurroundingLines": 1000, // keeps cursor centered always
@@ -62,22 +64,22 @@
       {
         "scope": "keyword.rainbow2",
         "settings": {
-          "foreground": "#3CB44B",
-          "fontStyle": "bold"
+          "fontStyle": "bold",
+          "foreground": "#3CB44B"
         }
       },
       {
         "scope": "entity.name.function.rainbow3",
         "settings": {
-          "foreground": "#FFE119",
-          "fontStyle": "italic"
+          "fontStyle": "italic",
+          "foreground": "#FFE119"
         }
       },
       {
         "scope": "comment.rainbow4",
         "settings": {
-          "foreground": "#0082C8",
-          "fontStyle": "underline"
+          "fontStyle": "underline",
+          "foreground": "#0082C8"
         }
       },
       {
@@ -89,22 +91,22 @@
       {
         "scope": "variable.parameter.rainbow6",
         "settings": {
-          "foreground": "#46F0F0",
-          "fontStyle": "bold"
+          "fontStyle": "bold",
+          "foreground": "#46F0F0"
         }
       },
       {
         "scope": "constant.numeric.rainbow7",
         "settings": {
-          "foreground": "#9c4597",
-          "fontStyle": "italic"
+          "fontStyle": "italic",
+          "foreground": "#9c4597"
         }
       },
       {
         "scope": "entity.name.type.rainbow8",
         "settings": {
-          "foreground": "#008080",
-          "fontStyle": "underline"
+          "fontStyle": "underline",
+          "foreground": "#008080"
         }
       },
       {
@@ -132,11 +134,24 @@
   "gitlens.codeLens.recentChange.enabled": false,
   "gitlens.codeLens.scopes": ["containers", "document"],
   "go.toolsManagement.autoUpdate": true,
+  "json.schemas": [
+    {
+      "fileMatch": ["/.config/opencode/opencode.json"],
+      "url": "https://opencode.ai/config.json"
+    },
+    {
+      "fileMatch": ["https://models.dev/model-schema.json"],
+      "url": "https://models.dev/model-schema.json"
+    }
+  ],
+  "makefile.configureOnOpen": false,
   "merge-conflict.codeLens.enabled": false,
   "merge-conflict.decorators.enabled": false,
   "redhat.telemetry.enabled": false,
   "search.quickOpen.includeHistory": false,
   "terminal.integrated.enableMultiLinePasteWarning": "never",
+  "terminal.integrated.stickyScroll.enabled": false,
+  "terminal.integrated.suggest.enabled": false,
   "window.zoomLevel": 1,
   "workbench.colorCustomizations": {
     "[Default Dark Modern]": {
@@ -148,9 +163,5 @@
   },
   "workbench.colorTheme": "Tokyo Night",
   "workbench.sideBar.location": "right",
-  "workbench.startupEditor": "none",
-  "makefile.configureOnOpen": false,
-  "terminal.integrated.stickyScroll.enabled": false,
-  "terminal.integrated.suggest.enabled": false,
-  "chat.disableAIFeatures": true
+  "workbench.startupEditor": "none"
 }
