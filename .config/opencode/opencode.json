@@ -1,5 +1,13 @@
 {
   "$schema": "https://opencode.ai/config.json",
+  "agent": {
+    "build": {
+      "permission": {
+        "edit": "allow",
+        "todowrite": "allow"
+      }
+    }
+  },
   "permission": {
     "*": "ask",
     "bash": {
@@ -16,12 +24,26 @@
       "git status *": "allow",
       "go *": "allow",
       "go run *": "ask",
-      "grep *": "allow",
       "make *": "ask",
       "make test": "allow",
-      "sed *": "allow",
       "rm *": "deny",
+      "sed *": "allow",
       "strings *": "allow"
-    }
+    },
+    "codesearch": "allow",
+    "edit": "deny",
+    "glob": "allow",
+    "grep": "allow",
+    "list": "allow",
+    "read": {
+      "*": "allow",
+      "*.env": "deny",
+      "*.env.*": "deny",
+      "*.env.example": "allow"
+    },
+    "task": "allow",
+    "todoread": "allow",
+    "webfetch": "allow",
+    "websearch": "allow"
   }
 }
