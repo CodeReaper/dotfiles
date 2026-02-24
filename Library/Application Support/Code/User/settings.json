@@ -158,7 +158,10 @@
       "editor.lineHighlightBackground": "#282515"
     },
     "[Tokyo Night]": {
-      "editor.lineHighlightBackground": "#282515"
+      "editor.lineHighlightBackground": "#282515",
+      "editorGutter.modifiedBackground": "#4c73c1",
+      "editorGutter.addedBackground": "#30a19e",
+      "editorGutter.deletedBackground": "#823c41"
     }
   },
   "workbench.colorTheme": "Tokyo Night",
