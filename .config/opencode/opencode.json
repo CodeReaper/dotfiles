@@ -8,6 +8,7 @@
       "dotnet build *": "allow",
       "dotnet restore *": "allow",
       "dotnet test *": "allow",
+      "gh *": "deny",
       "git *": "ask",
       "git diff *": "allow",
       "git log *": "allow",

@@ -148,6 +148,10 @@
   "merge-conflict.codeLens.enabled": false,
   "merge-conflict.decorators.enabled": false,
   "redhat.telemetry.enabled": false,
+  "scm.diffDecorationsGutterAction": "none",
+  "scm.diffDecorationsGutterPattern": {
+    "modified": false
+  },
   "search.quickOpen.includeHistory": false,
   "terminal.integrated.enableMultiLinePasteWarning": "never",
   "terminal.integrated.stickyScroll.enabled": false,
@@ -159,9 +163,12 @@
     },
     "[Tokyo Night]": {
       "editor.lineHighlightBackground": "#282515",
-      "editorGutter.modifiedBackground": "#4c73c1",
       "editorGutter.addedBackground": "#4c73c1",
-      "editorGutter.deletedBackground": "#823c41"
+      "editorGutter.addedSecondaryBackground": "#4c73c1",
+      "editorGutter.deletedBackground": "#823c41",
+      "editorGutter.deletedSecondaryBackground": "#823c41",
+      "editorGutter.modifiedBackground": "#4c73c1",
+      "editorGutter.modifiedSecondaryBackground": "#4c73c1"
     }
   },
   "workbench.colorTheme": "Tokyo Night",
