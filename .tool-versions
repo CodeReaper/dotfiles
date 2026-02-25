@@ -1,4 +1,4 @@
-dotnet-core 9.0.306
+dotnet-core 10.0.103
 github-cli 2.65.0
 golang 1.25.1
 helm 3.19.0
