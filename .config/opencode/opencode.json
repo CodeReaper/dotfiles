@@ -12,6 +12,7 @@
     "*": "ask",
     "bash": {
       "*": "ask",
+      "dotnet --info": "allow",
       "dotnet *": "ask",
       "dotnet build *": "allow",
       "dotnet restore *": "allow",
@@ -24,6 +25,7 @@
       "git status *": "allow",
       "go *": "allow",
       "go run *": "ask",
+      "ls *": "ask",
       "make *": "ask",
       "make test": "allow",
       "rm *": "deny",
