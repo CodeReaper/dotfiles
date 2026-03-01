@@ -12,6 +12,7 @@
     "*": "ask",
     "bash": {
       "*": "ask",
+      "curl *": "ask",
       "dotnet *": "ask",
       "dotnet --info": "allow",
       "dotnet build *": "allow",
@@ -27,13 +28,16 @@
       "git status *": "allow",
       "go *": "allow",
       "go run *": "ask",
+      "head *": "allow",
       "ls *": "allow",
       "ps *": "allow",
       "make *": "ask",
       "make test": "allow",
+      "mkdir *": "allow",
       "rm *": "deny",
       "sed *": "allow",
-      "strings *": "allow"
+      "strings *": "allow",
+      "tail *": "allow"
     },
     "codesearch": "allow",
     "edit": "deny",
