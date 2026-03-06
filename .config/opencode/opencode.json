@@ -9,6 +9,7 @@
       }
     }
   },
+  "default_agent": "plan",
   "permission": {
     "*": "ask",
     "bash": {
