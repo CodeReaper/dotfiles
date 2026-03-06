@@ -146,11 +146,22 @@
 # 	gpgsign = true
 # [includeIf "gitdir:~/repos/company/"]
 #     path = ~/.gitconfig.work
+# [includeIf "gitdir:~/repos/org/"]
+#     path = ~/.gitconfig.org
 
 # example content of .gitconfig.work
 # [user]
 # 	name = Name nameson
 # 	email = name@company.com
 # 	signingkey = ssh-rsa some-other-key
+
+# example content of .gitconfig.org
+# [includeIf "hasconfig:remote.*.url:*ssh.dev.azure.com*/**"]
+#     path = ~/.gitconfig.org-azure-ssh
+
+# example content of .gitconfig.org-azure-ssh
+# [core]
+#     sshCommand = ssh -i ~/.ssh/id_org_azure -o IdentitiesOnly=yes -F /dev/null
+
 [rebase]
 	autoStash = true
