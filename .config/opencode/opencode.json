@@ -25,6 +25,7 @@
       "gh *": "deny",
       "git *": "ask",
       "git diff *": "allow",
+      "git branch --show-current": "allow",
       "git log *": "allow",
       "git show *": "allow",
       "git status *": "allow",
