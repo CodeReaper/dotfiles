@@ -130,10 +130,12 @@
     "**/.git": true
   },
   "git.openRepositoryInParentFolders": "never",
+  "gitlens.ai.enabled": false,
   "gitlens.codeLens.authors.enabled": false,
   "gitlens.codeLens.recentChange.enabled": false,
   "gitlens.codeLens.scopes": ["containers", "document"],
   "go.toolsManagement.autoUpdate": true,
+  "inlineChat.affordance": "off",
   "json.schemas": [
     {
       "fileMatch": ["/.config/opencode/opencode.json"],
@@ -147,6 +149,7 @@
   "makefile.configureOnOpen": false,
   "merge-conflict.codeLens.enabled": false,
   "merge-conflict.decorators.enabled": false,
+  "python.analysis.aiHoverSummaries": false,
   "redhat.telemetry.enabled": false,
   "scm.diffDecorationsGutterAction": "none",
   "scm.diffDecorationsGutterPattern": {
@@ -172,6 +175,7 @@
     }
   },
   "workbench.colorTheme": "Tokyo Night",
+  "workbench.settings.showAISearchToggle": false,
   "workbench.sideBar.location": "right",
   "workbench.startupEditor": "none"
 }
