@@ -38,11 +38,16 @@
       "make *": "ask",
       "make test": "allow",
       "mkdir *": "allow",
+      "npm ci": "allow",
+      "npm view *": "allow",
+      "npm run build*": "allow",
+      "npm run test*": "allow",
       "rm *": "ask",
       "sed *": "allow",
       "strings *": "allow",
       "tail *": "allow",
-      "xxd *": "allow"
+      "xxd *": "allow",
+      "wc *": "allow"
     },
     "codesearch": "allow",
     "edit": "deny",
