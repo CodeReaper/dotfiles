@@ -25,6 +25,7 @@
       "echo *": "allow",
       "find *": "allow",
       "find * --delete *": "deny",
+      "find * --exec *": "deny",
       "gh *": "deny",
       "git *": "ask",
       "git diff *": "allow",
