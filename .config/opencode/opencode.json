@@ -20,6 +20,7 @@
       "dotnet --info": "allow",
       "dotnet build *": "allow",
       "dotnet restore *": "allow",
+      "dotnet list *": "allow",
       "dotnet test *": "allow",
       "find *": "allow",
       "find * --delete *": "deny",
