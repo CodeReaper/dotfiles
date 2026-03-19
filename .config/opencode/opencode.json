@@ -4,8 +4,7 @@
   "agent": {
     "build": {
       "permission": {
-        "edit": "allow",
-        "todowrite": "allow"
+        "edit": "allow"
       }
     }
   },
@@ -50,6 +49,7 @@
       "sed *": "allow",
       "strings *": "allow",
       "tail *": "allow",
+      "todowrite": "allow",
       "xxd *": "allow",
       "wc *": "allow"
     },
