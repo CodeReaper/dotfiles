@@ -13,6 +13,7 @@
     "*": "ask",
     "bash": {
       "*": "ask",
+      "cat *": "allow",
       "cd *": "allow",
       "curl *": "ask",
       "dotnet *": "ask",
@@ -21,6 +22,7 @@
       "dotnet restore *": "allow",
       "dotnet list *": "allow",
       "dotnet test *": "allow",
+      "echo *": "allow",
       "find *": "allow",
       "find * --delete *": "deny",
       "gh *": "deny",
@@ -38,6 +40,7 @@
       "hexdump *": "allow",
       "ls *": "allow",
       "ps *": "allow",
+      "printf *": "allow",
       "make *": "ask",
       "make test": "allow",
       "mkdir *": "allow",
@@ -49,7 +52,7 @@
       "sed *": "allow",
       "strings *": "allow",
       "tail *": "allow",
-      "todowrite": "allow",
+      "touch *": "allow",
       "xxd *": "allow",
       "wc *": "allow"
     },
@@ -66,6 +69,7 @@
     },
     "task": "allow",
     "todoread": "allow",
+    "todowrite": "allow",
     "skill": "allow",
     "webfetch": "allow",
     "websearch": "allow"
