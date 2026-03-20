@@ -1,6 +1,6 @@
 ---
 name: shell-fu
-description: Shell text processing for renaming files, bulk string replacement, complex text manipulation. Prefer over Python/Perl scripts. For macOS only.
+description: Use proactively for repo-wide renames, file/directory moves, bulk string replacement, and path/reference updates across many files. Especially useful when a task involves renaming identifiers plus filesystem paths together. Prefer over ad hoc Python/Perl scripts on macOS.
 license: MIT
 compatibility: opencode
 metadata:
