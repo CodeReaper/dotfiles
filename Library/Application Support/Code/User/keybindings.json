@@ -183,5 +183,10 @@
   {
     "key": "cmd+l cmd+k",
     "command": "workbench.action.toggleEditorWidths"
+  },
+  {
+    "key": "cmd+escape",
+    "command": "-workbench.action.chat.cancel",
+    "when": "chatHasQuestionCarousel && !chatRemoteJobCreating || chatHasToolConfirmation && !chatRemoteJobCreating || chatSessionRequestInProgress && !chatRemoteJobCreating"
   }
 ]
