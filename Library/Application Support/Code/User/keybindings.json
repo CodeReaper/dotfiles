@@ -188,5 +188,20 @@
     "key": "cmd+escape",
     "command": "-workbench.action.chat.cancel",
     "when": "chatHasQuestionCarousel && !chatRemoteJobCreating || chatHasToolConfirmation && !chatRemoteJobCreating || chatSessionRequestInProgress && !chatRemoteJobCreating"
+  },
+  {
+    "key": "ctrl+cmd+escape",
+    "command": "-quickInput.hide",
+    "when": "inQuickInput"
+  },
+  {
+    "key": "alt+cmd+escape",
+    "command": "-quickInput.hide",
+    "when": "inQuickInput"
+  },
+  {
+    "key": "ctrl+alt+cmd+escape",
+    "command": "-quickInput.hide",
+    "when": "inQuickInput"
   }
 ]
