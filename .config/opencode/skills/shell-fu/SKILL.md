@@ -1,97 +1,79 @@
 ---
 name: shell-fu
-description: Use proactively for repo-wide renames, file/directory moves, bulk string replacement, and path/reference updates across many files. Especially useful when a task involves renaming identifiers plus filesystem paths together. Prefer over ad hoc Python/Perl scripts on macOS.
+description: Use for repo-wide renames, file/directory moves, bulk string replacement, and path/reference updates across many files. Always load this skill first when tasks involve renaming identifiers plus filesystem path updates. Load in planning mode when bulk filesystem operations are implied.
 license: MIT
 compatibility: opencode
-metadata:
-  audience: all-developers
-  workflow: text-processing
-  platform: macos
 ---
 
 **Note**: This skill is optimized for macOS (zsh). Commands and syntax may differ on Linux/Windows.
+Use shell commands for repo-wide renames, file/directory moves, bulk string replacement, and path/reference updates.
+
+## Permissions
+
+Python, Perl, and Ruby are blocked by opencode. Use shell commands (sed, grep, find) instead.
+
+## Recommended Tools
+
+Finding and examining files: `rg` (fallback to `find` and `grep`)
+Changing files: `sed`
 
 ## File Discovery
 
-Use `find` to locate files, but avoid `--delete` and `--exec`.
-
-## The Scratch Pad Pattern
-
-Use `/tmp` as temporary storage for building a **delimiter-separated table**, e.g. `path<tab>file<tab>replacement`.
-
-1. Build the table using standard tools: grep, cut, sed, (awk as a fallback and only when other tools cannot accomplish the task)
-2. Use tab (`\t`) or null-byte delimiters - avoid spaces/newlines in paths
-3. Chain operations: discover -> extract -> transform -> apply
-
-A scratch pad file is not required if the operation is simple enough. Pipe replacements directly into a while loop.
-
-## Detect Git Repository
-
-```bash
-if git branch --show-current > /dev/null 2>&1; then
-    # Git repository - proceed directly
-else
-    # Not a git repository - review /tmp table first
-fi
-```
+Use `rg` to locate files, or when using `find` as a fallback do not use `--delete` and `--exec` since they will be blocked by opencode.
 
 ## Git Repositories
 
 Proceed directly with destructive operations. Do not wait for or ask for user review. Git provides recovery.
 
-## Non-Git Repositories
+## Examples
 
-Review the `/tmp` table before applying changes.
-
-## Common Patterns
-
-### Simple Find-and-Replace (No Scratch Pad)
+### Simple Find-and-Replace
 
 ```bash
-grep -rl "OLD" . | while read -r file; do
-    sed -i '' "s/OLD/NEW/g" "$file"
-done
+rg -l "OLD" . | xargs sed -i '' "s/OLD/NEW/g"
 ```
 
-### Bulk File Rename
+### Chaining Find-and-Replace
 
 ```bash
-# Shell loop
-for f in *.txt; do
-    printf '%s\t%s\n' "$f" "${f%.txt}.md"
-done > /tmp/renames.tsv
-
-# Or find + while
-find . -name "*.txt" | while read -r f; do
-    printf '%s\t%s\n' "$f" "${f%.txt}.md"
-done > /tmp/renames.tsv
-
-while IFS=$'\t' read -r src dst; do
-    mv "$src" "$dst"
-done < /tmp/renames.tsv
+rg -l "SEARCH_VALUE" . | xargs sed -i '' -e "s/OLD/NEW/g" -e "s/ANOTHER/VALUE/g" -e "s/SEARCH/REPLACE/g"
 ```
 
-### Multi-File Find-and-Replace
+### Using rg with word boundaries
 
 ```bash
-# Build: file<tab>src<tab>dst
-grep -rl "OLD" . | sed 's/$/\tOLD\tNEW/' > /tmp/replacements.tsv
-
-while IFS=$'\t' read -r file src dst; do
-    sed -i '' "s/$src/$dst/g" "$file"
-done < /tmp/replacements.tsv
+rg -l "OLD" . | xargs sed -i '' "s/\\bOLD\\b/NEW/g"
 ```
 
-### Rename Based on File Content
+### Case-insensitive replace with rg
 
 ```bash
-# Build: path<tab>src<tab>dst
-for f in *.txt; do
-    val=$(head -1 "$f")
-    printf '%s\t%s\t%s\n' "$f" "$f" "${val}.txt"
-done > /tmp/renames.tsv
+rg -li "OLD" . | xargs sed -i '' "s/OLD/NEW/gI"
+```
 
-while IFS=$'\t' read -r src dst; do
-    mv "$src" "$dst"
-done < /tmp/renames.tsv
+### Preview changes before applying
+
+```bash
+# 1. Preview first
+rg -n "OLD" .
+# 2. If satisfied, apply
+rg -l "OLD" . | xargs sed -i '' "s/OLD/NEW/g"
+# 3. Verify
+rg -n "NEW" .
+```
+
+The -n flag shows line numbers so you can review before running sed.
+
+### Limit matching files by type
+
+```bash
+rg -l "OLD" . --type rust | xargs sed -i '' "s/OLD/NEW/g"
+```
+
+`--type rust` limits to `*.rs` files.
+
+List available types with:
+
+```bash
+rg --type-list
 ```
