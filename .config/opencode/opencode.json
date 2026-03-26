@@ -54,6 +54,7 @@
       "npm run build*": "allow",
       "npm run test*": "allow",
       "rm *": "ask",
+      "rg *": "allow",
       "sed *": "allow",
       "strings *": "allow",
       "tail *": "allow",
@@ -77,6 +78,9 @@
     "todowrite": "allow",
     "skill": "allow",
     "webfetch": "allow",
-    "websearch": "allow"
+    "websearch": "allow",
+    "external_directory": {
+      " ~/.nuget/packages/**": "allow"
+    }
   }
 }
