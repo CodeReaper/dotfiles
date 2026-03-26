@@ -1,11 +1,8 @@
 ---
 name: code-style
-description: Enforce consistent code across all generated code. Use when writing new code, refactoring, or reviewing code changes.
+description: Use when writing code, planning code changes, refactoring code, reviewing code changes, or generating example code. This skill enforces code consistency.
 license: MIT
 compatibility: opencode
-metadata:
-  audience: all-developers
-  workflow: code-generation
 ---
 
 ## The Basics
@@ -22,7 +19,7 @@ Seek out formatting and style configuration files relevant to the current langua
 - TypeScript/JavaScript: .prettierrc, eslint config
 - Rust: rustfmt.toml
 
-You will fallback to mimicking the code style of the other code files in the current repository.
+You will mimic the code style of the other code files in the current repository, if no other formatting is configured.
 
 Code examples are given as Golang, but should be applied as translated to the current language.
 
@@ -46,11 +43,22 @@ Code examples are given as Golang, but should be applied as translated to the cu
 - Although never is often better than right now.
 - If the implementation is hard to explain, it's a bad idea.
 - If the implementation is easy to explain, it may be a good idea.
-- Namespaces are one honking great idea – let's do more of those!
 
-### Purpose
+## Predictability
 
 It is required that potential ambiguity is cleared up by asking the human for clarification instead of making assumptions.
+
+### Shared Understanding
+
+During the planning phase it is up to the agent to interview me relentlessly about every aspect of the plan until we reach a shared understanding. Walk down each branch of the design tree, resolving dependencies between decisions one-by-one. For each question, provide your recommended answer.
+
+Ask the questions one at a time.
+
+If a question can be answered by exploring the codebase, explore the codebase instead.
+
+### Predictable Outcome
+
+During the execution or build phase no changes should be made that are not already part of the original plan.
 
 ## Readability
 
@@ -58,12 +66,15 @@ The code is not just meant to be run, but to be read and understood by human dev
 
 ### Storytelling
 
-Class names, method names, function names, variable names, all should help inform the reader of the code what the code does by reading these names and having the story of the code be told.
+Class names, method names, function names, variable names, all should help inform the reader what the code does by reading these names and having the story of the code be told.
+
+Code tells a story vertically line by line through methods, where each variable contributes to the narrative of data flow. Names of both variables and methods should support this flow rather than using long descriptors.
 
 ### Naming Conventions
 
 - Use descriptive, but minimal, self-documenting names
 - Avoid redundantly named variables in local scopes, if there is a single service, it should be named `service` and not `apiService`
+- Prefer single shortest word for variables; add second word ONLY for disambiguation within scope, if there are two clients call them `apiClient` and `idClient`
 - Avoid abbreviations unless universally understood (id, db, url, api)
 - Words combined with abbreviations means the abbreviation should only be capitalized (ApiService, HttpRequest)
 
@@ -72,11 +83,15 @@ Class names, method names, function names, variable names, all should help infor
 var totalPrice float64
 var userCount int
 var service *Service
+var apiClient *Client
+var idClient *Client
 
 // Bad
 var tp float64
 var uc int
 var apiService *Service
+var apiHttpClient *Client
+var idHttpClient *Client
 ```
 
 ### Lines
@@ -123,7 +138,7 @@ func NewUser(name, email string, opts UserOptions) (*User, error) {}
 
 ### Comments
 
-It is important to never use multi-line comments, unless explicitly required by doc language.
+Never use multi-line comments unless explicitly required by the doc language.
 
 #### When to Comment
 
