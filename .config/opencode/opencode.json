@@ -60,7 +60,9 @@
       "tail *": "allow",
       "touch *": "allow",
       "xxd *": "allow",
-      "wc *": "allow"
+      "wc *": "allow",
+      "which *": "allow",
+      "wget *": "deny"
     },
     "codesearch": "allow",
     "edit": "deny",
