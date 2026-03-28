@@ -20,6 +20,7 @@ install-brew:
 install-brews:
 	brew install asdf
 	brew install brotli
+	brew install go
 	brew install lz4
 	brew install mas
 	brew install tree
@@ -62,7 +63,6 @@ install-autoupdate:
 
 install-asdf:
 	asdf plugin add github-cli
-	asdf plugin add golang
 	asdf plugin add helm
 	asdf plugin add jq
 	asdf plugin add kind
