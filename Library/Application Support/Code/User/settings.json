@@ -129,6 +129,7 @@
   "files.exclude": {
     "**/.git": true
   },
+  "files.hotExit": "onExitAndWindowClose",
   "git.openRepositoryInParentFolders": "never",
   "gitlens.ai.enabled": false,
   "gitlens.codeLens.authors.enabled": false,
