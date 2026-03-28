@@ -1,6 +1,6 @@
 ---
 name: shell-fu
-description: Use for repo-wide renames, file/directory moves, bulk string replacement, and path/reference updates across many files. Always load this skill first when tasks involve renaming identifiers plus filesystem path updates. Load in planning mode when bulk filesystem operations are implied.
+description: Prefer shell commands. Load this skill for repo-wide renames, file/directory moves, bulk string replacement, and path/reference updates across many files.
 license: MIT
 compatibility: opencode
 ---

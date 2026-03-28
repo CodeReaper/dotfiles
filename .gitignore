@@ -9,6 +9,7 @@
 !.config/nvim/lua/plugin/*
 
 !.config/opencode/
+!.config/opencode/AGENTS.md
 !.config/opencode/opencode.json
 !.config/opencode/skills/
 !.config/opencode/skills/*

@@ -1,6 +1,6 @@
 ---
 name: code-style
-description: Use when writing code, planning code changes, refactoring code, reviewing code changes, or generating example code. This skill enforces code consistency.
+description: Enforces code consistency. Load this skill for all code changes, implementations, bug fixes, refactoring, code reviews, and code generation.
 license: MIT
 compatibility: opencode
 ---
