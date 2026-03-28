@@ -35,6 +35,7 @@
       "git grep *": "allow",
       "git log *": "allow",
       "git ls-files *": "allow",
+      "git ls-tree *": "allow",
       "git mv *": "allow",
       "git show *": "allow",
       "git status *": "allow",
