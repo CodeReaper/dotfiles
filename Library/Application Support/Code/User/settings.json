@@ -39,16 +39,6 @@
     ".git/**",
     ".gitignore"
   ],
-  "cSpell.userWords": [
-    "appsettings",
-    "correlator",
-    "fstyr",
-    "healthz",
-    "npgsql",
-    "serilog",
-    "swashbuckle",
-    "opencode"
-  ],
   "dotnet.formatting.organizeImportsOnFormat": true,
   "editor.cursorSurroundingLines": 1000, // keeps cursor centered always
   "editor.formatOnSave": true,

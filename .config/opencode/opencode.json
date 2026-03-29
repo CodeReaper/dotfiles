@@ -29,6 +29,8 @@
       "find * --exec *": "deny",
       "gh *": "deny",
       "git *": "ask",
+      "git branch -a": "allow",
+      "git branch --all": "allow",
       "git branch --show-current": "allow",
       "git branch --list *": "allow",
       "git diff *": "allow",
