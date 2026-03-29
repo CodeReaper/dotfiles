@@ -122,7 +122,7 @@ reset-dotnet:
 
 	@echo 'Preparing to download:'
 	curl -sfL https://builds.dotnet.microsoft.com/dotnet/release-metadata/releases-index.json \
-		| yq '.releases-index[] | select(.support-phase =="active") | .latest-sdk' \
+		| jq -r '."releases-index"[] | select(."support-phase" == "active") | ."latest-sdk"' \
 		| sort -V \
 		| tee /tmp/versions
 
