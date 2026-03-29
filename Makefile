@@ -117,6 +117,29 @@ ifeq ($(ZONE),WORK)
 		--install-extension redhat.ansible
 endif
 
+reset-dotnet:
+	@-rm -f /tmp/versions /tmp/dotnet-*.tar.gz
+
+	@echo 'Preparing to download:'
+	curl -sfL https://builds.dotnet.microsoft.com/dotnet/release-metadata/releases-index.json \
+		| yq '.releases-index[] | select(.support-phase =="active") | .latest-sdk' \
+		| sort -V \
+		| tee /tmp/versions
+
+	@echo 'Downloading:'
+	< /tmp/versions xargs -n1 -I{} \
+		curl -o /tmp/dotnet-{}.tar.gz https://builds.dotnet.microsoft.com/dotnet/Sdk/{}/dotnet-sdk-{}-osx-$(shell uname -m).tar.gz
+
+	@-rm -rf ~/.dotnet
+	mkdir -p ~/.dotnet
+
+	@echo 'Unpacking:'
+	< /tmp/versions xargs -n1 -I{} \
+		tar -xzf /tmp/dotnet-{}.tar.gz -C ~/.dotnet/
+
+	xattr -r -d com.apple.quarantine ~/.dotnet
+	@sh -c 'source ~/.zshrc && dotnet --list-sdks && dotnet --info'
+
 list:
 	brew list --installed-on-request
 	brew list --cask

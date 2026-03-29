@@ -5,19 +5,29 @@ else
     eval "$(/usr/local/bin/brew shellenv)"
 fi
 
-# add asdf(>=0.16.0) shims to path
-if command -v asdf 2>&1 >/dev/null && test -d ~/.asdf/shims/; then
-    export PATH="$(realpath ~/.asdf/shims/):$PATH"
-fi
-
-# allow for local bin installation
+# env
 if test -d ~/.local/bin/; then
     export PATH="$PATH:$(realpath ~/.local/bin/)"
+fi
+if test -f ~/.dotnet/dotnet; then
+    export PATH="$PATH:$(realpath ~/.dotnet/)"
+    export DOTNET_ROOT=$(realpath ~/.dotnet/)
 fi
 if test -d ~/.dotnet/tools/; then
     export PATH="$PATH:$(realpath ~/.dotnet/tools/)"
 fi
 
+export HOMEBREW_NO_INSTALL_CLEANUP=1
+export LDFLAGS="-L/usr/local/opt/icu4c/lib -L/usr/local/opt/sqlite/lib -L/opt/homebrew/opt/openssl/lib"
+export CPPFLAGS="-I/usr/local/opt/icu4c/include -I/usr/local/opt/sqlite/include -I/opt/homebrew/opt/openssl/include"
+export EDITOR="code --wait"
+
+if command -v colima &>/dev/null; then
+    export DOCKER_HOST="unix://${HOME}/.colima/default/docker.sock"
+    export TESTCONTAINERS_DOCKER_SOCKET_OVERRIDE="${HOME}/.colima/default/docker.sock"
+fi
+
+# load aliases
 source ~/.aliases
 
 # enable git autocomplete
@@ -73,29 +83,3 @@ PROMPT='${PWD/#$HOME/~} ${vcs_info_msg_0_:+$vcs_info_msg_0_ }${LAST_EXIT:+$LAST_
     unset SSH_ENV
 )
 source "$HOME/.ssh/.env" >/dev/null
-
-# env
-export HOMEBREW_NO_INSTALL_CLEANUP=1
-export LDFLAGS="-L/usr/local/opt/icu4c/lib -L/usr/local/opt/sqlite/lib -L/opt/homebrew/opt/openssl/lib"
-export CPPFLAGS="-I/usr/local/opt/icu4c/include -I/usr/local/opt/sqlite/include -I/opt/homebrew/opt/openssl/include"
-export EDITOR="code --wait"
-
-# inlined while testing potential fix
-# test -f $HOME/.asdf/plugins/dotnet-core/set-dotnet-home.zsh && source $HOME/.asdf/plugins/dotnet-core/set-dotnet-home.zsh
-asdf_update_dotnet_home() {
-    local dotnet_path
-    dotnet_path="$(asdf which dotnet)"
-    if [[ -e "${dotnet_path}" ]]; then
-        export DOTNET_ROOT
-        DOTNET_ROOT="$(dirname "$(realpath "${dotnet_path}")")"
-    fi
-}
-autoload -U add-zsh-hook
-add-zsh-hook precmd asdf_update_dotnet_home
-# end of test file
-
-# special cases
-if command -v colima &>/dev/null; then
-    export DOCKER_HOST="unix://${HOME}/.colima/default/docker.sock"
-    export TESTCONTAINERS_DOCKER_SOCKET_OVERRIDE="${HOME}/.colima/default/docker.sock"
-fi
