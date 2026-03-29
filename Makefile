@@ -138,7 +138,10 @@ reset-dotnet:
 		tar -xzf /tmp/dotnet-{}.tar.gz -C ~/.dotnet/
 
 	xattr -r -d com.apple.quarantine ~/.dotnet
-	@sh -c 'source ~/.zshrc && dotnet --list-sdks && dotnet --info'
+	@sh -c 'export PATH="$$PATH:$$(realpath ~/.dotnet/)" \
+		&& export DOTNET_ROOT=$$(realpath ~/.dotnet/) \
+		&& dotnet --list-sdks \
+		&& dotnet --info'
 
 list:
 	brew list --installed-on-request
