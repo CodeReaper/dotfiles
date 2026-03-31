@@ -139,69 +139,39 @@
     "when": "accessibilityHelpIsShown"
   },
   {
-    "key": "cmd+j",
     "command": "workbench.action.terminal.toggleTerminal",
+    "key": "cmd+j",
     "when": "terminal.active"
   },
   {
-    "key": "cmd+j",
-    "command": "-workbench.action.togglePanel"
+    "command": "-workbench.action.togglePanel",
+    "key": "cmd+j"
   },
   {
-    "key": "cmd+k e",
     "command": "editor.action.refactor",
+    "key": "cmd+k e",
     "when": "editorHasCodeActionsProvider && textInputFocus && !editorReadonly"
   },
   {
-    "key": "cmd+k e",
     "command": "-workbench.files.action.focusOpenEditorsView",
+    "key": "cmd+k e",
     "when": "workbench.explorer.openEditorsView.active"
   },
   {
-    "key": "shift+enter", // https://github.com/anomalyco/opencode/issues/1505#issuecomment-3407445837
-    "command": "workbench.action.terminal.sendSequence",
     "args": {
       "text": "\u001b[13;2u"
     },
+    "command": "workbench.action.terminal.sendSequence",
+    "key": "shift+enter", // https://github.com/anomalyco/opencode/issues/1505#issuecomment-3407445837
     "when": "terminalFocus"
   },
   {
-    "key": "cmd+escape",
-    "command": "-quickInput.hide",
-    "when": "inQuickInput"
+    "command": "workbench.action.toggleEditorWidths",
+    "key": "cmd+l cmd+k"
   },
   {
-    "key": "cmd+escape",
-    "command": "-workbench.action.chat.cancel",
-    "when": "chatHasToolConfirmation && !chatRemoteJobCreating || chatSessionRequestInProgress && !chatRemoteJobCreating"
-  },
-  {
-    "key": "cmd+escape",
-    "command": "-workbench.action.hideComment",
-    "when": "commentWidgetVisible && editorFocus"
-  },
-  {
-    "key": "cmd+l cmd+k",
-    "command": "workbench.action.toggleEditorWidths"
-  },
-  {
-    "key": "cmd+escape",
-    "command": "-workbench.action.chat.cancel",
-    "when": "chatHasQuestionCarousel && !chatRemoteJobCreating || chatHasToolConfirmation && !chatRemoteJobCreating || chatSessionRequestInProgress && !chatRemoteJobCreating"
-  },
-  {
-    "key": "ctrl+cmd+escape",
-    "command": "-quickInput.hide",
-    "when": "inQuickInput"
-  },
-  {
-    "key": "alt+cmd+escape",
-    "command": "-quickInput.hide",
-    "when": "inQuickInput"
-  },
-  {
-    "key": "ctrl+alt+cmd+escape",
-    "command": "-quickInput.hide",
-    "when": "inQuickInput"
+    "command": "opencode.openTerminal",
+    "key": "cmd+k cmd+o",
+    "when": "editorTextFocus"
   }
 ]
