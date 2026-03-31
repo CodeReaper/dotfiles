@@ -9,6 +9,9 @@ fi
 if test -d ~/.local/bin/; then
     export PATH="$PATH:$(realpath ~/.local/bin/)"
 fi
+if command -v asdf 2>&1 >/dev/null && test -d ~/.asdf/shims/; then
+    export PATH="$PATH:$(realpath ~/.asdf/shims/)"
+fi
 if test -f ~/.dotnet/dotnet; then
     export PATH="$PATH:$(realpath ~/.dotnet/)"
     export DOTNET_ROOT=$(realpath ~/.dotnet/)
