@@ -49,6 +49,8 @@
       "head *": "allow",
       "hexdump *": "allow",
       "ls *": "allow",
+      "python *": "deny",
+      "python3 *": "deny",
       "ps *": "allow",
       "printf *": "allow",
       "make *": "ask",
