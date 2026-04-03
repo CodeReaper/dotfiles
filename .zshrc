@@ -43,17 +43,22 @@ fi
 
 # show version control information
 autoload -Uz vcs_info
+preexec() {
+    COMMAND_EXECUTED=1
+}
 precmd() {
-    if [[ $? -ne 0 ]]; then
-        LAST_EXIT="✖"
+    if [[ $? -ne 0 && $COMMAND_EXECUTED -eq 1 ]]; then
+        NEXT_CURSOR="-"
     else
-        LAST_EXIT=""
+        NEXT_CURSOR="%%"
     fi
+    unset COMMAND_EXECUTED
+    CLOCK=$(date +%H:%M)
     vcs_info
 }
 zstyle ':vcs_info:git:*' formats '(%b)'
 setopt PROMPT_SUBST
-PROMPT='${PWD/#$HOME/~} ${vcs_info_msg_0_:+$vcs_info_msg_0_ }${LAST_EXIT:+$LAST_EXIT }%% '
+PROMPT='${CLOCK} ${PWD/#$HOME/~} ${vcs_info_msg_0_:+$vcs_info_msg_0_ }${NEXT_CURSOR} '
 
 # load keys for ssh agent
 if [ ! -S "$SSH_AUTH_SOCK" ] || ! kill -0 "$SSH_AGENT_PID" 2>/dev/null || ! pgrep -x ssh-agent >/dev/null 2>&1; then
