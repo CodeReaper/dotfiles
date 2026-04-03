@@ -56,7 +56,36 @@ precmd() {
     CLOCK=$(date +%H:%M)
     vcs_info
 }
-zstyle ':vcs_info:git:*' formats '(%b)'
+zstyle ':vcs_info:git:*' formats '(%b%m)'
+zstyle ':vcs_info:git:*' check-for-changes true
+zstyle ':vcs_info:git:*' nvcsformats '%s' '' ''
+zstyle ':vcs_info:git*+set-message:*' hooks git-untracked
++vi-git-untracked() {
+    local indicator=""
+    if [[ $(git rev-parse --is-inside-work-tree 2>/dev/null) == 'true' ]]; then
+        local git_status
+        git_status=$(git status --porcelain=2)
+
+        local untracked staged unstaged
+
+        if echo "$git_status" | grep -Eq '^\?'; then
+            untracked="?"
+        fi
+        if echo "$git_status" | grep -Eq '^[1,2] [AM][\. ]'; then
+            staged="✓"
+        fi
+        if echo "$git_status" | grep -Eq '^[1,2] .[AM]'; then
+            unstaged="✗"
+        fi
+
+        local combined="${untracked}${staged}${unstaged}"
+
+        if [[ -n "$combined" ]]; then
+            indicator=" $combined"
+        fi
+    fi
+    hook_com[misc]="$indicator"
+}
 setopt PROMPT_SUBST
 PROMPT='${CLOCK} ${PWD/#$HOME/~} ${vcs_info_msg_0_:+$vcs_info_msg_0_ }${NEXT_CURSOR} '
 
