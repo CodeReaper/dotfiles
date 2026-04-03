@@ -1,17 +1,18 @@
-# load brew
+# env
 if [ "$(arch)" = "arm64" ]; then
     eval "$(/opt/homebrew/bin/brew shellenv)"
 else
     eval "$(/usr/local/bin/brew shellenv)"
 fi
 
-# env
 if test -d ~/.local/bin/; then
     export PATH="$PATH:$(realpath ~/.local/bin/)"
 fi
+
 if command -v asdf 2>&1 >/dev/null && test -d ~/.asdf/shims/; then
     export PATH="$PATH:$(realpath ~/.asdf/shims/)"
 fi
+
 if test -f ~/.dotnet/dotnet; then
     export PATH="$PATH:$(realpath ~/.dotnet/)"
     export DOTNET_ROOT=$(realpath ~/.dotnet/)
@@ -55,34 +56,14 @@ setopt PROMPT_SUBST
 PROMPT='${PWD/#$HOME/~} ${vcs_info_msg_0_:+$vcs_info_msg_0_ }${LAST_EXIT:+$LAST_EXIT }%% '
 
 # load keys for ssh agent
-# - must use home variable
-( # - in a subshell for traps to work
-    export SSH_ENV="$HOME/.ssh/.env"
-    start_ssh_agent() {
-        echo "Starting new ssh-agent..."
-        ssh-agent -s >"$SSH_ENV"
-        chmod 600 "$SSH_ENV"
-        source "$SSH_ENV"
+if [ ! -S "$SSH_AUTH_SOCK" ] || ! kill -0 "$SSH_AGENT_PID" 2>/dev/null || ! pgrep -x ssh-agent >/dev/null 2>&1; then
+    test -f ~/.ssh/.env && source ~/.ssh/.env >/dev/null
 
-        ssh-add $HOME/.ssh/id_ed25519 2>/dev/null
-        ssh-add $HOME/.ssh/id_rsa 2>/dev/null
-        ssh-add $HOME/.ssh/work_rsa 2>/dev/null
-    }
-    trap "rm -f '${SSH_ENV}.lock' || true" EXIT
-    if ln ~/.zshrc "${SSH_ENV}.lock" 2>/dev/null; then
-        if [ -f "$SSH_ENV" ]; then # really could use a check on whether the ssh-agent process is still running
-            source "$SSH_ENV" >/dev/null
-
-            if ! kill -0 "$SSH_AGENT_PID" 2>/dev/null; then
-                start_ssh_agent
-            fi
-        else
-            start_ssh_agent
-        fi
-    else
-        sleep 0.3
-        [ -f "$SSH_ENV" ] && source "$SSH_ENV" >/dev/null
+    if [ ! -S "$SSH_AUTH_SOCK" ] || ! kill -0 "$SSH_AGENT_PID" 2>/dev/null || ! pgrep -x ssh-agent >/dev/null 2>&1; then
+        echo "Starting ssh-agent..."
+        ssh-agent -s >~/.ssh/.env
+        chmod 600 ~/.ssh/.env
+        source ~/.ssh/.env
+        ssh-add ~/.ssh/id_ed25519 ~/.ssh/id_rsa ~/.ssh/work_rsa 2>/dev/null
     fi
-    unset SSH_ENV
-)
-source "$HOME/.ssh/.env" >/dev/null
+fi
