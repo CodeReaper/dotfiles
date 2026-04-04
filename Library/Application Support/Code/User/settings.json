@@ -129,8 +129,12 @@
   "inlineChat.affordance": "off",
   "json.schemas": [
     {
-      "fileMatch": ["/.config/opencode/opencode.json"],
+      "fileMatch": ["/.config/opencode/opencode.jsonc"],
       "url": "https://opencode.ai/config.json"
+    },
+    {
+      "fileMatch": ["/.config/opencode/tui.jsonc"],
+      "url": "https://opencode.ai/tui.json"
     },
     {
       "fileMatch": ["https://models.dev/model-schema.json"],

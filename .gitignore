@@ -10,7 +10,8 @@
 
 !.config/opencode/
 !.config/opencode/AGENTS.md
-!.config/opencode/opencode.json
+!.config/opencode/opencode.jsonc
+!.config/opencode/tui.jsonc
 !.config/opencode/skills/
 !.config/opencode/skills/*
 !.config/opencode/skills/*/SKILL.md

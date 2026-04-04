@@ -4,9 +4,9 @@
   "agent": {
     "build": {
       "permission": {
-        "edit": "allow"
-      }
-    }
+        "edit": "allow",
+      },
+    },
   },
   "default_agent": "plan",
   "permission": {
@@ -70,7 +70,7 @@
       "xxd *": "allow",
       "wc *": "allow",
       "which *": "allow",
-      "wget *": "deny"
+      "wget *": "deny",
     },
     "codesearch": "allow",
     "edit": "deny",
@@ -81,7 +81,7 @@
       "*": "allow",
       "*.env": "deny",
       "*.env.*": "deny",
-      "*.env.example": "allow"
+      "*.env.example": "allow",
     },
     "task": "allow",
     "todoread": "allow",
@@ -90,7 +90,7 @@
     "webfetch": "allow",
     "websearch": "allow",
     "external_directory": {
-      " ~/.nuget/packages/**": "allow"
-    }
-  }
+      " ~/.nuget/packages/**": "allow",
+    },
+  },
 }

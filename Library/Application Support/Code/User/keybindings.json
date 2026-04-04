@@ -125,11 +125,6 @@
     "when": "editorFocus"
   },
   {
-    "command": "-cursorUndo",
-    "key": "cmd+u",
-    "when": "textInputFocus"
-  },
-  {
     "command": "-actions.findWithSelection",
     "key": "cmd+e"
   },
@@ -156,14 +151,6 @@
     "command": "-workbench.files.action.focusOpenEditorsView",
     "key": "cmd+k e",
     "when": "workbench.explorer.openEditorsView.active"
-  },
-  {
-    "args": {
-      "text": "\u001b[13;2u"
-    },
-    "command": "workbench.action.terminal.sendSequence",
-    "key": "shift+enter", // https://github.com/anomalyco/opencode/issues/1505#issuecomment-3407445837
-    "when": "terminalFocus"
   },
   {
     "command": "workbench.action.toggleEditorWidths",
