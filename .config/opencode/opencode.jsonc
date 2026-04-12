@@ -17,6 +17,7 @@
       "cat *": "allow",
       "cd *": "allow",
       "curl *": "ask",
+      "docker *": "deny",
       "dotnet *": "ask",
       "dotnet --info": "allow",
       "dotnet build *": "allow",
