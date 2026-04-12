@@ -27,7 +27,7 @@ Tasks are expected to be self-contained description in a file.
 Task files are all considered the same priority, if not specified in the task file.
 
 Task files dependencies can be specified in the task file, but if not,
-it is up to the AI to find a dependency task.
+it is up to the AI to find a task without unresolved dependencies.
 
 Ask the human for guidance on finding the task files, if already not known.
 
@@ -69,7 +69,8 @@ You will remember the summary output from `<summary>...</summary>` from agents f
 
 ## Stopping
 
-A maximum number of iterations should always be provided. Each attempt to perform a task counts towards the maximum iterations.
+A maximum number of iterations is either provided or assumed to be 10 iterations.
+Each attempt to perform a task counts towards the maximum iterations.
 
 The loop will stop under these conditions:
 
