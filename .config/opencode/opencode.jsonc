@@ -55,8 +55,7 @@
       "plutil -lint *": "allow",
       "printf *": "allow",
       "pwd *": "allow",
-      "make *": "ask",
-      "make test": "allow",
+      "make *": "allow",
       "mkdir *": "allow",
       "mv *": "allow",
       "npm ci": "allow",
@@ -95,7 +94,8 @@
     "webfetch": "allow",
     "websearch": "allow",
     "external_directory": {
-      " ~/.nuget/packages/**": "allow",
+      "~/.nuget/packages/**": "allow",
+      "/tmp/**": "allow",
     },
   },
 }
