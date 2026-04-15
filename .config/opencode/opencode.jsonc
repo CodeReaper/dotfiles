@@ -68,6 +68,7 @@
       "sed *": "allow",
       "strings *": "allow",
       "tail *": "allow",
+      "textutil *": "allow",
       "touch *": "allow",
       "true": "allow",
       "xcodebuild *": "allow",
