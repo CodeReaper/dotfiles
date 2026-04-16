@@ -26,6 +26,7 @@ install-brews:
 	brew install tree
 	brew install watch
 	brew install anomalyco/tap/opencode
+	brew install joelreymont/tap/dots
 ifeq ($(ZONE),PERSONAL)
 	brew install colima
 	brew install docker
