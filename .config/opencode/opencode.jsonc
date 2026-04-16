@@ -65,6 +65,7 @@
       "npm view *": "allow",
       "npm run build*": "allow",
       "npm run test*": "allow",
+      "read *": "allow",
       "rm *": "allow",
       "rg *": "allow",
       "sed *": "allow",

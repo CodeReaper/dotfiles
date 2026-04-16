@@ -15,15 +15,20 @@ while [ "$iteration" -lt 10 ]; do
 	fi
 
 	task_path=$(echo "$result" | grep -o '<task>[^<]*</task>' | sed 's/<task>//;s/<\/task>//')
+	if [ -z "$task_path" ]; then
+		echo "error: unable to select a task"
+		break
+	fi
+
 	prompt="$ralph_worker
-Task file: $task_path"
+Task file or id: $task_path"
 	result=$(opencode run --agent build --dangerously-skip-permissions "$prompt" | tee /dev/tty)
 	if echo "$result" | grep -q "<promise>COMPLETE</promise>"; then
 		consecutive_empty=0
 	else
 		consecutive_empty=$((consecutive_empty + 1))
 		if [ "$consecutive_empty" -ge 2 ]; then
-			echo "Ralph loop ended (no progress for 2 iterations)"
+			echo "error: no progress for 2 iterations"
 			break
 		fi
 	fi

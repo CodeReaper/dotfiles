@@ -1,7 +1,7 @@
-1. Read the task file
+1. Read the task
 2. Work on that task until complete
 3. When done:
-   - Delete the task file
+   - Mark the task as complete
    - Output: <promise>COMPLETE</promise>
    - Include: <summary>briefly what you did</summary>
 

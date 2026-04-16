@@ -3,9 +3,10 @@
    - Output: <promise>FINISHED</promise>
 3. Else:
    - Output: <promise>COMPLETE</promise>
-   - Include: <task>path/to/task/file</task>
+   - Include: <task>id</task>
 
 Rules:
 
 - Pick ONE task only
+- Avoid reading additional files - you are picking based on the tasks and the feature it represents
 - It is strictly forbidden to use git directly (except `git status`)
