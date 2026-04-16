@@ -193,5 +193,6 @@
   "workbench.colorTheme": "Tokyo Night",
   "workbench.settings.showAISearchToggle": false,
   "workbench.sideBar.location": "right",
-  "workbench.startupEditor": "none"
+  "workbench.startupEditor": "none",
+  "update.showReleaseNotes": false
 }

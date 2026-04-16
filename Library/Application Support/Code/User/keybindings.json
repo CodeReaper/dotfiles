@@ -159,6 +159,6 @@
   {
     "command": "opencode.openTerminal",
     "key": "cmd+k cmd+o",
-    "when": "editorTextFocus"
+    "when": "!terminalFocus"
   }
 ]
