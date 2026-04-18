@@ -5,6 +5,7 @@
     "checkmake",
     "dockercompose",
     "esbenp",
+    "frontmatter",
     "gofmt",
     "opencode"
   ]

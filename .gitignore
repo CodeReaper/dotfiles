@@ -17,6 +17,8 @@
 !.config/opencode/skills/*/SKILL.md
 !.config/opencode/skills/*/scripts
 !.config/opencode/skills/*/scripts/*
+!.config/opencode/skills/*/references
+!.config/opencode/skills/*/references/*
 
 !Library
 !Library/Application Support/

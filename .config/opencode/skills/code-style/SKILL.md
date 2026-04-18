@@ -2,7 +2,6 @@
 name: code-style
 description: Enforces code consistency. Load this skill for all code changes, implementations, bug fixes, refactoring, code reviews, and code generation.
 license: MIT
-compatibility: opencode
 ---
 
 ## The Basics
