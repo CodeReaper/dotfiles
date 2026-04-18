@@ -3,7 +3,7 @@
    - Output: <promise>FINISHED</promise>
 3. Else:
    - Output: <promise>COMPLETE</promise>
-   - Include: <task>id</task>
+   - Include: <task>id (or path as a fallback)</task>
 
 Rules:
 

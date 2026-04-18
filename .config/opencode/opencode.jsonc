@@ -16,6 +16,8 @@
       "brew list *": "allow",
       "cat *": "allow",
       "cd *": "allow",
+      "cp *": "allow",
+      "continue *": "allow",
       "curl *": "ask",
       "docker *": "deny",
       "dot *": "allow",
@@ -101,6 +103,7 @@
     "websearch": "allow",
     "external_directory": {
       "~/.nuget/packages/**": "allow",
+      "~/.config/opencode/skills/*/**": "allow",
       "/tmp/**": "allow",
     },
   },

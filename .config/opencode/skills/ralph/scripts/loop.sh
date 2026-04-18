@@ -1,28 +1,32 @@
 #!/bin/sh
 
-ralph_worker=$(cat "$(dirname "$0")/prompt-worker.md")
-ralph_selection=$(cat "$(dirname "$0")/prompt-selection.md")
-
 consecutive_empty=0
 iteration=0
-while [ "$iteration" -lt 10 ]; do
+input=$(printf '%s ' "$@")
+while [ "$iteration" -lt 5 ]; do
 	iteration=$((iteration + 1))
 	echo "=== Ralph iteration $iteration ==="
 
-	result=$(opencode run --agent plan "$ralph_selection" | tee /dev/tty)
+	selection="$(cat "$(dirname "$0")/prompt-selection.md")\n\n$input"
+	result=$(opencode run --agent plan --title "Ralph - selection -> $input" "$selection" | tee /dev/tty)
 	if echo "$result" | grep -q "<promise>FINISHED</promise>"; then
 		break
 	fi
 
-	task_path=$(echo "$result" | grep -o '<task>[^<]*</task>' | sed 's/<task>//;s/<\/task>//')
-	if [ -z "$task_path" ]; then
+	task_output=$(echo "$result" | grep -o '<task>[^<]*</task>' | sed 's/<task>//;s/<\/task>//')
+	if [ -z "$task_output" ]; then
 		echo "error: unable to select a task"
 		break
 	fi
 
-	prompt="$ralph_worker
-Task file or id: $task_path"
-	result=$(opencode run --agent build --dangerously-skip-permissions "$prompt" | tee /dev/tty)
+	prompt="$(cat "$(dirname "$0")/prompt-worker.md")\n"
+	if [ -f "$task_output" ]; then
+		prompt="$prompt\nTask file: $task_output"
+	else
+		prompt="$prompt\nTask id: $task_output"
+	fi
+
+	result=$(opencode run --agent build --dangerously-skip-permissions --title "Ralph - worker - $task_output" "$prompt" | tee /dev/tty)
 	if echo "$result" | grep -q "<promise>COMPLETE</promise>"; then
 		consecutive_empty=0
 	else

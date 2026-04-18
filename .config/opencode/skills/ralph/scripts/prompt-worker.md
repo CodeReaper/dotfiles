@@ -7,7 +7,7 @@
 
 Rules:
 
-- Work on the given task only
+- Only work on the given task
 - Run tests after implementation (as described in agents.md)
-- Remove unintended files
+- Remove unintended files created even if ignored by git
 - It is strictly forbidden to use git directly (except `git status`)

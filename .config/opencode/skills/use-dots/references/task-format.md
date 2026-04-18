@@ -53,9 +53,9 @@ description of implementation guidance here.
 
 **Labels:**
 
-- label: F007
-- label: cache
-- label: phase1
+- label:F007
+- label:cache
+- label:phase1
 ```
 
 There should always be a regular markdown portion at the beginning - which is the entire task description.
@@ -64,7 +64,7 @@ There should always be a "Notes" section that contains key points from the descr
 
 The acceptance criteria, if present, are in their own section in list form.
 
-The labels, if any labels are to be assigned to a task, are in their own section in list form where each item is composed by the formula `label: <label>`.
+The labels, if any labels are to be assigned to a task, are in their own section in list form where each item is composed by the formula `label:<label>`.
 
 ## ID format
 

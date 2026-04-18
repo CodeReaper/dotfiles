@@ -65,4 +65,4 @@ docker run --rm \
 -v /var/run/docker.sock:/var/run/docker.sock \
 ghcr.io/laniksj/dfimage $@'
 
-alias ralph='sh ~/.config/opencode/skills/ralph/scripts/loop.sh'
+alias ralph='sh ~/.config/opencode/skills/ralph/scripts/loop.sh $@'
