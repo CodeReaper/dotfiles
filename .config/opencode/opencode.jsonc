@@ -27,6 +27,7 @@
       "dotnet restore *": "allow",
       "dotnet list *": "allow",
       "dotnet test *": "allow",
+      "dotnet sln *": "allow",
       "echo *": "allow",
       "file *": "allow",
       "find *": "allow",

@@ -15,10 +15,8 @@ fi
 
 if test -f ~/.dotnet/dotnet; then
     export PATH="$PATH:$(realpath ~/.dotnet/)"
-    export DOTNET_ROOT=$(realpath ~/.dotnet/)
-fi
-if test -d ~/.dotnet/tools/; then
     export PATH="$PATH:$(realpath ~/.dotnet/tools/)"
+    export DOTNET_ROOT=$(realpath ~/.dotnet/)
 fi
 
 export HOMEBREW_NO_INSTALL_CLEANUP=1
