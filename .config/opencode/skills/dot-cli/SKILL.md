@@ -1,12 +1,12 @@
 ---
-name: use-dots
+name: dot-cli
 description: Understand how to use the `dot` command to use dots for task management. Load skill to interact with tasks when dots handles task management as indicated by AGENTS.md or the presence of a .dots directory.
 license: MIT
 metadata:
   reference: https://github.com/joelreymont/dots
 ---
 
-Dots is a minimal task tracker for AI coding agents — uses plain markdown files with YAML frontmatter stored in `.dots/`. Supports parent-child relationships, priorities, and dependencies.
+Dots is a minimal task tracker for AI coding agents — uses plain markdown files with YAML frontmatter. Supports parent-child relationships, priorities, and dependencies.
 
 ALWAYS use the `dot` cli command, if possible.
 AVOID reading the task files directly.
