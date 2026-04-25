@@ -7,6 +7,7 @@ endif
 
 CODE := /Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code
 
+
 install: install-rosetta install-brew install-brews install-casks install-autoupdate install-asdf install-apps install-code-extensions
 
 install-rosetta:
@@ -120,7 +121,19 @@ ifeq ($(ZONE),WORK)
 		--install-extension redhat.ansible
 endif
 
-reset-dotnet:
+install-dotnet: backup-dotnet
+	$(MAKE) download-dotnet || $(MAKE) restore-dotnet
+
+backup-dotnet:
+	@-rm -rf ~/.dotnet.backup
+	mv ~/.dotnet ~/.dotnet.backup
+
+restore-dotnet:
+	test -d ~/.dotnet.backup
+	rm -rf ~/.dotnet
+	mv ~/.dotnet.backup ~/.dotnet
+
+download-dotnet:
 	@-rm -f /tmp/versions /tmp/dotnet-*.tar.gz
 
 	@echo 'Preparing to download:'
@@ -131,16 +144,19 @@ reset-dotnet:
 
 	@echo 'Downloading:'
 	< /tmp/versions xargs -n1 -I{} \
-		curl -o /tmp/dotnet-{}.tar.gz https://builds.dotnet.microsoft.com/dotnet/Sdk/{}/dotnet-sdk-{}-osx-$(shell uname -m).tar.gz
+		curl -sfLo /tmp/dotnet-{}.tar.gz \
+		https://builds.dotnet.microsoft.com/dotnet/Sdk/{}/dotnet-sdk-{}-$(shell uname -s | tr '[:upper:]' '[:lower:]' | sed 's/darwin/osx/')-$(shell uname -m).tar.gz
 
-	@-rm -rf ~/.dotnet
 	mkdir -p ~/.dotnet
 
 	@echo 'Unpacking:'
 	< /tmp/versions xargs -n1 -I{} \
 		tar -xzf /tmp/dotnet-{}.tar.gz -C ~/.dotnet/
 
+ifneq ($(shell uname -s),Linux)
 	xattr -r -d com.apple.quarantine ~/.dotnet
+endif
+
 	@sh -c 'export PATH="$$PATH:$$(realpath ~/.dotnet/)" \
 		&& export DOTNET_ROOT=$$(realpath ~/.dotnet/) \
 		&& dotnet --list-sdks \
