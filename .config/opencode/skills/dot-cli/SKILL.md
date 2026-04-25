@@ -147,13 +147,11 @@ dot add
 
 Note that labels are part of the tasks markdown body as described in the task format file.
 
-When the description markdown body must include special shell characters ( $, `, ?, !, code blocks), simplify the description to avoid them while preserving the essential meaning. There is no shell escaping trick that reliably preserves these characters in dot add -d arguments.
-
 Options:
 
-- `"title"`: Task title
+- `'title'`: Task title
 - `-p N`: Priority 0-4 (0 = highest, default 2)
-- `-d "text"`: Long description (markdown body)
+- `-d 'text'`: Long description (markdown body)
 - `-P ID`: Parent task ID (creates folder hierarchy)
 - `-a ID`: Blocked by task ID (dependency)
 - `--json`: Output created task as JSON
@@ -161,7 +159,7 @@ Options:
 Example:
 
 ```
-dot add "Implement API" -p 1 -a dots-1a2b3c4 -d "REST endpoints" --json
+dot add 'Implement API' -p 1 -a dots-1a2b3c4 -d 'REST endpoints' --json
 ```
 
 ### Removing tasks

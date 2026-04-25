@@ -1,3 +1,5 @@
+# cspell:disable
+
 # env
 if [ "$(arch)" = "arm64" ]; then
     eval "$(/opt/homebrew/bin/brew shellenv)"
@@ -14,8 +16,7 @@ if command -v asdf 2>&1 >/dev/null && test -d ~/.asdf/shims/; then
 fi
 
 if test -f ~/.dotnet/dotnet; then
-    export PATH="$PATH:$(realpath ~/.dotnet/)"
-    export PATH="$PATH:$(realpath ~/.dotnet/tools/)"
+    export PATH="$PATH:$(realpath ~/.dotnet/):$(realpath ~/.dotnet/)/tools"
     export DOTNET_ROOT=$(realpath ~/.dotnet/)
 fi
 
@@ -39,7 +40,7 @@ if ! compinit &>/dev/null; then
     compinit
 fi
 
-# show version control information
+# configure shell prompt
 autoload -Uz vcs_info
 preexec() {
     COMMAND_EXECUTED=1

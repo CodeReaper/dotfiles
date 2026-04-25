@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# shellcheck disable=all
+# cspell:disable
+
 # formatters
 alias plist="/usr/libexec/PlistBuddy -c \"Print\" $@"
 alias xml="xmllint --format -"

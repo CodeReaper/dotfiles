@@ -1,3 +1,5 @@
+# cspell:disable
+
 include .env
 ifeq ($(origin ZONE),undefined)
 $(error ZONE is not set)
