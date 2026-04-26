@@ -20,6 +20,9 @@
 !.config/opencode/skills/*/references
 !.config/opencode/skills/*/references/*
 
+!.config/setup/
+!.config/setup/*
+
 !Library
 !Library/Application Support/
 !Library/Application Support/Code/

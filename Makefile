@@ -7,7 +7,6 @@ endif
 
 CODE := /Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code
 
-
 install: install-rosetta install-brew install-brews install-casks install-autoupdate install-asdf install-apps install-code-extensions
 
 install-rosetta:
@@ -43,7 +42,6 @@ ifeq ($(ZONE),WORK)
 endif
 
 install-casks:
-	brew list --cask chatgpt >/dev/null 2>&1 || brew install --cask chatgpt
 	brew list --cask discord >/dev/null 2>&1 || brew install --cask discord
 	brew list --cask hush >/dev/null 2>&1 || brew install --cask hush
 	brew list --cask macpass >/dev/null 2>&1 || brew install --cask macpass
@@ -68,9 +66,7 @@ install-autoupdate:
 install-asdf:
 	asdf plugin add github-cli
 	asdf plugin add helm
-	asdf plugin add jq
 	asdf plugin add kind
-	asdf plugin add kubeconform
 	asdf plugin add kubectl
 	asdf plugin add nodejs
 	asdf plugin add python
@@ -79,9 +75,6 @@ install-asdf:
 	asdf plugin add swiftlint
 	asdf plugin add terraform
 	asdf plugin add yq
-ifeq ($(ZONE),WORK)
-	asdf plugin add dotnet-core
-endif
 	asdf install
 
 install-apps:
@@ -121,46 +114,8 @@ ifeq ($(ZONE),WORK)
 		--install-extension redhat.ansible
 endif
 
-install-dotnet: backup-dotnet
-	$(MAKE) download-dotnet || $(MAKE) restore-dotnet
-
-backup-dotnet:
-	@-rm -rf ~/.dotnet.backup
-	mv ~/.dotnet ~/.dotnet.backup
-
-restore-dotnet:
-	test -d ~/.dotnet.backup
-	rm -rf ~/.dotnet
-	mv ~/.dotnet.backup ~/.dotnet
-
-download-dotnet:
-	@-rm -f /tmp/versions /tmp/dotnet-*.tar.gz
-
-	@echo 'Preparing to download:'
-	curl -sfL https://builds.dotnet.microsoft.com/dotnet/release-metadata/releases-index.json \
-		| jq -r '."releases-index"[] | select(."support-phase" == "active") | ."latest-sdk"' \
-		| sort -V \
-		| tee /tmp/versions
-
-	@echo 'Downloading:'
-	< /tmp/versions xargs -n1 -I{} \
-		curl -sfLo /tmp/dotnet-{}.tar.gz \
-		https://builds.dotnet.microsoft.com/dotnet/Sdk/{}/dotnet-sdk-{}-$(shell uname -s | tr '[:upper:]' '[:lower:]' | sed 's/darwin/osx/')-$(shell uname -m).tar.gz
-
-	mkdir -p ~/.dotnet
-
-	@echo 'Unpacking:'
-	< /tmp/versions xargs -n1 -I{} \
-		tar -xzf /tmp/dotnet-{}.tar.gz -C ~/.dotnet/
-
-ifneq ($(shell uname -s),Linux)
-	xattr -r -d com.apple.quarantine ~/.dotnet
-endif
-
-	@sh -c 'export PATH="$$PATH:$$(realpath ~/.dotnet/)" \
-		&& export DOTNET_ROOT=$$(realpath ~/.dotnet/) \
-		&& dotnet --list-sdks \
-		&& dotnet --info'
+install-dotnet:
+	make -f .config/setup/install-dotnet.mk
 
 list:
 	brew list --installed-on-request
