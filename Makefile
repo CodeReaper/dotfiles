@@ -8,6 +8,9 @@ endif
 CODE := /Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code
 
 install: install-rosetta install-brew install-brews install-casks install-autoupdate install-asdf install-apps install-code-extensions
+ifeq ($(ZONE),WORK)
+	make install-dotnet
+endif
 
 install-rosetta:
 	arch -arch x86_64 uname -m | grep x86_64 > /dev/null || \
@@ -22,11 +25,21 @@ install-brew:
 install-brews:
 	brew install asdf
 	brew install brotli
+	brew install gh
 	brew install go
+	brew install helm
+	brew install hugo
+	brew install kind
+	brew install kubernetes-cli
+	brew install kustomize
 	brew install lz4
 	brew install mas
+	brew install shellcheck
+	brew install shfmt
+	brew install swiftlint
 	brew install tree
 	brew install watch
+	brew install yq
 	brew install anomalyco/tap/opencode
 	brew install joelreymont/tap/dots
 ifeq ($(ZONE),PERSONAL)
@@ -64,17 +77,9 @@ install-autoupdate:
 		brew autoupdate start 43200 --upgrade --cleanup --immediate --ac-only
 
 install-asdf:
-	asdf plugin add github-cli
-	asdf plugin add helm
-	asdf plugin add kind
-	asdf plugin add kubectl
 	asdf plugin add nodejs
 	asdf plugin add python
-	asdf plugin add shellcheck
-	asdf plugin add shfmt
-	asdf plugin add swiftlint
 	asdf plugin add terraform
-	asdf plugin add yq
 	asdf install
 
 install-apps:
