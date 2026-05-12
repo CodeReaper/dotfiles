@@ -1,5 +1,14 @@
 *
 
+!.agents/
+!.agents/skills/
+!.agents/skills/*
+!.agents/skills/*/SKILL.md
+!.agents/skills/*/scripts
+!.agents/skills/*/scripts/*
+!.agents/skills/*/references
+!.agents/skills/*/references/*
+
 !.config/
 !.config/nvim/
 !.config/nvim/*
@@ -12,13 +21,6 @@
 !.config/opencode/AGENTS.md
 !.config/opencode/opencode.jsonc
 !.config/opencode/tui.jsonc
-!.config/opencode/skills/
-!.config/opencode/skills/*
-!.config/opencode/skills/*/SKILL.md
-!.config/opencode/skills/*/scripts
-!.config/opencode/skills/*/scripts/*
-!.config/opencode/skills/*/references
-!.config/opencode/skills/*/references/*
 
 !.config/setup/
 !.config/setup/*

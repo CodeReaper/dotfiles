@@ -1,10 +1,8 @@
 # cspell:disable
 
 # env
-if [ "$(arch)" = "arm64" ]; then
+if test -f /opt/homebrew/bin/brew; then
     eval "$(/opt/homebrew/bin/brew shellenv)"
-else
-    eval "$(/usr/local/bin/brew shellenv)"
 fi
 
 if test -d ~/.local/bin/; then
@@ -41,7 +39,6 @@ if ! compinit &>/dev/null; then
 fi
 
 # configure shell prompt
-autoload -Uz vcs_info
 preexec() {
     COMMAND_EXECUTED=1
 }
@@ -52,41 +49,34 @@ precmd() {
         NEXT_CURSOR="%%"
     fi
     unset COMMAND_EXECUTED
-    CLOCK=$(date +%H:%M)
-    vcs_info
 }
-zstyle ':vcs_info:git:*' formats '(%b%m)'
-zstyle ':vcs_info:git:*' check-for-changes true
-zstyle ':vcs_info:git:*' nvcsformats '%s' '' ''
-zstyle ':vcs_info:git*+set-message:*' hooks git-untracked
-+vi-git-untracked() {
-    local indicator=""
-    if [[ $(git rev-parse --is-inside-work-tree 2>/dev/null) == 'true' ]]; then
-        local git_status
-        git_status=$(git status --porcelain=2)
+prompt-git-info() {
+    git rev-parse --is-inside-work-tree 2>/dev/null 1>/dev/null || return
 
-        local untracked staged unstaged
+    local branch
+    branch=$(git symbolic-ref --short HEAD 2>/dev/null || git rev-parse --short HEAD 2>/dev/null)
 
-        if echo "$git_status" | grep -Eq '^\?'; then
-            untracked="?"
-        fi
-        if echo "$git_status" | grep -Eq '^[1,2] [AM][\. ]'; then
-            staged="✓"
-        fi
-        if echo "$git_status" | grep -Eq '^[1,2] .[AM]'; then
-            unstaged="✗"
-        fi
+    local git_status
+    git_status=$(git status --porcelain=2)
 
-        local combined="${untracked}${staged}${unstaged}"
-
-        if [[ -n "$combined" ]]; then
-            indicator=" $combined"
-        fi
+    local untracked staged unstaged
+    if echo "$git_status" | grep -Eq '^\?'; then
+        untracked="?"
     fi
-    hook_com[misc]="$indicator"
+    if echo "$git_status" | grep -Eq '^[1,2] [AM][\. ]'; then
+        staged="✓"
+    fi
+    if echo "$git_status" | grep -Eq '^[1,2] .[AM]'; then
+        unstaged="✗"
+    fi
+
+    local indicator combined
+    combined="${untracked}${staged}${unstaged}"
+
+    echo "(${branch} ${combined})"
 }
 setopt PROMPT_SUBST
-PROMPT='${CLOCK} ${PWD/#$HOME/~} ${vcs_info_msg_0_:+$vcs_info_msg_0_ }${NEXT_CURSOR} '
+PROMPT='$(date +%H:%M) ${PWD/#$HOME/~} $(prompt-git-info)${NEXT_CURSOR} '
 
 # load keys for ssh agent
 if [ ! -S "$SSH_AUTH_SOCK" ] || ! kill -0 "$SSH_AGENT_PID" 2>/dev/null || ! pgrep -x ssh-agent >/dev/null 2>&1; then

@@ -104,7 +104,7 @@
     "websearch": "allow",
     "external_directory": {
       "~/.nuget/packages/**": "allow",
-      "~/.config/opencode/skills/*/**": "allow",
+      "~/.agents/skills/*/**": "allow",
       "/tmp/**": "allow",
     },
   },

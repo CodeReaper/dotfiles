@@ -6,11 +6,14 @@
 # formatters
 alias plist="/usr/libexec/PlistBuddy -c \"Print\" $@"
 alias xml="xmllint --format -"
-alias json="python -mjson.tool"
-alias jwt="
-__decode() { read in; echo "\$in"==== | fold -w 4 | sed '$ d' | tr -d '\n' | base64 --decode|python -mjson.tool };
-__jwt() { echo \$1|cut -d. -f1|__decode; echo \$1|cut -d. -f2|__decode; };
-__jwt"
+alias json="jq"
+
+function jwt() {
+	for index in 1 2; do
+		echo $1 | cut -d. -f$index | read in
+		echo $in==== | fold -w 4 | sed '$ d' | tr -d '\n' | base64 --decode | jq
+	done
+}
 
 # git
 alias g="git"
@@ -24,7 +27,11 @@ alias xcodeclean='rm -rf ~/library/Developer/Xcode/DerivedData/*'
 
 # android
 alias adb="~/Library/Android/sdk/platform-tools/adb"
-alias logcat='__logcat() { PKG_NAME=$1;shift;adb logcat --pid=$(adb shell pidof -s $PKG_NAME) -v color $@ }; __logcat'
+function logcat() {
+	PKG_NAME=$1
+	shift
+	adb logcat --pid=$(adb shell pidof -s $PKG_NAME) -v color $@
+}
 
 # network
 alias netstat='netstat -anptcp'
@@ -33,7 +40,7 @@ alias netstat='netstat -anptcp'
 alias code='/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code'
 
 # generators
-alias uuid="uuidgen| tr '[:upper:]' '[:lower:]'"
+alias uuid="uuidgen | tr '[:upper:]' '[:lower:]'"
 
 # tooling
 
@@ -68,4 +75,4 @@ docker run --rm \
 -v /var/run/docker.sock:/var/run/docker.sock \
 ghcr.io/laniksj/dfimage $@'
 
-alias ralph='sh ~/.config/opencode/skills/ralph/scripts/loop.sh $@'
+alias ralph='sh ~/.agents/skills/ralph/scripts/loop.sh $@'
