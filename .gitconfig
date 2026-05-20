@@ -41,9 +41,11 @@
 
 	a = add -u
 
+	# up
 	u = push -u
 
-	p = pull
+	# down
+	d = pull
 
 	b = checkout -b
 
