@@ -31,12 +31,9 @@ fi
 # load aliases
 source ~/.aliases
 
-# enable git autocomplete
+# enable git autocomplete - man zshcompsys
 autoload -Uz compinit
-if ! compinit &>/dev/null; then
-    rm -f "$HOME/.zcompdump"*
-    compinit
-fi
+compinit -D
 
 # configure shell prompt
 preexec() {
