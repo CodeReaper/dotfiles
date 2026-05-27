@@ -160,5 +160,10 @@
     "command": "opencode.openTerminal",
     "key": "cmd+k cmd+o",
     "when": "!terminalFocus"
+  },
+  {
+    "key": "cmd+k cmd+r",
+    "command": "-git.revertSelectedRanges",
+    "when": "editorTextFocus && !operationInProgress && resourceScheme == 'file'"
   }
 ]

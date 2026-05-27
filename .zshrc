@@ -43,14 +43,12 @@ preexec() {
     COMMAND_EXECUTED=1
 }
 precmd() {
-    if [[ $? -ne 0 && $COMMAND_EXECUTED -eq 1 ]]; then
-        NEXT_CURSOR="-"
-    else
-        NEXT_CURSOR="%%"
+    CUSTOM="$?: "
+    if [[ ! $COMMAND_EXECUTED -eq 1 ]]; then
+        CUSTOM="0: "
     fi
     unset COMMAND_EXECUTED
-}
-prompt-git-info() {
+
     git rev-parse --is-inside-work-tree 2>/dev/null 1>/dev/null || return
 
     local branch
@@ -59,24 +57,21 @@ prompt-git-info() {
     local git_status
     git_status=$(git status --porcelain=2)
 
-    local untracked staged unstaged
+    local buffer="" indicators=""
     if echo "$git_status" | grep -Eq '^\?'; then
-        untracked="?"
-    fi
-    if echo "$git_status" | grep -Eq '^[1,2] [AM][\. ]'; then
-        staged="✓"
+        indicators+="?"
     fi
     if echo "$git_status" | grep -Eq '^[1,2] .[AM]'; then
-        unstaged="✗"
+        indicators+="✗"
+    elif echo "$git_status" | grep -Eq '^[1,2] [AM]'; then
+        indicators+="✓"
     fi
+    [[ -n "$indicators" ]] && buffer=" "
 
-    local indicator combined
-    combined="${untracked}${staged}${unstaged}"
-
-    echo "(${branch} ${combined})"
+    CUSTOM="(${branch}${buffer}${indicators}) ${CUSTOM}"
 }
 setopt PROMPT_SUBST
-PROMPT='$(date +%H:%M) ${PWD/#$HOME/~} $(prompt-git-info)${NEXT_CURSOR} '
+PROMPT='$(date +%H:%M) ${PWD/#$HOME/~} $CUSTOM'
 
 # load keys for ssh agent
 if [ ! -S "$SSH_AUTH_SOCK" ] || ! kill -0 "$SSH_AGENT_PID" 2>/dev/null || ! pgrep -x ssh-agent >/dev/null 2>&1; then
