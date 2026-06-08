@@ -94,6 +94,7 @@ endif
 install-code-extensions:
 	$(CODE) \
 		--install-extension bierner.markdown-mermaid \
+		--install-extension DavidAnson.vscode-markdownlint \
 		--install-extension dbankier.vscode-quick-select \
 		--install-extension eamodio.gitlens \
 		--install-extension editorconfig.editorconfig \

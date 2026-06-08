@@ -45,7 +45,9 @@
 !.gitconfig
 !.gitignore
 !.gitignore.global
+!.markdownlint.jsonc
 !.tool-versions
+!.prettierrc
 !.zshrc
 !Makefile
 
