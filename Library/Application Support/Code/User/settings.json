@@ -24,7 +24,7 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[markdown]": {
-    "editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
+    "editor.defaultFormatter": "DavidAnson.vscode-markdownlint" // prettier cannot use specified markdown rules
   },
   "[xml]": {
     "editor.defaultFormatter": "redhat.vscode-xml"
@@ -34,8 +34,8 @@
   },
   "ansible.validation.enabled": false,
   "ansible.validation.lint.enabled": false,
-  "chat.agent.enabled": false,
-  "chat.disableAIFeatures": true,
+  "chat.agent.enabled": false, // essential AI disabling
+  "chat.disableAIFeatures": true, // essential AI disabling
   "cSpell.ignorePaths": [
     "package-lock.json",
     "node_modules",
@@ -45,7 +45,7 @@
   "dotnet.formatting.organizeImportsOnFormat": true,
   "editor.cursorSurroundingLines": 1000, // keeps cursor centered always
   "editor.formatOnSave": true,
-  "editor.minimap.enabled": false,
+  "editor.minimap.enabled": false, // minimap that is otherwise a giant scroll bar
   "editor.tokenColorCustomizations": {
     "textMateRules": [
       {
@@ -120,7 +120,7 @@
   "extensions.ignoreRecommendations": true,
   "files.autoSave": "afterDelay",
   "files.exclude": {
-    "**/.git": true
+    "**/.git": true // hides .git in file explorer and searches
   },
   "files.hotExit": "onExitAndWindowClose",
   "git.openRepositoryInParentFolders": "never",
@@ -145,6 +145,16 @@
     }
   ],
   "makefile.configureOnOpen": false,
+  "markdownlint.config": {
+    "MD012": {
+      "maximum": 2 // maximum number of blank lines
+    },
+    "MD013": false, // disable line length limit
+    "MD022": {
+      "lines_above": 2, // amount of blank lines before a heading
+      "lines_below": 1 // amount of blank lines after a heading
+    }
+  },
   "merge-conflict.codeLens.enabled": false,
   "merge-conflict.decorators.enabled": false,
   "npm.exclude": [
@@ -178,6 +188,7 @@
   "terminal.integrated.enableMultiLinePasteWarning": "never",
   "terminal.integrated.stickyScroll.enabled": false,
   "terminal.integrated.suggest.enabled": false,
+  "update.showReleaseNotes": false,
   "window.zoomLevel": 1,
   "workbench.colorCustomizations": {
     "[Default Dark Modern]": {
@@ -195,7 +206,6 @@
   },
   "workbench.colorTheme": "Tokyo Night",
   "workbench.settings.showAISearchToggle": false,
-  "workbench.sideBar.location": "right",
-  "workbench.startupEditor": "none",
-  "update.showReleaseNotes": false
+  "workbench.sideBar.location": "right", // avoid moving the left text edge
+  "workbench.startupEditor": "none"
 }
