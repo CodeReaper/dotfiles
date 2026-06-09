@@ -190,6 +190,7 @@
   "terminal.integrated.suggest.enabled": false,
   "update.showReleaseNotes": false,
   "window.zoomLevel": 1,
+  "workbench.browser.openLocalhostLinks": false,
   "workbench.colorCustomizations": {
     "[Default Dark Modern]": {
       "editor.lineHighlightBackground": "#282515"
