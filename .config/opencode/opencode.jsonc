@@ -16,7 +16,9 @@
     "bash": {
       "*": "ask",
       "basename *": "allow",
+      "brew info *": "allow",
       "brew list *": "allow",
+      "brew search *": "allow",
       "cat *": "allow",
       "cd *": "allow",
       "cp *": "allow",
