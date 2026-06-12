@@ -15,6 +15,7 @@
     "*": "ask",
     "bash": {
       "*": "ask",
+      "base64 *": "allow",
       "basename *": "allow",
       "brew info *": "allow",
       "brew list *": "allow",
