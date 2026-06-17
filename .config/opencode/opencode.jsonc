@@ -44,6 +44,7 @@
       "gh *": "deny",
       "git *": "ask",
       "git branch *": "allow",
+      "git check-ignore *": "allow",
       "git diff *": "allow",
       "git grep *": "allow",
       "git log *": "allow",
