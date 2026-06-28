@@ -36,6 +36,7 @@
       "dotnet *": "ask",
       "dotnet build *": "allow",
       "dotnet list *": "allow",
+      "dotnet msbuild *": "allow",
       "dotnet restore *": "allow",
       "dotnet sln *": "allow",
       "dotnet test *": "allow",
