@@ -33,6 +33,7 @@
       "docker *": "deny",
       "dot *": "allow",
       "dotnet --info": "allow",
+      "dotnet --version": "allow",
       "dotnet *": "ask",
       "dotnet build *": "allow",
       "dotnet list *": "allow",
