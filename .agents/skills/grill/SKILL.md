@@ -8,6 +8,6 @@ Interview me relentlessly about every aspect of this plan until we reach a share
 
 Ask the questions one at a time.
 
-If a question can be answered by exploring the codebase, explore the codebase instead.
+If a question can be answered by exploring the codebase, explore the codebase instead. If an answer can be inferred by current context given by the user or accepted by the user, assume that answer.
 
 The interview is complete when every major branch has a decision (or an explicitly noted open question) and you can state the full design back without gaps. At that point, stop asking and produce a wrap-up summary with three sections: decisions made (with brief rationale), assumptions accepted, and open questions still requiring resolution.
