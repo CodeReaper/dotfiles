@@ -81,6 +81,7 @@
       "npm run build*": "allow",
       "npm run test*": "allow",
       "npm view *": "allow",
+      "openssl *": "allow",
       "perl *": "deny",
       "pip *": "deny",
       "pip3 *": "deny",
