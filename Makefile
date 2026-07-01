@@ -68,6 +68,7 @@ ifeq ($(ZONE),PERSONAL)
 endif
 ifeq ($(ZONE),WORK)
 	brew list --cask slack >/dev/null 2>&1 || brew install --cask slack
+	brew list --cask rocket-chat >/dev/null 2>&1 || brew install --cask rocket-chat
 endif
 
 install-autoupdate:
