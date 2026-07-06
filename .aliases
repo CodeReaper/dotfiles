@@ -78,7 +78,3 @@ ghcr.io/laniksj/dfimage $@'
 # misc
 
 alias ralph='sh ~/.agents/skills/ralph/scripts/loop.sh $@'
-
-function make() {
-	command make SHELL=~"/.config/setup/make-shell.sh" "$@"
-}
