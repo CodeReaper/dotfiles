@@ -23,6 +23,7 @@
       "brew search *": "allow",
       "cat *": "allow",
       "cd *": "allow",
+      "comm *": "allow",
       "command *": "allow",
       "continue *": "allow",
       "cp *": "allow",
