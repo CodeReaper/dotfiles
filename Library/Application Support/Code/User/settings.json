@@ -120,7 +120,9 @@
   "extensions.ignoreRecommendations": true,
   "files.autoSave": "afterDelay",
   "files.exclude": {
-    "**/.git": true // hides .git in file explorer and searches
+    "**/.git": true, // hides .git in file explorer and searches
+    "Library/Containers": true, // stop annoying permission prompt
+    "Library/Group Containers": true // stop annoying permission prompt
   },
   "files.hotExit": "onExitAndWindowClose",
   "git.openRepositoryInParentFolders": "never",
