@@ -165,5 +165,9 @@
     "key": "cmd+k cmd+r",
     "command": "-git.revertSelectedRanges",
     "when": "editorTextFocus && !operationInProgress && resourceScheme == 'file'"
+  },
+  {
+    "key": "cmd+l cmd+m",
+    "command": "workbench.action.toggleMaximizedPanel"
   }
 ]

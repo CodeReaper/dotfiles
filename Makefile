@@ -7,6 +7,11 @@ endif
 
 CODE := /Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code
 
+all: setup install
+
+setup:
+	defaults write -g NSUserKeyEquivalents -dict-add 'Minimize' '\0'
+
 install: install-rosetta install-brew install-brews install-casks install-autoupdate install-asdf install-apps install-code-extensions
 ifeq ($(ZONE),WORK)
 	make install-dotnet
