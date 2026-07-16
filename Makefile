@@ -10,7 +10,10 @@ CODE := /Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code
 all: setup install
 
 setup:
+# disable minimize windows
 	defaults write -g NSUserKeyEquivalents -dict-add 'Minimize' '\0'
+# disable fn-button emoji picker
+	defaults write com.apple.HIToolbox AppleFnUsageType -int 0
 
 install: install-rosetta install-brew install-brews install-casks install-autoupdate install-asdf install-apps install-code-extensions
 ifeq ($(ZONE),WORK)

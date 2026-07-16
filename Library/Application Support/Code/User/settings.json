@@ -210,5 +210,13 @@
   "workbench.colorTheme": "Tokyo Night",
   "workbench.settings.showAISearchToggle": false,
   "workbench.sideBar.location": "right", // avoid moving the left text edge
-  "workbench.startupEditor": "none"
+  "workbench.startupEditor": "none",
+  "yaml.disableSchemaDetection": [
+    "**/.github/workflows/*.yml",
+    "**/.github/workflows/*.yaml",
+    "**/.gitea/workflows/*.yml",
+    "**/.gitea/workflows/*.yaml",
+    "**/.forgejo/workflows/*.yml",
+    "**/.forgejo/workflows/*.yaml"
+  ]
 }
