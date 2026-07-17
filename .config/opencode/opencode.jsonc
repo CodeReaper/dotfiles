@@ -37,6 +37,7 @@
       "dotnet --version": "allow",
       "dotnet *": "ask",
       "dotnet build *": "allow",
+      "dotnet format *": "allow",
       "dotnet list *": "allow",
       "dotnet msbuild *": "allow",
       "dotnet restore *": "allow",
