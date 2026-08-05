@@ -7,7 +7,9 @@
     "codereaper",
     "dockercompose",
     "esbenp",
+    "forgejo",
     "frontmatter",
+    "gitea",
     "gofmt",
     "opencode"
   ]
