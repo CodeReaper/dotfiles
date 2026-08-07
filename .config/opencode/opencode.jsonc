@@ -57,6 +57,7 @@
       "git branch *": "allow",
       "git check-ignore *": "allow",
       "git diff *": "allow",
+      "git for-each-ref *": "allow",
       "git grep *": "allow",
       "git log *": "allow",
       "git ls-files *": "allow",
