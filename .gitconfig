@@ -3,7 +3,7 @@
 	delete-remote-branch = push origin --delete
 
 	# long and descriptive name for pruning branches
-	prune-all-branches = remote prune origin
+	prune-all-branches = !git fetch --prune && git branch -vv | grep ': gone]' | awk '{print $1}' | xargs git branch -D
 
 	# undo last commit
 	undo-commit = reset --soft HEAD^
