@@ -194,9 +194,6 @@
   "window.zoomLevel": 1,
   "workbench.browser.openLocalhostLinks": false,
   "workbench.colorCustomizations": {
-    "[Default Dark Modern]": {
-      "editor.lineHighlightBackground": "#282515"
-    },
     "[Tokyo Night]": {
       "editor.lineHighlightBackground": "#282515",
       "editorGutter.addedBackground": "#4c73c1",
@@ -204,7 +201,10 @@
       "editorGutter.deletedBackground": "#823c41",
       "editorGutter.deletedSecondaryBackground": "#823c41",
       "editorGutter.modifiedBackground": "#4c73c1",
-      "editorGutter.modifiedSecondaryBackground": "#4c73c1"
+      "editorGutter.modifiedSecondaryBackground": "#4c73c1",
+      "window.activeBorder": "#25c2c2",
+      "titleBar.activeBackground": "#25c2c2",
+      "titleBar.activeForeground": "#ffffff"
     }
   },
   "workbench.colorTheme": "Tokyo Night",
