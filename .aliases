@@ -78,3 +78,5 @@ ghcr.io/laniksj/dfimage $@'
 # misc
 
 alias ralph='sh ~/.agents/skills/ralph/scripts/loop.sh $@'
+
+alias rg="rg -u"
