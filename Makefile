@@ -81,6 +81,7 @@ endif
 install-autoupdate:
 	brew tap | grep 'domt4/autoupdate' > /dev/null || \
 		brew tap domt4/autoupdate
+	brew trust --command domt4/autoupdate/autoupdate
 	brew autoupdate status | grep installed || \
 		brew autoupdate start 43200 --upgrade --cleanup --immediate --ac-only
 
