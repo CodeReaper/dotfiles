@@ -109,6 +109,7 @@ install-code-extensions:
 		--install-extension editorconfig.editorconfig \
 		--install-extension enkia.tokyo-night \
 		--install-extension esbenp.prettier-vscode \
+		--install-extension github.vscode-github-actions \
 		--install-extension golang.go \
 		--install-extension hashicorp.terraform \
 		--install-extension mechatroner.rainbow-csv \

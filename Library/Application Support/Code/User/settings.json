@@ -211,7 +211,14 @@
   "workbench.settings.showAISearchToggle": false,
   "workbench.sideBar.location": "right", // avoid moving the left text edge
   "workbench.startupEditor": "none",
-  "yaml.disableSchemaDetection": [],
+  "yaml.disableSchemaDetection": [
+    "**/.github/workflows/*.yml",
+    "**/.github/workflows/*.yaml",
+    "**/.gitea/workflows/*.yml",
+    "**/.gitea/workflows/*.yaml",
+    "**/.forgejo/workflows/*.yml",
+    "**/.forgejo/workflows/*.yaml"
+  ],
   "json.schemaDownload.trustedDomains": {
     "https://developer.microsoft.com/json-schemas/": true,
     "https://docs.renovatebot.com": true,
