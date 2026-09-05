@@ -152,11 +152,12 @@
     "webfetch": "allow",
     "websearch": "allow",
     "external_directory": {
-      "~/.nuget/packages/**": "allow",
-      "~/.agents/skills/*/**": "allow",
-      "/usr/local/share/dotnet/**": "allow",
-      "/tmp/**": "allow",
       "/private/**": "deny",
+      "/tmp/**": "allow",
+      "/usr/local/share/dotnet/**": "allow",
+      "~/.agents/skills/*/**": "allow",
+      "~/.nuget/packages/**": "allow",
+      "~/go/pkg/mod/**": "allow",
     },
   },
 }
