@@ -156,6 +156,7 @@
       "~/.agents/skills/*/**": "allow",
       "/usr/local/share/dotnet/**": "allow",
       "/tmp/**": "allow",
+      "/private/**": "deny",
     },
   },
 }
