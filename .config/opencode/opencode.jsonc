@@ -118,6 +118,7 @@
       "tail *": "allow",
       "tar *": "allow",
       "tee *": "allow",
+      "test *": "allow",
       "textutil *": "allow",
       "touch *": "allow",
       "tr *": "allow",
