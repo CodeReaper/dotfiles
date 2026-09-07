@@ -71,6 +71,7 @@
       "git ls-files *": "allow",
       "git ls-remote *": "allow",
       "git ls-tree *": "allow",
+      "git merge-base *": "allow",
       "git mv *": "allow",
       "git remote *": "allow",
       "git rev-parse *": "allow",
