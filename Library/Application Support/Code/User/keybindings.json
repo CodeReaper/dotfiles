@@ -169,5 +169,24 @@
   {
     "key": "cmd+l cmd+m",
     "command": "workbench.action.toggleMaximizedPanel"
+  },
+  {
+    "key": "alt+cmd+p",
+    "command": "-toggleSearchPreserveCase",
+    "when": "searchViewletFocus"
+  },
+  {
+    "key": "alt+cmd+p",
+    "command": "-togglePreserveCase",
+    "when": "editorFocus"
+  },
+  {
+    "key": "alt+cmd+p",
+    "command": "-keybindings.editor.toggleSortByPrecedence",
+    "when": "inKeybindings"
+  },
+  {
+    "key": "alt+cmd+p",
+    "command": "workbench.action.quickTextSearch"
   }
 ]
