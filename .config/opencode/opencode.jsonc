@@ -9,6 +9,12 @@
         "edit": "allow",
       },
     },
+    "reviewer": {
+      "prompt": "{file:~/.config/opencode/reviewer-prompt.txt}",
+      "permission": {
+        "task": "deny",
+      },
+    },
   },
   "default_agent": "plan",
   "permission": {
@@ -96,6 +102,7 @@
       "npm run build*": "allow",
       "npm run test*": "allow",
       "npm view *": "allow",
+      "opencode --version": "allow",
       "openssl *": "allow",
       "perl *": "deny",
       "pip *": "deny",
