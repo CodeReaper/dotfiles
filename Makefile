@@ -14,6 +14,13 @@ setup:
 	defaults write -g NSUserKeyEquivalents -dict-add 'Minimize' '\0'
 # disable fn-button emoji picker
 	defaults write com.apple.HIToolbox AppleFnUsageType -int 0
+# disable caps lock
+	defaults -currentHost write -g \
+		com.apple.keyboard.modifiermapping.0-0-0 \
+		-array '<dict>
+			<key>HIDKeyboardModifierMappingSrc</key><integer>0</integer>
+			<key>HIDKeyboardModifierMappingDst</key><integer>7</integer>
+		</dict>'
 
 install: install-rosetta install-brew install-brews install-casks install-autoupdate install-asdf install-apps install-code-extensions
 ifeq ($(ZONE),WORK)
