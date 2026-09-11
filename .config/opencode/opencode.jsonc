@@ -65,6 +65,7 @@
       "find * -delete*": "deny",
       "gh *": "deny",
       "git *": "ask",
+      "git add *": "deny",
       "git apply *": "allow",
       "git archive *": "allow",
       "git blame *": "allow",
