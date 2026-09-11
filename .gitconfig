@@ -42,6 +42,8 @@
 
 	ls = ls-files
 
+	l = log
+
 	a = add -u
 
 	# up
