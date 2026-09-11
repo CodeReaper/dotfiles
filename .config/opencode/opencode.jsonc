@@ -52,6 +52,7 @@
       "dotnet restore *": "allow",
       "dotnet sln *": "allow",
       "dotnet test *": "allow",
+      "dotnet clean *": "allow",
       "du *": "allow",
       "echo *": "allow",
       "env": "allow",
