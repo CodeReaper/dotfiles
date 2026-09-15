@@ -20,7 +20,9 @@
 !.config/opencode/
 !.config/opencode/AGENTS.md
 !.config/opencode/opencode.jsonc
+!.config/opencode/personal.opencode.jsonc
 !.config/opencode/reviewer-prompt.txt
+!.config/opencode/work.opencode.jsonc
 !.config/opencode/tui.jsonc
 
 !.config/setup/

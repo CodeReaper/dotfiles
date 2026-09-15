@@ -53,6 +53,7 @@
       "dotnet sln *": "allow",
       "dotnet test *": "allow",
       "dotnet clean *": "allow",
+      "dotnet tool list *": "allow",
       "du *": "allow",
       "echo *": "allow",
       "env": "allow",
