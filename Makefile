@@ -17,10 +17,7 @@ setup:
 # disable caps lock
 	defaults -currentHost write -g \
 		com.apple.keyboard.modifiermapping.0-0-0 \
-		-array '<dict>
-			<key>HIDKeyboardModifierMappingSrc</key><integer>0</integer>
-			<key>HIDKeyboardModifierMappingDst</key><integer>7</integer>
-		</dict>'
+		-array '<dict><key>HIDKeyboardModifierMappingSrc</key><integer>0</integer><key>HIDKeyboardModifierMappingDst</key><integer>7</integer></dict>'
 
 install: install-rosetta install-brew install-brews install-casks install-autoupdate install-asdf install-apps install-code-extensions
 ifeq ($(ZONE),WORK)
