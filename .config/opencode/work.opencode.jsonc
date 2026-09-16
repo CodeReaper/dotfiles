@@ -12,10 +12,10 @@
       "variant": "medium",
     },
     "plan": {
-      "model": "openai/gpt-6-astra",
+      "model": "openai/gpt-5.6-sol",
     },
     "build": {
-      "model": "openai/gpt-5.6-sol",
+      "model": "openai/gpt-5.6-terra",
     },
     "reviewer": {
       "model": "openai/gpt-6-astra",
