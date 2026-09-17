@@ -58,6 +58,8 @@
 
 	tmp = commit -m tmp
 
+	t = commit -m tweaks
+
 	main = !git stash && git checkout main && git pull && git stash apply
 [apply]
 	# Detect whitespace errors when applying a patch
