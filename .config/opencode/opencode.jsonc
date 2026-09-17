@@ -178,4 +178,7 @@
       "~/go/pkg/mod/**": "allow",
     },
   },
+  "skills": {
+    "paths": [".agents/vendor/skills"],
+  },
 }

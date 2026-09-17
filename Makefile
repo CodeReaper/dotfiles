@@ -137,6 +137,12 @@ endif
 install-dotnet:
 	make -f .config/setup/install-dotnet.mk
 
+install-skills:
+	@mkdir -p .agents/vendor/skills/
+	test -d .agents/vendor/repositories/mattpocock/skills || git clone https://github.com/mattpocock/skills.git .agents/vendor/repositories/mattpocock/skills
+	git -C .agents/vendor/repositories/mattpocock/skills pull
+	ln -sf $(CURDIR)/.agents/vendor/repositories/mattpocock/skills/skills/engineering/codebase-design $(CURDIR)/.agents/vendor/skills/codebase-design
+
 list:
 	brew list --installed-on-request
 	brew list --cask
