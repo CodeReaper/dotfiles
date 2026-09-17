@@ -38,7 +38,7 @@
 	co = checkout
 
 	# setup a branch
-	cb = "!git checkout -b \"$1\" && git branch --set-upstream-to=\"origin/$1\" \"$1\" #"
+	cb = checkout -b
 
 	ls = ls-files
 
