@@ -101,7 +101,7 @@ install-apps:
 	mas install 425424353 # The Unarchiver
 	mas install 497799835 # Xcode
 ifeq ($(ZONE),PERSONAL)
-	mas install 409203825 # Numbers
+	mas install 361304891 # Numbers
 endif
 
 install-code-extensions:
