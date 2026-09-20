@@ -24,6 +24,8 @@
 !.config/opencode/reviewer-prompt.txt
 !.config/opencode/work.opencode.jsonc
 !.config/opencode/tui.jsonc
+!.config/opencode/opencode-quota/
+!.config/opencode/opencode-quota/quota-toast.jsonc
 
 !.config/setup/
 !.config/setup/*

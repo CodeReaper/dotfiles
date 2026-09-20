@@ -1,0 +1,6 @@
+{
+  "enableToast": false,
+  "tuiCompactStatus": { "enabled": false },
+  "enabledProviders": ["OpenCode", "openai"],
+  "tuiPromptBar": { "enabled": true },
+}

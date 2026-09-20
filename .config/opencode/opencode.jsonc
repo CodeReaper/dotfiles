@@ -177,6 +177,7 @@
       "/tmp/**": "allow",
       "/usr/local/share/dotnet/**": "allow",
       "~/.agents/skills/*/**": "allow",
+      "~/.agents/vendor/skills/*/**": "allow",
       "~/.nuget/packages/**": "allow",
       "~/go/pkg/mod/**": "allow",
     },
@@ -184,4 +185,5 @@
   "skills": {
     "paths": ["~/.agents/vendor/skills"],
   },
+  "plugin": ["@slkiser/opencode-quota"],
 }
