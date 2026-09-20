@@ -1,3 +1,6 @@
+// cspell:disable
+
 {
   "$schema": "https://opencode.ai/config.json",
+  "plugin": ["@slkiser/opencode-quota"],
 }
