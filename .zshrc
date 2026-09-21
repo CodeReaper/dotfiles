@@ -31,7 +31,8 @@ fi
 if test -f ~/.env; then
     ZONE=$(grep -E '^ZONE ?= ?(WORK|PERSONAL)$' ~/.env | tr -d ' ' | cut -d= -f2)
     if test -n "$ZONE"; then
-        export OPENCODE_CONFIG="$HOME/.config/opencode/${${ZONE}:l}.opencode.jsonc"
+        export OPENCODE_CONFIG_DIR="$HOME/.config/opencode/profiles/${${ZONE}:l}"
+        export OPENCODE_CONFIG="$OPENCODE_CONFIG_DIR/opencode.jsonc"
     fi
 fi
 

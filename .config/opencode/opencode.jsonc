@@ -186,4 +186,7 @@
     "paths": ["~/.agents/vendor/skills"],
   },
   "plugin": ["@slkiser/opencode-quota"],
+  "provider": {
+    "openai": {},
+  },
 }

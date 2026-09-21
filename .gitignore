@@ -20,12 +20,15 @@
 !.config/opencode/
 !.config/opencode/AGENTS.md
 !.config/opencode/opencode.jsonc
-!.config/opencode/personal.opencode.jsonc
 !.config/opencode/reviewer-prompt.txt
-!.config/opencode/work.opencode.jsonc
 !.config/opencode/tui.jsonc
 !.config/opencode/opencode-quota/
 !.config/opencode/opencode-quota/quota-toast.jsonc
+!.config/opencode/profiles/
+!.config/opencode/profiles/*/
+!.config/opencode/profiles/*/opencode.jsonc
+!.config/opencode/profiles/*/opencode-quota/
+!.config/opencode/profiles/*/opencode-quota/quota-toast.jsonc
 
 !.config/setup/
 !.config/setup/*
@@ -55,4 +58,3 @@
 !.prettierrc
 !.zshrc
 !Makefile
-

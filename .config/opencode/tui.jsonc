@@ -1,5 +1,8 @@
+// cspell:disable
+
 {
   "$schema": "https://opencode.ai/tui.json",
   "theme": "opencode",
   "diff_style": "stacked",
+  "plugin": ["@slkiser/opencode-quota"],
 }
