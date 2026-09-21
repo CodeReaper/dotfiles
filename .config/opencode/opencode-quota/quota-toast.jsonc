@@ -1,5 +1,5 @@
 {
   "enableToast": false,
-  "tuiCompactStatus": { "enabled": false },
   "tuiPromptBar": { "enabled": true },
+  "tuiCommandDisplay": "dialog",
 }

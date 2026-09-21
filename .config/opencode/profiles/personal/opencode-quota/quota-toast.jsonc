@@ -1,3 +1,6 @@
 {
-  "enabledProviders": ["opencode"],
+  "enabledProviders": [],
+  "tuiSidebarPanel": {
+    "enabled": false,
+  },
 }

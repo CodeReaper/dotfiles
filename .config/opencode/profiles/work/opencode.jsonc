@@ -21,4 +21,7 @@
       "model": "openai/gpt-6-astra",
     },
   },
+  "provider": {
+    "openai": {},
+  },
 }
