@@ -180,6 +180,7 @@
       "~/.agents/vendor/skills/*/**": "allow",
       "~/.nuget/packages/**": "allow",
       "~/go/pkg/mod/**": "allow",
+      "/var/folders/cc/*/T/opencode/**": "allow",
     },
   },
   "skills": {
