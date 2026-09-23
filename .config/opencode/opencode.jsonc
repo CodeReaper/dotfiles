@@ -142,6 +142,7 @@
       "tr *": "allow",
       "true": "allow",
       "uname *": "allow",
+      "uniq *": "allow",
       "unzip *": "allow",
       "wc *": "allow",
       "wget *": "deny",
