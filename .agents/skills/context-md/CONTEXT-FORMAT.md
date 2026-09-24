@@ -21,6 +21,18 @@ _Avoid_: Bill, payment request
 **Customer**:
 A person or organization that places orders.
 _Avoid_: Client, buyer, account
+
+## Relationships
+
+- An **Invoice** belongs to exactly one **Customer**
+- An **Order** produces one or more **Invoices**
+
+## Example dialogue
+
+> **Dev:** "When a **Customer** places an **Order**, do we create the **Invoice** immediately?"
+> **Domain expert:** "No — an **Invoice** is only generated once a **Fulfillment** is confirmed. A single **Order** can produce multiple **Invoices** if items ship in separate **Shipments**."
+> **Dev:** "So if a **Shipment** is cancelled before dispatch, no **Invoice** exists for it?"
+> **Domain expert:** "Exactly. The **Invoice** lifecycle is tied to the **Fulfillment**, not the **Order**."
 ```
 
 
@@ -47,7 +59,7 @@ _Avoid_: Client, buyer, account
 - [Billing](./src/billing/CONTEXT.md): generates invoices and processes payments
 - [Fulfillment](./src/fulfillment/CONTEXT.md): manages warehouse picking and shipping
 
-## Relationships
+## Inter-context relationships
 
 - **Ordering → Fulfillment**: Ordering emits `OrderPlaced` events; Fulfillment consumes them to start picking
 - **Fulfillment → Billing**: Fulfillment emits `ShipmentDispatched` events; Billing consumes them to generate invoices
