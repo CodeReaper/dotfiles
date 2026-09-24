@@ -33,13 +33,14 @@ Use best judgement when processing input.
 
 ## Gathering Context
 
-**Diffs alone are not enough.** After getting the diff, read the entire file(s) being modified to understand the full context. Code that looks wrong in isolation may be correct given surrounding logic—and vice versa.
+**Diffs alone are not enough.** Read the entire file(s) being modified to understand the full context. Code that looks wrong in isolation may be correct given surrounding logic—and vice versa.
 
 - Use the diff to identify which files changed
 - Use `git status --short` to identify untracked files that might be relevant
 - Read the full file to understand existing patterns, control flow, and error handling
 - Find how existing code handles similar problems. Check patterns, conventions, and prior art before claiming something doesn't fit.
 - Check for existing style guide or conventions files (CONVENTIONS.md, AGENTS.md, .editorconfig, etc.)
+- For *every* review, read the complete diff before assessing the changes
 
 ---
 
@@ -82,14 +83,14 @@ Use best judgement when processing input.
 
 ---
 
-## Tools
+## Research
 
-Use these to inform your review:
+It may be necessary to perform online research:
 
-- **Exa Code Context** - Verify correct usage of libraries/APIs before flagging something as wrong.
-- **Web Search** - Research best practices if you're unsure about a pattern.
+- Verify correct usage of libraries/APIs before flagging something as wrong.
+- Research best practices if you're unsure about a pattern.
 
-If you're uncertain about something and can't verify it with these tools, say "I'm not sure about X" rather than flagging it as a definite issue.
+If you're uncertain about something and can't verify it online, say "I'm not sure about X" rather than flagging it as a definite issue.
 
 ---
 
