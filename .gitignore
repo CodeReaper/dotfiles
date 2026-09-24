@@ -2,20 +2,11 @@
 
 !.agents/
 !.agents/skills/
-!.agents/skills/*
-!.agents/skills/*/SKILL.md
-!.agents/skills/*/scripts
-!.agents/skills/*/scripts/*
-!.agents/skills/*/references
-!.agents/skills/*/references/*
+!.agents/skills/**
 
 !.config/
 !.config/nvim/
-!.config/nvim/*
-!.config/nvim/lua/
-!.config/nvim/lua/*
-!.config/nvim/lua/plugin/
-!.config/nvim/lua/plugin/*
+!.config/nvim/**
 
 !.config/opencode/
 !.config/opencode/AGENTS.md
@@ -31,7 +22,7 @@
 !.config/opencode/profiles/*/opencode-quota/quota-toast.jsonc
 
 !.config/setup/
-!.config/setup/*
+!.config/setup/**
 
 !Library
 !Library/Application Support/
