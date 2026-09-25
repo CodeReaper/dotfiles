@@ -1,12 +1,12 @@
-# CONTEXT.md Format
+# TERMINOLOGY.md Format
 
 
 ## Structure
 
 ```md
-# {Context Name}
+# {Domain Name}
 
-{One or two sentence description of what this context is and why it exists.}
+{One or two sentence description of what this domain covers and why it exists.}
 
 ## Language
 
@@ -44,22 +44,22 @@ _Avoid_: Client, buyer, account
 - **Group terms under subheadings** when natural clusters emerge. If all terms belong to a single cohesive area, a flat list is fine.
 
 
-## Single vs multi-context repos
+## Single vs multi-domain repos
 
-**Single context (most repos):** One `CONTEXT.md` at the repo root.
+**Single domain (most repos):** One `TERMINOLOGY.md` at the repo root.
 
-**Multiple contexts:** A `CONTEXT-MAP.md` at the repo root lists the contexts, where they live, and how they relate to each other:
+**Multiple domains:** A `TERMINOLOGY-CATALOG.md` at the repo root links to each domain's `TERMINOLOGY.md`, describes the domains, and explains how they relate to each other:
 
 ```md
-# Context Map
+# Terminology Catalog
 
-## Contexts
+## Domains
 
-- [Ordering](./src/ordering/CONTEXT.md): receives and tracks customer orders
-- [Billing](./src/billing/CONTEXT.md): generates invoices and processes payments
-- [Fulfillment](./src/fulfillment/CONTEXT.md): manages warehouse picking and shipping
+- [Ordering](./src/ordering/TERMINOLOGY.md): receives and tracks customer orders
+- [Billing](./src/billing/TERMINOLOGY.md): generates invoices and processes payments
+- [Fulfillment](./src/fulfillment/TERMINOLOGY.md): manages warehouse picking and shipping
 
-## Inter-context relationships
+## Cross-domain relationships
 
 - **Ordering → Fulfillment**: Ordering emits `OrderPlaced` events; Fulfillment consumes them to start picking
 - **Fulfillment → Billing**: Fulfillment emits `ShipmentDispatched` events; Billing consumes them to generate invoices
@@ -68,8 +68,8 @@ _Avoid_: Client, buyer, account
 
 The skill infers which structure applies:
 
-- If `CONTEXT-MAP.md` exists, read it to find contexts
-- If only a root `CONTEXT.md` exists, single context
-- If neither exists, create a root `CONTEXT.md` lazily when the first term is resolved
+- If `TERMINOLOGY-CATALOG.md` exists, read it to find domains and their terminology files
+- If only a root `TERMINOLOGY.md` exists, use it for the single domain
+- If neither exists, create a root `TERMINOLOGY.md` lazily when the first term is resolved
 
-When multiple contexts exist, infer which one the current topic relates to. If unclear, ask.
+When multiple domains exist, infer which one the current topic relates to. If unclear, ask. When adding a domain terminology file, add its link and description to `TERMINOLOGY-CATALOG.md`.
