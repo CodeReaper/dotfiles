@@ -138,11 +138,12 @@ install-dotnet:
 	make -f .config/setup/install-dotnet.mk
 
 install-skills:
-	@mkdir -p .agents/vendor/skills/
-	test -d .agents/vendor/repositories/mattpocock/skills || git clone https://github.com/mattpocock/skills.git .agents/vendor/repositories/mattpocock/skills
-	git -C .agents/vendor/repositories/mattpocock/skills pull
-	ln -sf $(CURDIR)/.agents/vendor/repositories/mattpocock/skills/skills/engineering/codebase-design $(CURDIR)/.agents/vendor/skills/codebase-design
-	ln -sf $(CURDIR)/.agents/vendor/repositories/mattpocock/skills/skills/engineering/improve-codebase-architecture $(CURDIR)/.agents/vendor/skills/improve-codebase-architecture
+# vendored skills are on-hold
+# 	@mkdir -p .agents/vendor/skills/
+# 	test -d .agents/vendor/repositories/mattpocock/skills || git clone https://github.com/mattpocock/skills.git .agents/vendor/repositories/mattpocock/skills
+# 	git -C .agents/vendor/repositories/mattpocock/skills pull
+# 	ln -sf $(CURDIR)/.agents/vendor/repositories/mattpocock/skills/skills/engineering/codebase-design $(CURDIR)/.agents/vendor/skills/codebase-design
+# 	ln -sf $(CURDIR)/.agents/vendor/repositories/mattpocock/skills/skills/engineering/improve-codebase-architecture $(CURDIR)/.agents/vendor/skills/improve-codebase-architecture
 
 list:
 	brew list --installed-on-request

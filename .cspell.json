@@ -5,12 +5,15 @@
     "Anson",
     "checkmake",
     "codereaper",
+    "deepenable",
     "dockercompose",
     "esbenp",
     "forgejo",
     "frontmatter",
     "gitea",
     "gofmt",
-    "opencode"
+    "hotspot",
+    "opencode",
+    "Ousterhout"
   ]
 }
