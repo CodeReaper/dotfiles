@@ -18,50 +18,38 @@ Seek out formatting and style configuration files relevant to the current langua
 - TypeScript/JavaScript: .prettierrc, eslint config
 - Rust: rustfmt.toml
 
-You will mimic the code style of the other code files in the current repository, if no other formatting is configured.
-
-Code examples are given as Golang, but should be applied as translated to the current language.
+Follow explicit user instructions and established project conventions first. Use the guidance below as defaults when neither settles the choice.
 
 ### The Core Principles
 
-- Beautiful is better than ugly.
-- Explicit is better than implicit.
-- Simple is better than complex.
-- Complex is better than complicated.
-- Flat is better than nested.
-- Sparse is better than dense.
-- Readability counts.
-- Special cases are not special enough to break the rules.
-- Although practicality beats purity.
-- Errors should never pass silently.
-- Unless explicitly silenced.
-- In the face of ambiguity, refuse the temptation to guess.
-- There should be one - and preferably only one - obvious way to do it.
-- Although that way may not be obvious at first unless you're Dutch.
-- Now is better than never.
-- Although never is often better than right now.
-- If the implementation is hard to explain, it's a bad idea.
-- If the implementation is easy to explain, it may be a good idea.
+- Beautiful is better than ugly
+- Explicit is better than implicit
+- Simple is better than complex
+- Complex is better than complicated
+- Flat is better than nested
+- Sparse is better than dense
+- Readability counts
+- Special cases are not special enough to break the rules
+- Although practicality beats purity
+- Errors should never pass silently
+- Unless explicitly silenced
+- In the face of ambiguity, refuse the temptation to guess
+- There should be one - and preferably only one - obvious way to do it
+- Although that way may not be obvious at first unless you're Dutch
+- Now is better than never
+- Although never is often better than right now
+- If the implementation is hard to explain, it's a bad idea
+- If the implementation is easy to explain, it may be a good idea
 
 ## Predictability
 
-It is required that potential ambiguity is cleared up by asking the human for clarification instead of making assumptions.
+It is required that potential ambiguity is cleared up during planning phase by asking the user for clarification instead of making assumptions.
 
-### Shared Understanding
-
-During the planning phase it is up to the agent to interview me relentlessly about every aspect of the plan until we reach a shared understanding. Walk down each branch of the design tree, resolving dependencies between decisions one-by-one. For each question, provide your recommended answer.
-
-Ask the questions one at a time.
-
-If a question can be answered by exploring the codebase, explore the codebase instead.
-
-### Predictable Outcome
-
-During the execution or build phase no changes should be made that are not already part of the original plan.
+During the execution or build phase no changes should be made that are not part of the agreed upon plan.
 
 ## Readability
 
-The code is not just meant to be run, but to be read and understood by human developers. The code should be easy to read quickly and hard to misunderstand.
+The code is not just meant to be run, but to be read and understood by developers. The code should be easy to read quickly and hard to misunderstand.
 
 ### Storytelling
 
@@ -75,7 +63,7 @@ Code tells a story vertically line by line through methods, where each variable 
 - Avoid redundantly named variables in local scopes, if there is a single service, it should be named `service` and not `apiService`
 - Prefer single shortest word for variables; add second word ONLY for disambiguation within scope, if there are two clients call them `apiClient` and `idClient`
 - Avoid abbreviations unless universally understood (id, db, url, api)
-- Words combined with abbreviations means the abbreviation should only be capitalized (ApiService, HttpRequest)
+- In names that combine words and abbreviations, capitalize abbreviations like ordinary words: ApiService, HttpRequest, not APIService or HTTPRequest. Apply the project’s casing convention to the full name (for example, apiClient for a lower-camel-case variable)
 
 ```go
 // Good
@@ -84,6 +72,8 @@ var userCount int
 var service *Service
 var apiClient *Client
 var idClient *Client
+var urlRequest *Socket
+var tcpRequest *Socket
 
 // Bad
 var tp float64
@@ -91,6 +81,8 @@ var uc int
 var apiService *Service
 var apiHttpClient *Client
 var idHttpClient *Client
+var uRLRequest *Socket
+var tCPRequest *Socket
 ```
 
 ### Lines
@@ -117,9 +109,9 @@ There should only be one public type definition per file. There is no limit for 
 
 ### Single Responsibility
 
-- Each function should do one thing well
+- Each function should have one clear responsibility
 - Maximum recommended parameters: 3
-- If more needed, use object pattern
+- If more parameters are needed, use object pattern
 
 ```go
 // Bad - too many parameters
@@ -137,15 +129,41 @@ func NewUser(name, email string, opts UserOptions) (*User, error) {}
 
 ### Comments
 
-Never use multi-line comments unless explicitly required by the doc language.
+Never use block comments unless explicitly required by the doc language.
+
+#### How to Comment
+
+- Explain the "why", not the "what" (code shows what)
+- Write notes detailing non-obvious behavior
+- Prefer no comments. When a comment is necessary, use the language’s documentation-comment syntax on the relevant declaration. Do not add inline or trailing comments; TODO: and FIXME: are exceptions to this rule
+
+```go
+// Bad:
+func NewUser(name, email string) (*User, error) {
+    if (len(name) == 0) { // check the name is not empty
+        return nil, fmt.Errorf("could not create user with empty name") // return an error due to name being empty
+    } // name is not empty from here on
+    return &User{Name: name, Email: email}, nil // return created user and nil
+}
+
+// Good:
+
+// NewUser returns either a pointer to a User or an error.
+// The arguments given are validated before creating the user.
+func NewUser(name, email string) (*User, error) {
+    if (len(name) == 0) {
+        return nil, fmt.Errorf("could not create user with empty name")
+    }
+    return &User{Name: name, Email: email}, nil
+}
+```
 
 #### When to Comment
 
-- Explain "why", not "what" (code shows what)
 - Document public API contracts
-- Note non-obvious behavior
+- Otherwise prefer no comments. When a comment is necessary, use the language’s documentation-comment syntax on the relevant declaration
 - Mark technical debt with TODO:
-- Use FIXME: markers for items to resolve before merging to main
+- Mark unfinished work that must not reach main with FIXME:
 
 #### Avoid
 
@@ -155,8 +173,22 @@ Never use multi-line comments unless explicitly required by the doc language.
 
 ### Error Handling
 
-- Use typed errors when possible
-- Wrap errors with context using `fmt.Errorf("operation: %w", err)`
+Wrap errors with context to propagate the original error:
+
+Example code of part of an ordering service processing an order:
+
+```go
+user, err := userService.lookup(orderId)
+if (err != nil) {
+    return fmt.Errorf("unable to process order %s, user lookup failed: %w", orderId, err)
+}
+err = orderService.ship(orderId, user)
+if (err != nil) {
+    return fmt.Errorf("unable to ship order %s: %w", orderId, err)
+}
+```
+
+Use typed errors when possible to collect debugging details:
 
 ```go
 type NotFoundError struct {

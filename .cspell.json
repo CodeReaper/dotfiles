@@ -7,14 +7,19 @@
     "codereaper",
     "deepenable",
     "dockercompose",
+    "Errorf",
     "esbenp",
     "footguns",
     "forgejo",
     "frontmatter",
     "gitea",
     "gofmt",
+    "golangci",
     "hotspot",
     "opencode",
-    "Ousterhout"
+    "Ousterhout",
+    "pyproject",
+    "Sprintf",
+    "swiftlint"
   ]
 }
