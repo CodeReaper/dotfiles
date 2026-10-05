@@ -54,13 +54,13 @@ precmd() {
     fi
     unset COMMAND_EXECUTED
 
-    git rev-parse --is-inside-work-tree 2>/dev/null 1>/dev/null || return
+    g rev-parse --is-inside-work-tree 2>/dev/null 1>/dev/null || return
 
     local branch
-    branch=$(git symbolic-ref --short HEAD 2>/dev/null || git rev-parse --short HEAD 2>/dev/null)
+    branch=$(g symbolic-ref --short HEAD 2>/dev/null || g rev-parse --short HEAD 2>/dev/null)
 
     local git_status
-    git_status=$(git status --porcelain=2)
+    git_status=$(g status --porcelain=2)
 
     local buffer="" indicators=""
     if echo "$git_status" | grep -Eq '^\?'; then

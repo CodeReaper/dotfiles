@@ -16,7 +16,13 @@ function jwt() {
 }
 
 # git
-alias g="git"
+g() {
+	if [ "$PWD" = "$HOME" ]; then
+		git --git-dir="$HOME/.stowed" --work-tree="$HOME" "$@"
+	else
+		git "$@"
+	fi
+}
 
 # Always enable colored `grep` output
 # Note: `GREP_OPTIONS="--color=auto"` is deprecated, hence the alias usage.
@@ -76,7 +82,5 @@ docker run --rm \
 ghcr.io/laniksj/dfimage $@'
 
 # misc
-
-alias ralph='sh ~/.agents/skills/ralph/scripts/loop.sh $@'
 
 alias rg="rg -u"

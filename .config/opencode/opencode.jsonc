@@ -107,6 +107,7 @@
       "jq *": "allow",
       "ls *": "allow",
       "make *": "allow",
+      "man *": "allow",
       "mkdir *": "allow",
       "mv *": "allow",
       "npm ci": "allow",

@@ -10,6 +10,8 @@ CODE := /Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code
 all: setup install
 
 setup:
+# correctly place git directory
+	-test -d .git && ! test -d .stowed && mv .git .stowed
 # disable minimize windows
 	defaults write -g NSUserKeyEquivalents -dict-add 'Minimize' '\0'
 # disable fn-button emoji picker
