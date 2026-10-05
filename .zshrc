@@ -90,3 +90,7 @@ if [ ! -S "$SSH_AUTH_SOCK" ] || ! kill -0 "$SSH_AGENT_PID" 2>/dev/null || ! pgre
         ssh-add ~/.ssh/id_ed25519 ~/.ssh/id_rsa ~/.ssh/work_rsa 2>/dev/null
     fi
 fi
+
+# configure terminal
+
+unsetopt BEEP
