@@ -34,6 +34,7 @@
       "continue *": "allow",
       "cp *": "allow",
       "curl *": "deny",
+      "cut *": "allow",
       "date": "allow",
       "df *": "allow",
       "diff *": "allow",
