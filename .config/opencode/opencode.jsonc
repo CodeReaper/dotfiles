@@ -115,6 +115,7 @@
       "npm run build*": "allow",
       "npm run test*": "allow",
       "npm view *": "allow",
+      "od *": "allow",
       "opencode --version": "allow",
       "openssl *": "allow",
       "perl *": "deny",
@@ -184,6 +185,7 @@
       "~/.nuget/packages/**": "allow",
       "~/go/pkg/mod/**": "allow",
       "/var/folders/*/*/T/opencode/**": "allow",
+      "/opt/homebrew/Cellar/go/*/libexec/src/**": "allow",
     },
   },
   "skills": {
