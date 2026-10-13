@@ -43,6 +43,7 @@
       "dotnet *": "ask",
       "dotnet --info": "allow",
       "dotnet --version": "allow",
+      "dotnet --list-sdks": "allow",
       "dotnet build *": "allow",
       "dotnet format *": "allow",
       "dotnet fsi *": "deny",

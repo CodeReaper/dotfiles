@@ -13,15 +13,14 @@
     },
     "plan": {
       "model": "openai/gpt-6.1-sol",
-      "variant": "high",
     },
     "build": {
-      "model": "openai/gpt-6.1-sol",
+      "model": "openai/gpt-6-luna",
       "variant": "medium",
+      "temperature": 0,
     },
     "reviewer": {
       "model": "openai/gpt-6.1-sol",
-      "variant": "high",
     },
   },
 }
