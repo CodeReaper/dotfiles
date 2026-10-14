@@ -94,6 +94,7 @@
       "git remote show *": "allow",
       "git rev-parse *": "allow",
       "git show *": "allow",
+      "git show-ref *": "allow",
       "git status *": "allow",
       "git -C * status *": "allow",
       "git submodule status": "allow",
