@@ -8,12 +8,11 @@
       "permission": {
         "edit": "allow",
       },
+      "temperature": 0,
     },
     "reviewer": {
       "prompt": "{file:~/.config/opencode/reviewer-prompt.txt}",
-      "permission": {
-        "task": "deny",
-      },
+      "hidden": true,
     },
   },
   "default_agent": "plan",

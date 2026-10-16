@@ -3,4 +3,18 @@
 {
   "$schema": "https://opencode.ai/config.json",
   "model": "openai/gpt-6-luna",
+  "agent": {
+    "general": {
+      "model": "openai/gpt-6-luna",
+      "variant": "medium",
+    },
+    "explore": {
+      "model": "openai/gpt-6-luna",
+      "variant": "medium",
+    },
+    "build": {
+      "model": "openai/gpt-6-luna",
+      "variant": "medium",
+    },
+  },
 }

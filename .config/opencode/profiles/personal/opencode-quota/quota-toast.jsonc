@@ -1,6 +1,3 @@
 {
-  "enabledProviders": [],
-  "tuiSidebarPanel": {
-    "enabled": false,
-  },
+  "enabledProviders": ["openai"],
 }
