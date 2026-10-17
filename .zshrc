@@ -41,6 +41,17 @@ source ~/.aliases
 # enable git autocomplete - man zshcompsys
 autoload -Uz compinit
 compinit -D
+_g() {
+    local service=git
+
+    if [[ "$PWD" = "$HOME" ]]; then
+        local -x GIT_DIR="$HOME/.stowed"
+        local -x GIT_WORK_TREE="$HOME"
+    fi
+
+    _git "$@"
+}
+compdef _g g
 
 # configure shell prompt
 preexec() {
