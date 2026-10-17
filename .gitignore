@@ -10,6 +10,8 @@
 
 !.config/opencode/
 !.config/opencode/AGENTS.md
+!.config/opencode/agents/
+!.config/opencode/agents/**
 !.config/opencode/cli.json
 !.config/opencode/opencode.jsonc
 !.config/opencode/reviewer-prompt.txt
