@@ -1,5 +1,9 @@
 ---
-description: Read-only agent for external documentation and dependency research
+description: >-
+  Read-only agent for external documentation and dependency research. Use when
+  verifying library APIs, checking version compatibility or migration guidance,
+  or comparing dependencies using external authoritative sources. Not for local codebase
+  exploration or implementation.
 mode: subagent
 permissions:
   - action: edit

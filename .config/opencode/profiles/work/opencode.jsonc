@@ -9,11 +9,14 @@
     "explore": {
       "model": "openai/gpt-6-luna#medium",
     },
-    "plan": {
-      "model": "openai/gpt-6.1-sol",
+    "scout": {
+      "model": "openai/gpt-6-luna#medium",
     },
     "build": {
       "model": "openai/gpt-6-luna#medium",
+    },
+    "plan": {
+      "model": "openai/gpt-6.1-sol",
     },
     "reviewer": {
       "model": "openai/gpt-6.1-sol",

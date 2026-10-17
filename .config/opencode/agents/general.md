@@ -1,5 +1,9 @@
 ---
-description: General-purpose agent for research and multi-step tasks
+description: >-
+  Read-only agent for complex investigation and synthesis. Use when a task
+  combines multiple research steps or does not fit a specialist agent.
+  Prefer explore for local code navigation, scout for external documentation,
+  and reviewer for code review. Not for implementation.
 mode: subagent
 permissions:
   - action: edit
