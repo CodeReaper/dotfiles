@@ -128,6 +128,7 @@
     { "action": "shell", "resource": "python *", "effect": "deny" },
     { "action": "shell", "resource": "python3 *", "effect": "deny" },
     { "action": "shell", "resource": "read *", "effect": "allow" },
+    { "action": "shell", "resource": "IFS= read *", "effect": "allow" },
     { "action": "shell", "resource": "rg *", "effect": "allow" },
     { "action": "shell", "resource": "rm *", "effect": "allow" },
     { "action": "shell", "resource": "ruby *", "effect": "deny" },
