@@ -1,0 +1,21 @@
+{
+  "config": {
+    "MD012": {
+      "maximum": 2, // maximum number of blank lines
+    },
+    "MD013": false, // disable line length limit
+  },
+  "overrides": [
+    {
+      "filter": [".config/opencode/**/*.md", ".agents/**/*.md"],
+      "combine": "merge",
+      "config": {
+        "MD022": {
+          "lines_above": 2, // amount of blank lines before a heading
+          "lines_below": 1, // amount of blank lines after a heading
+        },
+        "MD041": false, // disable titles
+      },
+    },
+  ],
+}

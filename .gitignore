@@ -12,6 +12,8 @@
 !.config/opencode/AGENTS.md
 !.config/opencode/agents/
 !.config/opencode/agents/**
+!.config/opencode/commands/
+!.config/opencode/commands/**
 !.config/opencode/cli.json
 !.config/opencode/opencode.jsonc
 !.config/opencode/reviewer-prompt.txt
@@ -45,7 +47,7 @@
 !.gitconfig
 !.gitignore
 !.gitignore.global
-!.markdownlint.jsonc
+!.markdownlint-cli2.jsonc
 !.tool-versions
 !.prettierrc
 !.zshrc
