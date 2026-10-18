@@ -8,9 +8,13 @@ This exception does not permit one-off scripts for inspecting, validating, or mo
 
 Use web tools for fetching URLs and searching the web rather than shell commands such as curl or wget.
 
-For text processing, prefer:
+For text processing, prefer `sed`, `rg`, `jq`, and `yq`.
 
-- sed
-- rg
-- jq
-- yq
+
+## Bulk file operations
+
+- Prefer shell tools: `rg` for discovery, `sed` for replacements, and `mv` for moves/renames.
+- Include hidden files when relevant while respecting ignore rules.
+- Before bulk replacements, identify and preview all targets, covering every replacement pattern and filter. In Git repositories, identify untracked targets and ask before changing them.
+- Use platform-appropriate syntax and NUL-delimited filename passing.
+- After changes, verify the resulting content and affected paths.
