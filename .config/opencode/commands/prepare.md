@@ -9,3 +9,5 @@ You are tasked with thinking through the users instructions and ensuring that th
 - Scout authoritative sources
 - Research online sources
 - Ask questions
+
+Do not include completed or irrelevant instructions in the hand off.
