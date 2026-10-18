@@ -1,0 +1,10 @@
+{
+  "json.schemas": [
+    {
+      "fileMatch": [".markdownlint-cli2.jsonc"],
+      "schema": {
+        "allowTrailingCommas": true
+      }
+    }
+  ]
+}

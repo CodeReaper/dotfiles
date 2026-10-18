@@ -140,6 +140,7 @@
     "https://docs.renovatebot.com": true,
     "https://json-schema.org/": true,
     "https://json.schemastore.org/": true,
+    "https://models.dev": true,
     "https://opencode.ai": true,
     "https://raw.githubusercontent.com/devcontainers/spec/": true,
     "https://raw.githubusercontent.com/microsoft/vscode/": true,
@@ -147,20 +148,6 @@
     "https://spec.openapis.org/": true,
     "https://www.schemastore.org/": true
   },
-  "json.schemas": [
-    {
-      "fileMatch": ["/.config/opencode/opencode.jsonc"],
-      "url": "https://opencode.ai/config.json"
-    },
-    {
-      "fileMatch": ["/.config/opencode/tui.jsonc"],
-      "url": "https://opencode.ai/tui.json"
-    },
-    {
-      "fileMatch": ["https://models.dev/model-schema.json"],
-      "url": "https://models.dev/model-schema.json"
-    }
-  ],
   "makefile.configureOnOpen": false,
   "markdownlint.configFile": "${userHome}/.markdownlint-cli2.jsonc",
   "merge-conflict.codeLens.enabled": false,

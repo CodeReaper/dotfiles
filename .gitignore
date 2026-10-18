@@ -27,6 +27,9 @@
 !.config/setup/
 !.config/setup/**
 
+!.vscode/
+!.vscode/settings.json
+
 !Library
 !Library/Application Support/
 !Library/Application Support/Code/
