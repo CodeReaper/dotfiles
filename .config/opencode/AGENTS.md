@@ -11,6 +11,13 @@ Use web tools for fetching URLs and searching the web rather than shell commands
 For text processing, prefer `sed`, `rg`, `jq`, and `yq`.
 
 
+## Environment variables
+
+- Use `export NAME=value && command` instead of inline assignments such as `NAME=value command` for compatibility with permission matching.
+- Keep exports and affected commands in the same shell call; environment changes do not persist across calls.
+- Keep the call narrowly scoped, since exports affect subsequent commands.
+
+
 ## Bulk file operations
 
 - Prefer shell tools: `rg` for discovery, `sed` for replacements, and `mv` for moves/renames.

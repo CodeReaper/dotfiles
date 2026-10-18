@@ -117,6 +117,7 @@
     { "action": "shell", "resource": "npm view *", "effect": "allow" },
     { "action": "shell", "resource": "od *", "effect": "allow" },
     { "action": "shell", "resource": "opencode --version", "effect": "allow" },
+    { "action": "shell", "resource": "opencode --help", "effect": "allow" },
     { "action": "shell", "resource": "openssl *", "effect": "allow" },
     { "action": "shell", "resource": "perl *", "effect": "deny" },
     { "action": "shell", "resource": "pip *", "effect": "deny" },
