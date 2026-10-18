@@ -16,6 +16,7 @@ For text processing, prefer `sed`, `rg`, `jq`, and `yq`.
 - Use `export NAME=value && command` instead of inline assignments such as `NAME=value command` for compatibility with permission matching.
 - Keep exports and affected commands in the same shell call; environment changes do not persist across calls.
 - Keep the call narrowly scoped, since exports affect subsequent commands.
+- This includes assignments before builtins, such as `IFS= read`; export, use and restore such variables.
 
 
 ## Bulk file operations
