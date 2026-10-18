@@ -221,6 +221,11 @@
     },
     {
       "action": "external_directory",
+      "resource": "/private/var/folders/*/*/T/opencode/**",
+      "effect": "allow",
+    },
+    {
+      "action": "external_directory",
       "resource": "/var/folders/*/*/T/opencode/**",
       "effect": "allow",
     },

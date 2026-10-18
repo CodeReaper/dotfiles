@@ -10,4 +10,6 @@ You are tasked with thinking through the users instructions and ensuring that th
 - Research online sources
 - Ask questions
 
+If you need to ask questions, then you ask questions instead doing the hand off.
+
 Do not include completed or irrelevant instructions in the hand off.
