@@ -12,10 +12,7 @@
     "scout": {
       "model": "openai/gpt-6-luna#medium",
     },
-    "build": {
-      "model": "openai/gpt-6-luna#medium",
-    },
-    "plan": {
+    "cosmo": {
       "model": "openai/gpt-6-luna#medium",
     },
     "wanda": {

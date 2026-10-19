@@ -1,7 +1,7 @@
 ---
-description: Agent used by build commands
-mode: cosmo
-color: #7ceb61
+description: Cosmo builds prepared plans
+mode: primary
+color: "#7ceb61"
 hidden: true
 permissions:
   - action: edit
