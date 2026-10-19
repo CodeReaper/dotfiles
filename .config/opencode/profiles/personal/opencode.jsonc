@@ -16,6 +16,9 @@
       "model": "openai/gpt-6-luna#medium",
     },
     "plan": {
+      "model": "openai/gpt-6-luna#medium",
+    },
+    "wanda": {
       "model": "openai/gpt-6.1-sol#high",
     },
     "reviewer": {
