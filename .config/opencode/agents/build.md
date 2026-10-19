@@ -1,12 +1,5 @@
 ---
-description: Agent used by build commands
+description: Disabled agent
 mode: primary
-permissions:
-  - action: edit
-    resource: "*"
-    effect: allow
 hidden: true
-request:
-  body:
-    temperature: 0
 ---
