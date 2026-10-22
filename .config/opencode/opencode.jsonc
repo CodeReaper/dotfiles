@@ -257,4 +257,7 @@
   "providers": {
     "openai": {},
   },
+  "websearch": {
+    "provider": "random",
+  },
 }
