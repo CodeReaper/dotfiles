@@ -2,19 +2,24 @@
 
 {
   "$schema": "https://opencode.ai/config.json",
-  "model": "openai/gpt-6-luna",
-  "agent": {
+  "agents": {
     "general": {
-      "model": "openai/gpt-6-luna",
-      "variant": "medium",
+      "model": "openai/gpt-6-luna#medium",
     },
     "explore": {
-      "model": "openai/gpt-6-luna",
-      "variant": "medium",
+      "model": "openai/gpt-6-luna#medium",
     },
-    "build": {
-      "model": "openai/gpt-6-luna",
-      "variant": "medium",
+    "scout": {
+      "model": "openai/gpt-6-luna#medium",
+    },
+    "cosmo": {
+      "model": "openai/gpt-6-luna#medium",
+    },
+    "wanda": {
+      "model": "openai/gpt-6.1-sol#high",
+    },
+    "reviewer": {
+      "model": "openai/gpt-6.1-sol#high",
     },
   },
 }

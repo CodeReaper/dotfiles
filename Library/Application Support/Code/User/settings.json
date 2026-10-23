@@ -43,6 +43,9 @@
     ".gitignore"
   ],
   "dotnet.formatting.organizeImportsOnFormat": true,
+  "editor.cursorBlinking": "solid",
+  "editor.cursorSmoothCaretAnimation": "on",
+  "editor.cursorStyle": "block",
   "editor.cursorSurroundingLines": 1000, // keeps cursor centered always
   "editor.formatOnSave": true,
   "editor.minimap.enabled": false, // minimap that is otherwise a giant scroll bar
@@ -132,31 +135,21 @@
   "gitlens.codeLens.scopes": ["containers", "document"],
   "go.toolsManagement.autoUpdate": true,
   "inlineChat.affordance": "off",
-  "json.schemas": [
-    {
-      "fileMatch": ["/.config/opencode/opencode.jsonc"],
-      "url": "https://opencode.ai/config.json"
-    },
-    {
-      "fileMatch": ["/.config/opencode/tui.jsonc"],
-      "url": "https://opencode.ai/tui.json"
-    },
-    {
-      "fileMatch": ["https://models.dev/model-schema.json"],
-      "url": "https://models.dev/model-schema.json"
-    }
-  ],
-  "makefile.configureOnOpen": false,
-  "markdownlint.config": {
-    "MD012": {
-      "maximum": 2 // maximum number of blank lines
-    },
-    "MD013": false, // disable line length limit
-    "MD022": {
-      "lines_above": 2, // amount of blank lines before a heading
-      "lines_below": 1 // amount of blank lines after a heading
-    }
+  "json.schemaDownload.trustedDomains": {
+    "https://developer.microsoft.com/json-schemas/": true,
+    "https://docs.renovatebot.com": true,
+    "https://json-schema.org/": true,
+    "https://json.schemastore.org/": true,
+    "https://models.dev": true,
+    "https://opencode.ai": true,
+    "https://raw.githubusercontent.com/devcontainers/spec/": true,
+    "https://raw.githubusercontent.com/microsoft/vscode/": true,
+    "https://schemastore.azurewebsites.net/": true,
+    "https://spec.openapis.org/": true,
+    "https://www.schemastore.org/": true
   },
+  "makefile.configureOnOpen": false,
+  "markdownlint.configFile": "${userHome}/.markdownlint-cli2.jsonc",
   "merge-conflict.codeLens.enabled": false,
   "merge-conflict.decorators.enabled": false,
   "npm.exclude": [
@@ -202,9 +195,9 @@
       "editorGutter.deletedSecondaryBackground": "#823c41",
       "editorGutter.modifiedBackground": "#4c73c1",
       "editorGutter.modifiedSecondaryBackground": "#4c73c1",
-      "window.activeBorder": "#25c2c2",
       "titleBar.activeBackground": "#25c2c2",
-      "titleBar.activeForeground": "#ffffff"
+      "titleBar.activeForeground": "#ffffff",
+      "window.activeBorder": "#25c2c2"
     }
   },
   "workbench.colorTheme": "Tokyo Night",
@@ -218,15 +211,5 @@
     "**/.gitea/workflows/*.yaml",
     "**/.forgejo/workflows/*.yml",
     "**/.forgejo/workflows/*.yaml"
-  ],
-  "json.schemaDownload.trustedDomains": {
-    "https://developer.microsoft.com/json-schemas/": true,
-    "https://docs.renovatebot.com": true,
-    "https://json-schema.org/": true,
-    "https://json.schemastore.org/": true,
-    "https://raw.githubusercontent.com/devcontainers/spec/": true,
-    "https://raw.githubusercontent.com/microsoft/vscode/": true,
-    "https://schemastore.azurewebsites.net/": true,
-    "https://www.schemastore.org/": true
-  }
+  ]
 }

@@ -10,19 +10,25 @@
 
 !.config/opencode/
 !.config/opencode/AGENTS.md
+!.config/opencode/agents/
+!.config/opencode/agents/**
+!.config/opencode/commands/
+!.config/opencode/commands/**
+!.config/opencode/cli.json
 !.config/opencode/opencode.jsonc
 !.config/opencode/reviewer-prompt.txt
-!.config/opencode/tui.jsonc
 !.config/opencode/opencode-quota/
 !.config/opencode/opencode-quota/quota-toast.jsonc
 !.config/opencode/profiles/
 !.config/opencode/profiles/*/
 !.config/opencode/profiles/*/opencode.jsonc
-!.config/opencode/profiles/*/opencode-quota/
-!.config/opencode/profiles/*/opencode-quota/quota-toast.jsonc
+!.config/opencode/profiles/*/cli.json
 
 !.config/setup/
 !.config/setup/**
+
+!.vscode/
+!.vscode/settings.json
 
 !Library
 !Library/Application Support/
@@ -44,7 +50,7 @@
 !.gitconfig
 !.gitignore
 !.gitignore.global
-!.markdownlint.jsonc
+!.markdownlint-cli2.jsonc
 !.tool-versions
 !.prettierrc
 !.zshrc

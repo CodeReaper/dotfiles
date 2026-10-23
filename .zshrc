@@ -31,8 +31,7 @@ fi
 if test -f ~/.env; then
     ZONE=$(grep -E '^ZONE ?= ?(WORK|PERSONAL)$' ~/.env | tr -d ' ' | cut -d= -f2)
     if test -n "$ZONE"; then
-        export OPENCODE_CONFIG_DIR="$HOME/.config/opencode/profiles/${${ZONE}:l}"
-        export OPENCODE_CONFIG="$OPENCODE_CONFIG_DIR/opencode.jsonc"
+        export OPENCODE_CONFIG="$HOME/.config/opencode/profiles/${${ZONE}:l}/opencode.jsonc"
     fi
 fi
 
@@ -42,6 +41,17 @@ source ~/.aliases
 # enable git autocomplete - man zshcompsys
 autoload -Uz compinit
 compinit -D
+_g() {
+    local service=git
+
+    if [[ "$PWD" = "$HOME" ]]; then
+        local -x GIT_DIR="$HOME/.stowed"
+        local -x GIT_WORK_TREE="$HOME"
+    fi
+
+    _git "$@"
+}
+compdef _g g
 
 # configure shell prompt
 preexec() {
