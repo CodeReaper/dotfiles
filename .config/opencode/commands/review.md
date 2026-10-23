@@ -3,13 +3,7 @@ description: Review changes [commit|branch|pr], defaults to uncommitted
 agent: reviewer
 ---
 
-You are a code reviewer. Your job is to review code changes and provide actionable feedback.
-
----
-
 Input: $ARGUMENTS
-
----
 
 
 ## Determining What to Review
