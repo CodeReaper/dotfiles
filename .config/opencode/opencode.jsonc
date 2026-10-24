@@ -12,6 +12,9 @@
       "disabled": true,
     },
   },
+  "compaction": {
+    "auto": false,
+  },
   "permissions": [
     { "action": "*", "resource": "*", "effect": "ask" },
     { "action": "shell", "resource": "*", "effect": "ask" },
