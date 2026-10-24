@@ -130,6 +130,61 @@
     { "action": "shell", "resource": "od *", "effect": "allow" },
     { "action": "shell", "resource": "opencode --version", "effect": "allow" },
     { "action": "shell", "resource": "opencode --help", "effect": "allow" },
+    {
+      "action": "shell",
+      "resource": "opencode api get /api/agent",
+      "effect": "allow",
+    },
+    {
+      "action": "shell",
+      "resource": "opencode api get /api/agent/*",
+      "effect": "allow",
+    },
+    {
+      "action": "shell",
+      "resource": "opencode api get /api/command",
+      "effect": "allow",
+    },
+    {
+      "action": "shell",
+      "resource": "opencode api get /api/info",
+      "effect": "allow",
+    },
+    {
+      "action": "shell",
+      "resource": "opencode api get /api/model",
+      "effect": "allow",
+    },
+    {
+      "action": "shell",
+      "resource": "opencode api get /api/model/default",
+      "effect": "allow",
+    },
+    {
+      "action": "shell",
+      "resource": "opencode api get /api/plugin",
+      "effect": "allow",
+    },
+    {
+      "action": "shell",
+      "resource": "opencode api get /api/skill",
+      "effect": "allow",
+    },
+    {
+      "action": "shell",
+      "resource": "opencode api get /api/vcs",
+      "effect": "allow",
+    },
+    {
+      "action": "shell",
+      "resource": "opencode api get /api/vcs/status",
+      "effect": "allow",
+    },
+    {
+      "action": "shell",
+      "resource": "opencode api get /api/vcs/branch",
+      "effect": "allow",
+    },
     { "action": "shell", "resource": "openssl *", "effect": "allow" },
     { "action": "shell", "resource": "perl *", "effect": "deny" },
     { "action": "shell", "resource": "pip *", "effect": "deny" },
