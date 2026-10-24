@@ -68,6 +68,14 @@ When designing an interface, ask:
 - **The interface is the test surface.** Callers and tests cross the same seam. If you want to test _past_ the interface, the module is probably the wrong shape.
 - **One adapter means a hypothetical seam. Two adapters means a real one.** Don't introduce a seam unless something actually varies across it.
 
+## Failure behavior
+
+Failure behavior is part of the interface. Callers must be able to understand and respond to relevant failures without inspecting the implementation.
+
+- Make relevant failures observable through the interface. Do not silently discard them.
+- Propagate errors directly unless adding meaningful context, and preserve the underlying cause when doing so.
+- Use structured or typed errors when callers need to distinguish failures or inspect details.
+
 ## Designing for testability
 
 Good interfaces make testing natural:
