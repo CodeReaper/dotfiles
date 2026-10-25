@@ -91,7 +91,7 @@ Clear names and structure do not replace documentation of non-obvious interface 
 
 ## Design signals
 
-Documentation that requires callers to understand internal steps may indicate a shallow module. Flag that design concern rather than introducing abstractions or restructuring code solely to eliminate a comment.
+Documentation that requires callers to understand internal steps may indicate a shallow module. Flag that design concern rather than introducing abstractions or restructuring code solely to eliminate a comment. A clear such design signal is local comments inside implementation.
 
 ## Line layout
 
@@ -107,7 +107,7 @@ result := calculate(
 resp, err := send(result)
 ```
 
-Group logically related lines together. Separate distinct steps with a blank line.
+Group logically related lines with a blank line between groups.
 
 Do not insert blank lines mechanically after every statement or call.
 
