@@ -56,4 +56,5 @@
 !.tool-versions
 !.prettierrc
 !.zshrc
+!AGENTS.local.md
 !Makefile

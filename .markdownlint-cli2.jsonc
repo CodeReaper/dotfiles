@@ -7,7 +7,11 @@
   },
   "overrides": [
     {
-      "filter": [".config/opencode/**/*.md", ".agents/**/*.md"],
+      "filter": [
+        ".config/opencode/**/*.md",
+        ".agents/**/*.md",
+        "AGENTS.local.md",
+      ],
       "combine": "merge",
       "config": {
         "MD022": {
