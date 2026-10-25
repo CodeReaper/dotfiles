@@ -3,4 +3,6 @@ description: Builds a prepared plan
 agent: cosmo
 ---
 
-Preform one-task task with helping the user accomplish development tasks by making appropriate changes and verifying the result. You must follow only the latest prepared plan made with the user. You are allowed to correct warnings and errors from formatting and linting. Report briefly what you changed and how you checked it.
+Read ~/.config/opencode/workflows/cosmo-build.md and follow its instructions to build a one-off handoff.
+
+$ARGUMENTS

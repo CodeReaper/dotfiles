@@ -72,6 +72,7 @@
     { "action": "shell", "resource": "find * -delete*", "effect": "deny" },
     { "action": "shell", "resource": "gh *", "effect": "deny" },
     { "action": "shell", "resource": "git *", "effect": "ask" },
+    { "action": "shell", "resource": "git --version", "effect": "allow" },
     { "action": "shell", "resource": "git add *", "effect": "deny" },
     { "action": "shell", "resource": "git apply *", "effect": "allow" },
     { "action": "shell", "resource": "git archive *", "effect": "allow" },
@@ -278,6 +279,11 @@
     },
     {
       "action": "external_directory",
+      "resource": "~/.config/opencode/workflows/**",
+      "effect": "allow",
+    },
+    {
+      "action": "external_directory",
       "resource": "~/.nuget/packages/**",
       "effect": "allow",
     },
@@ -313,6 +319,7 @@
     },
   ],
   "skills": ["~/.agents/vendor/skills"],
+  "instructions": ["AGENTS.local.md"],
   "plugins": ["@slkiser/opencode-quota"],
   "providers": {
     "openai": {},

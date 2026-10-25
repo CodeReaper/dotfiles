@@ -14,6 +14,8 @@
 !.config/opencode/agents/**
 !.config/opencode/commands/
 !.config/opencode/commands/**
+!.config/opencode/workflows/
+!.config/opencode/workflows/**
 !.config/opencode/cli.json
 !.config/opencode/opencode.jsonc
 !.config/opencode/reviewer-prompt.txt

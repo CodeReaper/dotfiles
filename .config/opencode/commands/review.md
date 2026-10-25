@@ -3,4 +3,4 @@ description: Review changes [commit|branch|pr], defaults to uncommitted
 agent: reviewer
 ---
 
-Input: $ARGUMENTS
+Preform a review with input: $ARGUMENTS
