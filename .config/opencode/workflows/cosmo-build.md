@@ -5,7 +5,7 @@ Each of the following phases must be completed in sequence and in full before mo
 
 ## Phase 1
 
-Identify the plan, read the messages in the sessions backwards until you find a handoff - this is the only plan to build.
+Identify the plan, read the messages in the sessions backwards until you find a handoff - this is the only plan to build. Note its id.
 
 Failing to find any plan aborts the build.
 

@@ -24,6 +24,8 @@ Load the grilling skill and follow its instructions to completion.
 
 ## Phase 3
 
-Display the hand off.
+Generate an id for the hand off with `openssl rand -hex 4` or equivalent command.
+
+Display the hand off with its id.
 
 Do not include completed or irrelevant instructions in the hand off.
