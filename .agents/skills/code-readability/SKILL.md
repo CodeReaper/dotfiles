@@ -17,10 +17,10 @@ Read the code vertically, in execution order. Names and logical groupings should
 
 ## Naming
 
-Choose the shortest name that preserves the meaning needed at its use sites.
+Choose the shortest clear name in context, not the most descriptive name in isolation.
 
-- Prefer one word when it fully expresses the role of the value.
-- Add words when they preserve meaningful distinctions: purpose, units, state, ownership, or relationships.
+- Default to one word for local variables.
+- Add words only when needed to distinguish purpose, units, state, ownership, or relationships.
 - Remove qualifiers that merely repeat obvious surrounding context.
 - Name values for their role in the operation and include implementation details only when readers need them.
 - Use consistent domain vocabulary and do not introduce synonyms for variety.
@@ -41,7 +41,6 @@ For example:
 
 - Use `service` rather than `apiService` when the API qualifier adds nothing in that scope.
 - Use `apiClient` and `idClient` when their distinct roles matter.
-- Keep `totalPrice` or `userCount` when shortening them would lose useful meaning.
 
 ### Abbreviations and casing
 
