@@ -27,6 +27,7 @@
     { "action": "shell", "resource": "brew search *", "effect": "allow" },
     { "action": "shell", "resource": "cat *", "effect": "allow" },
     { "action": "shell", "resource": "cd *", "effect": "allow" },
+    { "action": "shell", "resource": "chmod *", "effect": "allow" },
     { "action": "shell", "resource": "comm *", "effect": "allow" },
     { "action": "shell", "resource": "command *", "effect": "allow" },
     { "action": "shell", "resource": "continue *", "effect": "allow" },
@@ -215,6 +216,7 @@
     { "action": "shell", "resource": "textutil *", "effect": "allow" },
     { "action": "shell", "resource": "touch *", "effect": "allow" },
     { "action": "shell", "resource": "tr *", "effect": "allow" },
+    { "action": "shell", "resource": "trap *", "effect": "allow" }
     { "action": "shell", "resource": "true *", "effect": "allow" },
     { "action": "shell", "resource": "uname *", "effect": "allow" },
     { "action": "shell", "resource": "uniq *", "effect": "allow" },
