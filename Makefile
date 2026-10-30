@@ -74,6 +74,7 @@ install-casks:
 	brew list --cask rectangle >/dev/null 2>&1 || brew install --cask rectangle
 	brew list --cask spotify >/dev/null 2>&1 || brew install --cask spotify
 	brew list --cask visual-studio-code >/dev/null 2>&1 || brew install --cask visual-studio-code
+	brew list --cask macdirstat >/dev/null 2>&1 || brew install --cask macdirstat
 ifeq ($(ZONE),PERSONAL)
 	brew list --cask steam >/dev/null 2>&1 || brew install --cask steam
 	brew list --cask tor-browser >/dev/null 2>&1 || brew install --cask tor-browser
