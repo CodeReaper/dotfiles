@@ -126,6 +126,7 @@
     { "action": "shell", "resource": "mkdir *", "effect": "allow" },
     { "action": "shell", "resource": "mktemp *", "effect": "allow" },
     { "action": "shell", "resource": "mv *", "effect": "allow" },
+    { "action": "shell", "resource": "nl *", "effect": "allow" },
     { "action": "shell", "resource": "npm ci", "effect": "allow" },
     { "action": "shell", "resource": "npm run build*", "effect": "allow" },
     { "action": "shell", "resource": "npm run test*", "effect": "allow" },
