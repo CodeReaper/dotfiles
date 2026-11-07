@@ -142,9 +142,10 @@ install-dotnet:
 
 install-skills:
 	@mkdir -p .agents/vendor/skills/
-	test -d .agents/vendor/repositories/spf13/go-skills || git clone https://github.com/spf13/go-skills.git .agents/vendor/repositories/spf13/go-skills
-	git -C .agents/vendor/repositories/spf13/go-skills pull
-	ln -sf $(CURDIR)/.agents/vendor/repositories/spf13/go-skills/go $(CURDIR)/.agents/vendor/skills/go
+# 	DISABLED:
+# 	test -d .agents/vendor/repositories/spf13/go-skills || git clone https://github.com/spf13/go-skills.git .agents/vendor/repositories/spf13/go-skills
+# 	git -C .agents/vendor/repositories/spf13/go-skills pull
+# 	ln -sf $(CURDIR)/.agents/vendor/repositories/spf13/go-skills/go $(CURDIR)/.agents/vendor/skills/go
 
 list:
 	brew list --installed-on-request

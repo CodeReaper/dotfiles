@@ -2,12 +2,12 @@
   "version": "0.2",
   "language": "en",
   "words": [
-    "Anson",
+    "anson",
     "checkmake",
     "codereaper",
     "deepenable",
     "dockercompose",
-    "Errorf",
+    "errorf",
     "esbenp",
     "footguns",
     "forgejo",
@@ -17,9 +17,9 @@
     "golangci",
     "hotspot",
     "opencode",
-    "Ousterhout",
+    "ousterhout",
     "pyproject",
-    "Sprintf",
+    "sprintf",
     "swiftlint"
   ]
 }
