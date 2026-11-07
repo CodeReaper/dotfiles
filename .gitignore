@@ -32,6 +32,11 @@
 !.vscode/
 !.vscode/settings.json
 
+!.colima/
+!.colima/_lima/
+!.colima/_lima/_config/
+!.colima/_lima/_config/override.yaml
+
 !Library
 !Library/Application Support/
 !Library/Application Support/Code/

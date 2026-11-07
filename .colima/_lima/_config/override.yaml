@@ -1,0 +1,5 @@
+mounts:
+  - location: "~"
+    writable: true
+    sshfs:
+      cache: false
