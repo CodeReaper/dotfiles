@@ -207,6 +207,7 @@
     { "action": "shell", "resource": "sed *", "effect": "allow" },
     { "action": "shell", "resource": "set *", "effect": "allow" },
     { "action": "shell", "resource": "shasum *", "effect": "allow" },
+    { "action": "shell", "resource": "shift *", "effect": "allow" },
     { "action": "shell", "resource": "sleep *", "effect": "allow" },
     { "action": "shell", "resource": "sort *", "effect": "allow" },
     { "action": "shell", "resource": "strings *", "effect": "allow" },

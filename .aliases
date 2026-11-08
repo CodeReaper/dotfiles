@@ -7,12 +7,18 @@
 alias plist="/usr/libexec/PlistBuddy -c \"Print\" $@"
 alias xml="xmllint --format -"
 alias json="jq"
+alias ls='ls -p'
 
 function jwt() {
 	for index in 1 2; do
 		echo $1 | cut -d. -f$index | read in
 		echo $in==== | fold -w 4 | sed '$ d' | tr -d '\n' | base64 --decode | jq
 	done
+}
+
+function epoch() {
+	local num=${1:--1}
+	printf '%(%B %d, %Y %-I:%M:%S %p %Z)T\n' "$num"
 }
 
 # git
@@ -84,3 +90,4 @@ ghcr.io/laniksj/dfimage $@'
 # misc
 
 alias rg="rg -u"
+command -v system_profiler &>/dev/null && alias wattage='system_profiler SPPowerDataType | grep Wattage'

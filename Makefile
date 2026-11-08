@@ -10,16 +10,81 @@ CODE := /Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code
 all: setup install
 
 setup:
-# correctly place git directory
+# Setup: correctly place git directory
 	-test -d .git && ! test -d .stowed && mv .git .stowed
-# disable minimize windows
-	defaults write -g NSUserKeyEquivalents -dict-add 'Minimize' '\0'
-# disable fn-button emoji picker
+	$(MAKE) setup-defaults
+
+setup-defaults: # see https://macos-defaults.com
+
+# Global: disable minimize windows
+	defaults write -g NSUserKeyEquivalents -dict-add Minimize '\0'
+# Global: disable fn-button emoji picker
 	defaults write com.apple.HIToolbox AppleFnUsageType -int 0
-# disable caps lock
+# Global: disable caps lock
 	defaults -currentHost write -g \
 		com.apple.keyboard.modifiermapping.0-0-0 \
 		-array '<dict><key>HIDKeyboardModifierMappingSrc</key><integer>0</integer><key>HIDKeyboardModifierMappingDst</key><integer>7</integer></dict>'
+# Global: expand save panel by default
+	defaults write -g NSNavPanelExpandedStateForSaveMode -bool true
+	defaults write -g NSNavPanelExpandedStateForSaveMode2 -bool true
+# Global: enable full keyboard access for all controls (e.g. enable tab in modal dialogs)
+	defaults write -g AppleKeyboardUIMode -int 3
+# Global: disable smart quotes as they’re annoying when typing code
+	defaults write -g NSAutomaticQuoteSubstitutionEnabled -bool false
+# Global: disable smart dashes as they’re annoying when typing code
+	defaults write -g NSAutomaticDashSubstitutionEnabled -bool false
+# Global: use scroll gesture with the ctrl (^) modifier key to zoom
+	defaults write com.apple.universalaccess closeViewScrollWheelToggle -bool true
+
+# Finder: show ~/library
+	chflags nohidden ~/Library
+# Finder: show extenions
+	defaults write -g AppleShowAllExtensions -bool true
+# Finder: show hidden files
+	defaults write com.apple.finder AppleShowAllFiles -bool true
+# Finder: show path bar
+	defaults write com.apple.finder ShowPathbar -bool true
+# Finder: show files in list view
+	defaults write com.apple.finder FXPreferredViewStyle -string Nlsv
+# Finder: full posix path in finder windows
+	defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
+# Finder: show status bar in finder
+	defaults write com.apple.finder ShowStatusBar -bool true
+# Finder: new windows start at home directory
+	defaults write com.apple.finder NewWindowTarget -string PfHm
+	defaults write com.apple.finder NewWindowTargetPath -string 'file:///$$HOME'
+# Finder: only search the current direcotry
+	defaults write com.apple.finder FXDefaultSearchScope -string SCcf
+# Finder: disable warning for changing extension
+	defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
+
+# Keyboard: enable repeating key while pressed
+	defaults write -g ApplePressAndHoldEnabled -bool false
+# Keyboard: disable autocorrect
+	defaults write -g NSAutomaticSpellingCorrectionEnabled -bool false
+# Keyboard: disable auto-capitalization
+	defaults write -g NSAutomaticCapitalizationEnabled -bool false
+# Keyboard: set a shorter delay until key repeat
+	defaults write -g InitialKeyRepeat -int 15
+# Keyboard: set a fast keyboard repeat rate
+	defaults write -g KeyRepeat -int 2
+# Keyboard: disable replace double-space with period-space
+	defaults write NSGlobalDomain NSAutomaticPeriodSubstitutionEnabled -bool true
+
+# Dock: automatically hide and show the dock
+	defaults write com.apple.dock autohide -bool true
+# Dock: dock on the left
+	defaults write com.apple.dock orientation -string left
+# Dock: disable recents
+	defaults write com.apple.dock show-recents -bool false
+# Dock: show only active
+	defaults write com.apple.dock static-only -bool true
+
+# Hot corners: disable all
+	defaults write com.apple.dock wvous-tl-corner -int 0
+	defaults write com.apple.dock wvous-tr-corner -int 0
+	defaults write com.apple.dock wvous-bl-corner -int 0
+	defaults write com.apple.dock wvous-br-corner -int 0
 
 install: install-rosetta install-brew install-brews install-casks install-autoupdate install-asdf install-apps install-code-extensions
 ifeq ($(ZONE),WORK)

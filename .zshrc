@@ -22,6 +22,7 @@ export HOMEBREW_NO_INSTALL_CLEANUP=1
 export LDFLAGS="-L/usr/local/opt/icu4c/lib -L/usr/local/opt/sqlite/lib -L/opt/homebrew/opt/openssl/lib"
 export CPPFLAGS="-I/usr/local/opt/icu4c/include -I/usr/local/opt/sqlite/include -I/opt/homebrew/opt/openssl/include"
 export EDITOR="code --wait"
+export TZ='Europe/Copenhagen'
 
 if command -v colima &>/dev/null; then
     export DOCKER_HOST="unix://${HOME}/.colima/default/docker.sock"
