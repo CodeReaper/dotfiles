@@ -16,13 +16,13 @@ function jwt() {
 	done
 }
 
+zmodload zsh/datetime
 function epoch() {
-	local num=${1:--1}
-	printf '%(%B %d, %Y %-I:%M:%S %p %Z)T\n' "$num"
+	strftime '%B %d, %Y %-I:%M:%S %p %Z' "${1:-$EPOCHSECONDS}"
 }
 
 # git
-g() {
+function g() {
 	if [ "$PWD" = "$HOME" ]; then
 		git --git-dir="$HOME/.stowed" --work-tree="$HOME" "$@"
 	else

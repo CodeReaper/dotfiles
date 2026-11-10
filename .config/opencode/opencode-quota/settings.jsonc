@@ -1,0 +1,18 @@
+{
+  "version": 6,
+  "statusLine": {
+    "show": true,
+    "withSidebar": true,
+    "detail": "one",
+    "window": {
+      "openai": "five_hour",
+    },
+    "hidden": ["openai"],
+  },
+  "toast": {
+    "show": false,
+  },
+  "words": {
+    "sessionTokens": "tree",
+  },
+}

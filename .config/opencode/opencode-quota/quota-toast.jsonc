@@ -1,7 +1,0 @@
-{
-  "enableToast": false,
-  "maintainerAnnouncements": { "enabled": false },
-  "sessionTokenScope": "tree",
-  "tuiPromptBar": { "enabled": true },
-  "tuiCommandDisplay": "dialog",
-}

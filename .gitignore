@@ -20,7 +20,7 @@
 !.config/opencode/opencode.jsonc
 !.config/opencode/reviewer-prompt.txt
 !.config/opencode/opencode-quota/
-!.config/opencode/opencode-quota/quota-toast.jsonc
+!.config/opencode/opencode-quota/settings.jsonc
 !.config/opencode/profiles/
 !.config/opencode/profiles/*/
 !.config/opencode/profiles/*/opencode.jsonc

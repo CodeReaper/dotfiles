@@ -26,7 +26,7 @@ export TZ='Europe/Copenhagen'
 
 if command -v colima &>/dev/null; then
     export DOCKER_HOST="unix://${HOME}/.colima/default/docker.sock"
-    export TESTCONTAINERS_DOCKER_SOCKET_OVERRIDE="${HOME}/.colima/default/docker.sock"
+    export TESTCONTAINERS_DOCKER_SOCKET_OVERRIDE=/var/run/docker.sock
 fi
 
 if test -f ~/.env; then

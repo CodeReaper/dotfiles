@@ -120,13 +120,11 @@ install-brews:
 	brew install watch
 	brew install yq
 	brew install anomalyco/tap/opencode-v2
-ifeq ($(ZONE),PERSONAL)
 	brew install colima
 	brew install docker
 	brew install docker-buildx
 	brew install docker-compose
 	brew install docker-credential-helper
-endif
 ifeq ($(ZONE),WORK)
 	brew install azure-cli
 	brew install wget
