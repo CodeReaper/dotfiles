@@ -6,8 +6,9 @@
     "detail": "one",
     "window": {
       "openai": "five_hour",
+      "*": "five_hour",
     },
-    "hidden": ["openai"],
+    "hidden": [],
   },
   "toast": {
     "show": false,
