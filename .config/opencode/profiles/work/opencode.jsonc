@@ -13,7 +13,7 @@
       "model": "openai/gpt-6-luna#medium",
     },
     "cosmo": {
-      "model": "openai/gpt-6-luna#medium",
+      "model": "openai/gpt-6.1-sol#high",
     },
     "wanda": {
       "model": "openai/gpt-6.1-sol#high",
