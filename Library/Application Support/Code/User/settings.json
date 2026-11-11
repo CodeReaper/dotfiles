@@ -201,6 +201,8 @@
     }
   },
   "workbench.colorTheme": "Tokyo Night",
+  "workbench.experimental.modernUI": false,
+  "workbench.modernUIFrostedGlass": false,
   "workbench.settings.showAISearchToggle": false,
   "workbench.sideBar.location": "right", // avoid moving the left text edge
   "workbench.startupEditor": "none",
