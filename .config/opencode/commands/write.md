@@ -4,4 +4,4 @@ agent: cosmo
 subagent: false
 ---
 
-Perform only the agreed file changes. Read files as needed. Stop and report unresolved decisions or failures.
+Write the agreed changes

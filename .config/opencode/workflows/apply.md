@@ -22,6 +22,15 @@ If you need to ask questions, then you ask brief questions.
 Load the grilling skill and follow it to completion.
 
 
-## Phase 3: Writing files
+## Phase 3: Verification
+
+Prepare explicit verification commands, if any, and print them into the session.
+
+Use the project's established verification commands and existing tests, plus test additions explicitly included in the agreed plan. Do not introduce ad hoc checks, scripts, or tests outside that plan.
+
+If no applicable verification is available, state that rather than inventing it.
+
+
+## Phase 4: Writing files
 
 Proceed with file writes if capable, otherwise simply report the plan is ready to apply.
