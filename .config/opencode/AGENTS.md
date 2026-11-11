@@ -10,6 +10,8 @@ Use web tools for fetching URLs and searching the web rather than shell commands
 
 For text processing, prefer `sed`, `rg`, `jq`, and `yq`.
 
+For conditional, always use `test` instead of `[`.
+
 
 ## Environment variables
 
