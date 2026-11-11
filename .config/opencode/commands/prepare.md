@@ -1,5 +1,5 @@
 ---
-description: Prepares a plan for build
+description: Prepares exact file operations for apply
 agent: wanda
 ---
 
