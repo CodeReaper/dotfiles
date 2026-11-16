@@ -122,6 +122,9 @@
   },
   "explorer.confirmDragAndDrop": false,
   "extensions.ignoreRecommendations": true,
+  "files.associations": {
+    "*.playbook": "ansible"
+  },
   "files.autoSave": "afterDelay",
   "files.exclude": {
     "**/.git": true, // hides .git in file explorer and searches
