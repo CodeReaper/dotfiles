@@ -169,6 +169,9 @@ install-apps:
 ifeq ($(ZONE),PERSONAL)
 	mas install 361304891 # Numbers
 endif
+ifeq ($(ZONE),WORK)
+	mas install 1451685025 # wireguard
+endif
 
 install-code-extensions:
 	$(CODE) \
