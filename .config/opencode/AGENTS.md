@@ -19,6 +19,7 @@ For conditional, always use `test` instead of `[`.
 - Keep exports and affected commands in the same shell call; environment changes do not persist across calls.
 - Keep the call narrowly scoped, since exports affect subsequent commands.
 - This includes assignments before builtins, such as `IFS= read`; export, use and restore such variables.
+- Do not use `--no-pager` for git, set an empty GIT_PAGER env instead.
 
 
 ## Bulk file operations

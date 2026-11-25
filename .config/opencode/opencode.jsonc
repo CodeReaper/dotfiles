@@ -284,7 +284,7 @@
     },
     {
       "action": "external_directory",
-      "resource": "~/.config/opencode/workflows/**",
+      "resource": "~/.config/agents/workflows/**",
       "effect": "allow",
     },
     {
